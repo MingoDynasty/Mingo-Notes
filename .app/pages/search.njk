@@ -1,0 +1,17 @@
+---
+title: Search
+layout: "core/base.layout.njk"
+permalink: "/search/"
+panel: false
+---
+
+{% from 'modules/search/search.macro.njk' import searchInput %}
+
+<div class="page">
+  <main class="page__main" id="app-content">
+    <h1 class="page__title" lang="{% uiLang %}">
+      {{ 'page.search.title' | t }}
+    </h1>
+    {{ searchInput('inline') }}
+  </main>
+</div>

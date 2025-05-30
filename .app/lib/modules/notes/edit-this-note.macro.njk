@@ -1,0 +1,13 @@
+{% macro editThisNote(config, page) %}
+  {% if config and config.url %}
+    <a 
+      href="{{ page | editThisNoteLink(config) }}"
+      {{ 'target="_blank" rel="noopener"' if config.openInNewTab == true else '' }}
+      class="toggle-btn"
+      lang="{% uiLang %}"
+    >
+      {{ 'edit-2' | icon({ width: '1em', height: '1em' }) | safe }}
+      <span>{{ 'edit_this_note.label' | t }}</span>
+    </a>
+  {% endif %}
+{% endmacro %}
