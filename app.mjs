@@ -27,14 +27,9 @@ export default defineConfig({
   sidebar: {
     links: [
       {
-        url: "https://github.com/rothsandro/eleventy-notes",
+        url: "https://github.com/MingoDynasty/Mingo-Notes",
         label: "GitHub / Support",
         icon: "github",
-      },
-      {
-        url: "https://www.buymeacoffee.com/sandroroth",
-        label: "Buy me a coffee",
-        icon: "coffee",
       },
     ],
     sections: [
