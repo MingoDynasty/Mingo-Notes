@@ -56,61 +56,13 @@ export default defineConfig({
         ],
       },
       {
-        label: "Introduction",
+        label: "Street Fighter 6",
         groups: [
           {
             query: createNotesQuery({
-              pattern: "^/[^/]+$",
-              tags: ["basics"],
-            }),
-          },
-        ],
-      },
-      {
-        label: "Guides",
-        groups: [
-          {
-            label: "Writing Notes",
-            query: createNotesQuery({
-              pattern: "^/Writing/",
-              tree: {
-                replace: {
-                  "^/\\w+": "",
-                },
-              },
-            }),
-          },
-          {
-            label: "Organizing Notes",
-            query: createNotesQuery({
-              pattern: "^/Organizing/",
-            }),
-          },
-          {
-            label: "Core Features",
-            query: createNotesQuery({
-              pattern: "^/Features/",
-              tree: {
-                replace: {
-                  "^/\\w+": "",
-                },
-              },
-            }),
-          },
-          {
-            label: "Deployment",
-            query: createNotesQuery({
-              pattern: "^/Deployment/",
-            }),
-          },
-        ],
-      },
-      {
-        label: "Releases",
-        groups: [
-          {
-            query: createNotesQuery({
-              pattern: "^/Releases/",
+              // pattern: "^/[^/]+$",
+              pattern: "^/SF6/",
+              tags: ["sf6"],
             }),
           },
         ],
