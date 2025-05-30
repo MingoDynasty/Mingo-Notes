@@ -39,6 +39,23 @@ export default defineConfig({
     ],
     sections: [
       {
+        label: "Valorant",
+        groups: [
+          {
+            query: createNotesQuery({
+              // pattern: "^/[^/]+$",
+              pattern: "^/Valorant/",
+              // tags: ["valorant"],
+              tree: {
+                replace: {
+                  "^/\\w+": "",
+                },
+              },
+            }),
+          },
+        ],
+      },
+      {
         label: "Introduction",
         groups: [
           {
