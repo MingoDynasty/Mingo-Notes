@@ -9,7 +9,7 @@ tags: ["basics"]
 
 ### Generator
 
-![My image](./public/my-image.png)
+<!-- ![My image](./public/my-image.png) -->
 
 <!-- zxcv -->
 
