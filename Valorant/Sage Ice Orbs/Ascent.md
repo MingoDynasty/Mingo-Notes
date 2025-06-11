@@ -4,8 +4,9 @@ tags: ["valorant"]
 
 # Attack
 
-### Generator (version 1)
+### Generator (version 1, walk contact)
 
+TODO: this lineup is good for walk contact, but is sometimes too slow for extremely fast executes. Need to find another version for fast executes (possibly even round start lineups).
 Tuck in this corner:
 ![20250608020131.png](../../public/screenshots/20250608020131.png)
 Take note of this intersection of bricks above the middle wood arch:
@@ -15,7 +16,7 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250608020808.png](../../public/screenshots/20250608020808.png)
 
-### Generator (version 2)
+### Generator (version 2, trapped behind smoke)
 
 Tuck in this corner:
 ![20250518234437.png](../../public/screenshots/20250518234437.png)
