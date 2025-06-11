@@ -108,31 +108,23 @@ Example result:
 ![20250519023318.png](../../public/screenshots/20250519023318.png)
 **Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk C Long.
 
-### C Site stall / retake (Version 1)
+### C Site retake
 
-Stand on this metal railing and walk to the top:
-
-TODO
-
-### C Site stall / retake (Version 1)
-
-Hug this wall:
-![20250519014143.png](../../public/screenshots/20250519014143.png)
-Make it so this window is no longer visible on your screen:
-![20250519014217.png](../../public/screenshots/20250519014217.png)
-Aim at this point in the sky: TODO: need a better lineup
-![20250519014246.png](../../public/screenshots/20250519014246.png)
-Example result:
-![20250519014309.png](../../public/screenshots/20250519014309.png)
-The lineup is a little finicky and situational, but the main idea is that you discourage the enemy team from planting for Long (can easily combo with a Sova ult or something). It can also be useful to help stall for someone holding back site.
-
-C Site stall / retake (Version 2)
-Stand on this and tuck as far upward as you can:
-![20250519021724.png](../../public/screenshots/20250519021724.png)
-Aim slightly to the left of the bottom light:
-![20250519021759.png](../../public/screenshots/20250519021759.png)
+Tuck into this corner:
+![20250610214257.png](../../public/screenshots/20250610214257.png)
+Aim slightly below this wood piece sticking out:
+![20250610214347.png](../../public/screenshots/20250610214347.png)
+**Note**: be careful not to accidentally hit the wood piece nor the wall to your right, else the Ice Orb may accidentally bounce back.
 Result:
-![20250519021836.png](../../public/screenshots/20250519021836.png)
+![20250610214451.png](../../public/screenshots/20250610214451.png)
+
+### C Site stall
+
+Same as retake lineup, but simply aim about 1-2 crosshair lengths lower than the wooden piece, while still keeping your crosshair along the right wall:
+![20250610214705.png](../../public/screenshots/20250610214705.png)
+Result:
+![20250610214853.png](../../public/screenshots/20250610214853.png)
+**Note**: this version discourages the enemy team from planting for Long (can easily combo with a Sova ult or something). It can also be useful to help stall for someone holding back site.
 
 ### C Site stall from A Site
 
@@ -146,3 +138,16 @@ Run, jump and throw:
 Example result:
 ![20250519015816.png](../../public/screenshots/20250519015816.png)
 **Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk A Long.
+
+# Honorable Mentions
+
+I don't use these often, but they can sometimes be useful to know.
+
+### C Site stall / retake (railing version)
+
+Stand on this and tuck as far upward as you can:
+![20250519021724.png](../../public/screenshots/20250519021724.png)
+Aim slightly to the left of the bottom light:
+![20250519021759.png](../../public/screenshots/20250519021759.png)
+Result:
+![20250519021836.png](../../public/screenshots/20250519021836.png)

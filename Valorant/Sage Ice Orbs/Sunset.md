@@ -80,8 +80,13 @@ Result:
 
 Hug this wall in CT Alley
 ![20250519030935.png](../../public/screenshots/20250519030935.png)
-
-TODO: where result ?
+**Note**: ensure you are not yet exposed to Elbow yet:
+![20250610211313.png](../../public/screenshots/20250610211313.png)
+Aim over this box; jump and while falling, throw:
+![20250610211408.png](../../public/screenshots/20250610211408.png)
+**Note**: try to bounce the Ice Orb off the wall in Elbow for an easy lineup.
+Result:
+![20250610211516.png](../../public/screenshots/20250610211516.png)
 
 ## B Site retake
 
