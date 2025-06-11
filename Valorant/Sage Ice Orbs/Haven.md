@@ -110,11 +110,17 @@ Example result:
 
 ### C Site stall / retake (Version 1)
 
+Stand on this metal railing and walk to the top:
+
+TODO
+
+### C Site stall / retake (Version 1)
+
 Hug this wall:
 ![20250519014143.png](../../public/screenshots/20250519014143.png)
 Make it so this window is no longer visible on your screen:
 ![20250519014217.png](../../public/screenshots/20250519014217.png)
-Aim at this point in the sky:
+Aim at this point in the sky: TODO: need a better lineup
 ![20250519014246.png](../../public/screenshots/20250519014246.png)
 Example result:
 ![20250519014309.png](../../public/screenshots/20250519014309.png)

@@ -164,12 +164,23 @@ Combined results:
 Tuck here:
 ![20250518224943.png](../../public/screenshots/20250518224943.png)
 
-The small bar between the Ice Orb and Heal ability; line up the left side of the bar with the left side building's wooden frame:
+The small bar between the Ice Orb and Heal ability; line up the right side of the bar with the left side building's wooden frame:
 ![20250518225656.png](../../public/screenshots/20250518225656.png)
 Result:
 ![20250518225746.png](../../public/screenshots/20250518225746.png)
 
 ### Backsite
+
+Tuck here:
+![20250518224943.png](../../public/screenshots/20250518224943.png)
+Put the top of your crosshair at the tip of this leaf:
+![20250608001026.png](../../public/screenshots/20250608001026.png)
+Result:
+![20250608001152.png](../../public/screenshots/20250608001152.png)
+Combined results:
+![20250608001224.png](../../public/screenshots/20250608001224.png)
+
+### Backsite (easier)
 
 Hug this wall:
 ![20250518232949.png](../../public/screenshots/20250518232949.png)
