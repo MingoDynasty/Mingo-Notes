@@ -39,7 +39,7 @@ Results:
 ![20250526233627.png](../../public/screenshots/20250526233627.png)
 ![20250526233658.png](../../public/screenshots/20250526233658.png)
 
-### Sign / Backsite (left side)
+### Sign / Back site (left side)
 
 Tuck into this corner:
 ![20250518214042.png](../../public/screenshots/20250518214042.png)
@@ -48,7 +48,7 @@ Aim in between these two beams in the sky:
 Result:
 ![20250519120500.png](../../public/screenshots/20250519120500.png)
 
-### Sign / Backsite (right side)
+### Sign / Back site (right side)
 
 Tuck into this corner:
 ![20250518214042.png](../../public/screenshots/20250518214042.png)
@@ -91,7 +91,7 @@ Result:
 
 ## B Site
 
-### Backsite (easy)
+### Back site (easy)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
 ![20250518230030.png](../../public/screenshots/20250518230030.png)
@@ -123,7 +123,7 @@ Result:
 
 ### A Site Retake
 
-### From Heaven to Sign / Backsite
+### From Heaven to Sign / Back site
 
 Tuck here:
 ![20250518233707.png](../../public/screenshots/20250518233707.png)
@@ -132,7 +132,7 @@ Aim in between the roof and the K symbol:
 Result:
 ![20250518233941.png](../../public/screenshots/20250518233941.png)
 
-### From A Main to Sign / Backsite
+### From A Main to Sign / Back site
 
 Tuck here:
 ![20250518220510.png](../../public/screenshots/20250518220510.png)
@@ -146,7 +146,7 @@ Keep the lightbulb at the bottom of your screen, while lining up the Heal abilit
 Result:
 ![20250518220732.png](../../public/screenshots/20250518220732.png)
 
-### Backsite / Elbow from A Main
+### Back site / Elbow from A Main
 
 Tuck here:
 ![20250518220510.png](../../public/screenshots/20250518220510.png)
@@ -169,7 +169,7 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250518225746.png](../../public/screenshots/20250518225746.png)
 
-### Backsite
+### Back site
 
 Tuck here:
 ![20250518224943.png](../../public/screenshots/20250518224943.png)
@@ -180,7 +180,7 @@ Result:
 Combined results:
 ![20250608001224.png](../../public/screenshots/20250608001224.png)
 
-### Backsite (easier)
+### Back site (easier)
 
 Hug this wall:
 ![20250518232949.png](../../public/screenshots/20250518232949.png)

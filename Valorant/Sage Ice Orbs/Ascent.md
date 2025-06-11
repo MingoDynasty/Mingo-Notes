@@ -25,7 +25,7 @@ Aim anywhere at this vertical line above the generator:
 Example result:
 ![20250518234646.png](../../public/screenshots/20250518234646.png)
 
-### Backsite
+### Back site (version 1, walk contact)
 
 Tuck in this corner:
 ![20250608020131.png](../../public/screenshots/20250608020131.png)
@@ -92,7 +92,7 @@ Result:
 
 # Honorable Mentions
 
-### Backsite (easy)
+### Back site (easy)
 
 Hug anywhere along this wall:
 ![20250518234729.png](../../public/screenshots/20250518234729.png)
@@ -101,7 +101,7 @@ Aim above this wooden wall, using it as a backboard:
 Example result:
 ![20250518235251.png](../../public/screenshots/20250518235251.png)
 
-### Backsite / Hell
+### Back site / Hell
 
 Hug this wall:
 ![20250518235325.png](../../public/screenshots/20250518235325.png)

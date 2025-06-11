@@ -16,7 +16,7 @@ Aim slightly to the right of this roof, but at the tip of the trees:
 Result:
 ![20250519010405.png](../../public/screenshots/20250519010405.png)
 
-### Backsite
+### Back site
 
 Tuck into this corner:
 ![20250519011046.png](../../public/screenshots/20250519011046.png)
@@ -25,7 +25,7 @@ Aim slightly left and above the corner of this roof:
 Result:
 ![20250519011154.png](../../public/screenshots/20250519011154.png)
 
-### Backsite (easy)
+### Back site (easy)
 
 Stand at the bottom of A Long, and aim anywhere at this wooden frame, above the site box:
 ![20250519011746.png](../../public/screenshots/20250519011746.png)

@@ -29,7 +29,7 @@ Result:
 
 ## B Site
 
-### Backsite (right side)
+### Back site (right side)
 
 Hug this wall:
 ![20250519030045.png](../../public/screenshots/20250519030045.png)
@@ -38,7 +38,7 @@ Aim along this white strip:
 Result:
 ![20250519030143.png](../../public/screenshots/20250519030143.png)
 
-### Backsite (left side)
+### Back site (left side)
 
 Angle yourself and aim at this back wall, using it as a backboard. Run and throw:
 ![20250519030213.png](../../public/screenshots/20250519030213.png)
