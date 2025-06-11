@@ -20,6 +20,6 @@ There are good lineups, and then there are bad lineups.
     2. Being able to perform your lineup and quickly rejoin your team to assist in the execute.
     3. Performing the lineup in safe locations; not requiring you to be exposed to dangerous angles.
 5. Optimal Ice spread.
-    1. Ice that covers the maximum area that enemies are likely to hold.
+    1. Ice that covers the maximum area that enemies are likely to hold from.
     2. Ice that does not touch the area that your team wants to push onto.
     3. Ice that does not overlap with each other (in the case of combining multiple Ice Orbs), resulting in maximum Ice coverage.
