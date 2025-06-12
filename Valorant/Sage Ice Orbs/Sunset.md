@@ -18,6 +18,8 @@ Result:
 
 ### On site generator
 
+TODO: need to find another lineup for gen, since once you have A Main control, sometimes your team executes too quickly onto site (especially Jett/Neon).
+
 Tuck into this corner:
 ![20250519085304.png](../../public/screenshots/20250519085304.png)
 Place the top of the bottom left HUD line into the second orange solar panel:

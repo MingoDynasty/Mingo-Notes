@@ -4,11 +4,14 @@ tags: ["valorant"]
 
 # Attack
 
-### Generator (version 1, walk contact)
+## A Site - walk contact
 
 **Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team.
 Tuck in this corner:
 ![20250608020131.png](../../public/screenshots/20250608020131.png)
+
+### Generator
+
 Take note of this intersection of bricks above the middle wood arch:
 ![20250608020537.png](../../public/screenshots/20250608020537.png)
 The small bar between the Ice Orb and Heal ability; line up the right side of the bar with the bricks:
@@ -16,29 +19,74 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250608020808.png](../../public/screenshots/20250608020808.png)
 
-### Generator (version 2, fast execute)
+### Back site
+
+Take note this intersection of bricks:
+![20250608021339.png](../../public/screenshots/20250608021339.png)
+The small bar between the Ice Orb and Heal ability; line up the right side of the bar with the bricks:
+![20250608021516.png](../../public/screenshots/20250608021516.png)
+Result:
+![20250608021545.png](../../public/screenshots/20250608021545.png)
+Combo results (version 1):
+![20250608021657.png](../../public/screenshots/20250608021657.png)
+
+### Heaven
+
+Aim at the tip of this cloud in the sky:
+![20250608022338.png](../../public/screenshots/20250608022338.png)
+**Note**: the lineup is relatively lenient, as the back wall helps bounce the Ice Orb onto Heaven.
+Result:
+![20250608022405.png](../../public/screenshots/20250608022405.png)
+
+## A Site - fast execute
 
 **Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
 
 Tuck into this corner with the box:
 ![20250612003312.png](../../public/screenshots/20250612003312.png)
+
+### Generator
+
 Aim at this part in the cloud:
 ![20250612003728.png](../../public/screenshots/20250612003728.png)
 Example result:
 ![20250612003751.png](../../public/screenshots/20250612003751.png)
 
-### Generator (version 3, round start)
+### Back site
+
+Note these spikes in the sky:
+![20250612004716.png](../../public/screenshots/20250612004716.png)
+Line up the down arrow of the Ice Ob indicator in between the right two spikes:
+![20250612004759.png](../../public/screenshots/20250612004759.png)
+Result:
+![20250612004928.png](../../public/screenshots/20250612004928.png)
+
+## A Site - round start
 
 **Note**: this is the fastest possible version. This is best when you know your team will execute fast _and_ your team has mobility duelists such as Jett, Neon, etc.
 
 Tuck between the box and the round start barrier:
 ![20250612004218.png](../../public/screenshots/20250612004218.png)
+
+### Generator
+
 Aim in the middle of these pockets of clouds:
 ![20250612004409.png](../../public/screenshots/20250612004409.png)
 Result:
 ![20250612004441.png](../../public/screenshots/20250612004441.png)
 
-### Generator (version 4, trapped behind smoke)
+### Back site
+
+Note these spikes in the sky:
+![20250612005436.png](../../public/screenshots/20250612005436.png)
+Line up the down arrow of the Ice Ob indicator in the middle of this spike:
+![20250612005555.png](../../public/screenshots/20250612005555.png)
+Result:
+![20250612005503.png](../../public/screenshots/20250612005503.png)
+
+## A Site
+
+### Generator (trapped behind smoke)
 
 **Note**: use this when your team is temporarily trapped behind smoke, but team is soon to be executing onto site (e.g. Phoenix is equipping a Flash into his hands).
 
@@ -49,51 +97,6 @@ Aim anywhere at this vertical line above the generator:
 **Note**: as long as the Ice Orb is thrown above the generator, then it will bounce roughly into the same spot.
 Example result:
 ![20250518234646.png](../../public/screenshots/20250518234646.png)
-
-### Back site (version 1, walk contact)
-
-Tuck in this corner:
-![20250608020131.png](../../public/screenshots/20250608020131.png)
-Take note this intersection of bricks:
-![20250608021339.png](../../public/screenshots/20250608021339.png)
-The small bar between the Ice Orb and Heal ability; line up the right side of the bar with the bricks:
-![20250608021516.png](../../public/screenshots/20250608021516.png)
-Result:
-![20250608021545.png](../../public/screenshots/20250608021545.png)
-Combo results (version 1):
-![20250608021657.png](../../public/screenshots/20250608021657.png)
-
-### Back site (version 2, fast execute)
-
-Tuck into this corner with the box:
-![20250612003312.png](../../public/screenshots/20250612003312.png)
-Note these spikes in the sky:
-![20250612004716.png](../../public/screenshots/20250612004716.png)
-Line up the down arrow of the Ice Ob indicator in between the right two spikes:
-![20250612004759.png](../../public/screenshots/20250612004759.png)
-Result:
-![20250612004928.png](../../public/screenshots/20250612004928.png)
-
-### Back site (version 3, round start)
-
-Tuck between the box and the round start barrier:
-![20250612004218.png](../../public/screenshots/20250612004218.png)
-Note these spikes in the sky:
-![20250612005436.png](../../public/screenshots/20250612005436.png)
-Line up the down arrow of the Ice Ob indicator in the middle of this spike:
-![20250612005555.png](../../public/screenshots/20250612005555.png)
-Result:
-![20250612005503.png](../../public/screenshots/20250612005503.png)
-
-### Heaven
-
-Tuck in this corner:
-![20250608020131.png](../../public/screenshots/20250608020131.png)
-Aim at the tip of this cloud in the sky:
-![20250608022338.png](../../public/screenshots/20250608022338.png)
-**Note**: the lineup is relatively lenient, as the back wall helps bounce the Ice Orb onto Heaven.
-Result:
-![20250608022405.png](../../public/screenshots/20250608022405.png)
 
 ## B Site
 
@@ -136,6 +139,8 @@ Result:
 ![20250519001300.png](../../public/screenshots/20250519001300.png)
 
 # Defense
+
+TODO: slow from Tree/Garden into B Site/Main
 
 # Honorable Mentions
 
