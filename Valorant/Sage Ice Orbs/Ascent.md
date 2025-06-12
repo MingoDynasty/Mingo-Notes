@@ -141,7 +141,23 @@ Result:
 
 # Defense
 
-TODO: slow from Tree/Garden into B Site/Main
+### From Tree to B Site execute
+
+Tuck into this corner:
+![20250612125512.png](../../public/screenshots/20250612125512.png)
+Notice these pair of leaves to the right of the scoped crosshair:
+![20250612131501.png](../../public/screenshots/20250612131501.png)
+Tuck the right side of your crosshair (if using a plus symbol) in between those two leaves:
+![20250612131524.png](../../public/screenshots/20250612131524.png)
+Result:
+![20250612131601.png](../../public/screenshots/20250612131601.png)
+
+For a simpler lineup, just aim slightly above the bottom leaf:
+![20250612131635.png](../../public/screenshots/20250612131635.png)
+Result:
+![20250612131710.png](../../public/screenshots/20250612131710.png)
+
+Though the trade off is that you slow more of Lane and less of Logs.
 
 # Honorable Mentions
 
