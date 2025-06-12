@@ -141,6 +141,26 @@ Result:
 
 # Defense
 
+### From Tree to A Main orb
+
+**Note**: use this when you have a hard read on an A Main push and your team wants to fight A Main. Great to combo with a molly lineup on the ult orb.
+
+Tuck into this corner:
+![20250612133204.png](../../public/screenshots/20250612133204.png)
+Take note of this dark leaf in the sky:
+![20250612133033.png](../../public/screenshots/20250612133033.png)
+Line up your crosshair with the top left of that dark leaf:
+![20250612133235.png](../../public/screenshots/20250612133235.png)
+Result:
+![20250612133303.png](../../public/screenshots/20250612133303.png)
+
+For an easier lineup, you can aim directly into the gap above the dark leaf:
+![20250612133329.png](../../public/screenshots/20250612133329.png)
+Result:
+![20250612133411.png](../../public/screenshots/20250612133411.png)
+
+**Tradeoff**: this covers the nook that people like to hide in, but covers less of A Lobby, so you may want to include a one-way smoke.
+
 ### From Tree to B Site execute
 
 Tuck into this corner:
@@ -157,7 +177,7 @@ For a simpler lineup, just aim slightly above the bottom leaf:
 Result:
 ![20250612131710.png](../../public/screenshots/20250612131710.png)
 
-Though the trade off is that you slow more of Lane and less of Logs.
+**Tradeoff**: you slow more of Lane but less of Logs.
 
 # Honorable Mentions
 
