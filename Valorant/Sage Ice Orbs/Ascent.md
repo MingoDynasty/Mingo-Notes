@@ -7,6 +7,7 @@ tags: ["valorant"]
 ## A Site - walk contact
 
 **Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team.
+
 Tuck in this corner:
 ![20250608020131.png](../../public/screenshots/20250608020131.png)
 
