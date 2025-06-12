@@ -6,7 +6,7 @@ tags: ["valorant"]
 
 ### Generator (version 1, walk contact)
 
-TODO: this lineup is good for walk contact, but is sometimes too slow for extremely fast executes. Need to find another version for fast executes (possibly even round start lineups).
+**Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team.
 Tuck in this corner:
 ![20250608020131.png](../../public/screenshots/20250608020131.png)
 Take note of this intersection of bricks above the middle wood arch:
@@ -16,7 +16,31 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250608020808.png](../../public/screenshots/20250608020808.png)
 
-### Generator (version 2, trapped behind smoke)
+### Generator (version 2, fast execute)
+
+**Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
+
+Tuck into this corner with the box:
+![20250612003312.png](../../public/screenshots/20250612003312.png)
+Aim at this part in the cloud:
+![20250612003728.png](../../public/screenshots/20250612003728.png)
+Example result:
+![20250612003751.png](../../public/screenshots/20250612003751.png)
+
+### Generator (version 3, round start)
+
+**Note**: this is the fastest possible version. This is best when you know your team will execute fast _and_ your team has mobility duelists such as Jett, Neon, etc.
+
+Tuck between the box and the round start barrier:
+![20250612004218.png](../../public/screenshots/20250612004218.png)
+Aim in the middle of these pockets of clouds:
+![20250612004409.png](../../public/screenshots/20250612004409.png)
+Result:
+![20250612004441.png](../../public/screenshots/20250612004441.png)
+
+### Generator (version 4, trapped behind smoke)
+
+**Note**: use this when your team is temporarily trapped behind smoke, but team is soon to be executing onto site (e.g. Phoenix is equipping a Flash into his hands).
 
 Tuck in this corner:
 ![20250518234437.png](../../public/screenshots/20250518234437.png)
@@ -36,8 +60,30 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 ![20250608021516.png](../../public/screenshots/20250608021516.png)
 Result:
 ![20250608021545.png](../../public/screenshots/20250608021545.png)
-Combo results:
+Combo results (version 1):
 ![20250608021657.png](../../public/screenshots/20250608021657.png)
+
+### Back site (version 2, fast execute)
+
+Tuck into this corner with the box:
+![20250612003312.png](../../public/screenshots/20250612003312.png)
+Note these spikes in the sky:
+![20250612004716.png](../../public/screenshots/20250612004716.png)
+Line up the down arrow of the Ice Ob indicator in between the right two spikes:
+![20250612004759.png](../../public/screenshots/20250612004759.png)
+Result:
+![20250612004928.png](../../public/screenshots/20250612004928.png)
+
+### Back site (version 3, round start)
+
+Tuck between the box and the round start barrier:
+![20250612004218.png](../../public/screenshots/20250612004218.png)
+Note these spikes in the sky:
+![20250612005436.png](../../public/screenshots/20250612005436.png)
+Line up the down arrow of the Ice Ob indicator in the middle of this spike:
+![20250612005555.png](../../public/screenshots/20250612005555.png)
+Result:
+![20250612005503.png](../../public/screenshots/20250612005503.png)
 
 ### Heaven
 

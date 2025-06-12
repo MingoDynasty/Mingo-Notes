@@ -17,6 +17,8 @@ Aim in between these two stars:
 Result:
 ![20250527000835.png](../../public/screenshots/20250527000835.png)
 
+TODO: aim at the star shifts the slow more to the right, enabling a faster execute (e.g. with Neon)
+
 ### On top of Yellow
 
 Tuck into this corner:
