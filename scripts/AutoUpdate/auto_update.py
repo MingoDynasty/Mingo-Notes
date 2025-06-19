@@ -98,6 +98,7 @@ num_markdowns_copied = 0
 for file in os.listdir(config['obsidian_markdown_dir']):
     full_filename = os.path.join(config['obsidian_markdown_dir'], file)
     dst_file = os.path.join(config['git_markdown_directory'], file)
+
     logger.debug("Copying markdown file: {}".format(file))
     shutil.copy(full_filename, dst_file)
     num_markdowns_copied += 1
@@ -112,10 +113,10 @@ for file in os.listdir(config['obsidian_markdown_dir']):
         if line.endswith('.png]]'):
             if line.startswith('![[attachments/Pasted image '):
                 alt_text = line.split('![[attachments/Pasted image ')[1][:-2]
-                print(f"![{alt_text}](../../public/screenshots/{alt_text})")
+                print(f"![{alt_text}](/screenshots/{alt_text})")
             if line.startswith('![[Pasted image '):
                 alt_text = line.split('![[Pasted image ')[1][:-2]
-                print(f"![{alt_text}](../../public/screenshots/{alt_text})")
+                print(f"![{alt_text}](/screenshots/{alt_text})")
         else:
             print(line)
             # print('{} {}'.format(fileinput.filelineno(), line), end='') # for Python 3
