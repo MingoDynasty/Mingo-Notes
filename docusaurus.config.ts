@@ -43,10 +43,10 @@ const config: Config = {
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
           sidebarPath: "./sidebars.ts",
+          showLastUpdateTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/MingoDynasty/Mingo-Notes-V2/tree/main/",
         },
         blog: false, // Optional: disable the blog plugin
         // blog: {
