@@ -78,6 +78,9 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    tableOfContents: {
+      maxHeadingLevel: 6,
+    },
     navbar: {
       title: "Mingo Notes",
       style: "dark",
