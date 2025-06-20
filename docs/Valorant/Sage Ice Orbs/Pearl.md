@@ -2,21 +2,23 @@
 tags: ["valorant"]
 ---
 
-# Attack
+# Pearl
 
-## A Site
+## Attack
+
+### A Site
 
 Tuck into this corner:
 ![20250527001546.png](/screenshots/20250527001546.png)
 
-### Back site
+#### Back site
 
 Aim a little to the right of this light, and avoiding the arch:
 ![20250527002027.png](/screenshots/20250527002027.png)
 Result:
 ![20250527002116.png](/screenshots/20250527002116.png)
 
-### Secret
+#### Secret
 
 Fit the Heart icon directly in the middle of the pattern:
 ![20250527001610.png](/screenshots/20250527001610.png)
@@ -25,9 +27,9 @@ Result:
 Combined results:
 ![20250527002213.png](/screenshots/20250527002213.png)
 
-## B Site
+### B Site
 
-### Pillar
+#### Pillar
 
 Aim along this line:
 ![20250527003057.png](/screenshots/20250527003057.png)
@@ -36,7 +38,7 @@ Aim along this line:
 Example result:
 ![20250527003141.png](/screenshots/20250527003141.png)
 
-# Defense
+## Defense
 
 ### A Site stall from Art
 
@@ -49,7 +51,7 @@ Aim at roughly where the wire enters the window:
 Result:
 ![20250519025311.png](/screenshots/20250519025311.png)
 
-## B Site Retake
+### B Site Retake
 
 Tuck into this corner:
 ![20250519024259.png](/screenshots/20250519024259.png)

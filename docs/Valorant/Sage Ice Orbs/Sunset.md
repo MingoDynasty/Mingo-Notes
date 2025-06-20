@@ -2,11 +2,13 @@
 tags: ["valorant"]
 ---
 
-# Attack
+# Sunset
 
-## A Site
+## Attack
 
-### A Link
+### A Site
+
+#### A Link
 
 Tuck into this corner:
 ![20250519085304.png](/screenshots/20250519085304.png)
@@ -16,7 +18,7 @@ Aim slightly over the box and slightly away from the wall, to avoid accidental b
 Result:
 ![20250519085622.png](/screenshots/20250519085622.png)
 
-### On site generator
+#### On site generator
 
 TODO: need to find another lineup for gen, since once you have A Main control, sometimes your team executes too quickly onto site (especially Jett/Neon).
 
@@ -29,9 +31,9 @@ Place the top of the bottom left HUD line into the second orange solar panel:
 Result:
 ![20250519090011.png](/screenshots/20250519090011.png)
 
-## B Site
+### B Site
 
-### Back site (right side)
+#### Back site (right side)
 
 Hug this wall:
 ![20250519030045.png](/screenshots/20250519030045.png)
@@ -40,7 +42,7 @@ Aim along this white strip:
 Result:
 ![20250519030143.png](/screenshots/20250519030143.png)
 
-### Back site (left side)
+#### Back site (left side)
 
 Angle yourself and aim at this back wall, using it as a backboard. Run and throw:
 ![20250519030213.png](/screenshots/20250519030213.png)
@@ -49,13 +51,13 @@ Result:
 Both results:
 ![20250519030331.png](/screenshots/20250519030331.png)
 
-### Market
+#### Market
 
-# Defense
+## Defense
 
-## A Site stall
+### A Site stall
 
-### A Link
+#### A Link
 
 Hug this this doorway frame:
 ![20250519091156.png](/screenshots/20250519091156.png)
@@ -65,7 +67,7 @@ Place the letter E to the corner of the roof:
 Result:
 ![20250519091358.png](/screenshots/20250519091358.png)
 
-### Elbow
+#### Elbow
 
 Hug this this doorway frame:
 ![20250519091156.png](/screenshots/20250519091156.png)
@@ -76,9 +78,9 @@ Take two character steps forward:
 Result:
 ![20250519091957.png](/screenshots/20250519091957.png)
 
-## A Site retake
+### A Site retake
 
-### Elbow
+#### Elbow
 
 Hug this wall in CT Alley
 ![20250519030935.png](/screenshots/20250519030935.png)
@@ -90,9 +92,9 @@ Aim over this box; jump and while falling, throw:
 Result:
 ![20250610211516.png](/screenshots/20250610211516.png)
 
-## B Site retake
+### B Site retake
 
-### Pillar
+#### Pillar
 
 Hug this wall:
 ![20250519030537.png](/screenshots/20250519030537.png)
@@ -101,9 +103,9 @@ Line up the box with the site pillar, to stay safe while setting up the Ice Orb.
 Result:
 ![20250519030729.png](/screenshots/20250519030729.png)
 
-## B Site stall
+### B Site stall
 
-### B Main entrance
+#### B Main entrance
 
 Hug this wall:
 ![20250519090319.png](/screenshots/20250519090319.png)

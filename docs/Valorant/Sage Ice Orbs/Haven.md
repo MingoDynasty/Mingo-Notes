@@ -2,11 +2,13 @@
 tags: ["valorant"]
 ---
 
-# Attack
+# Haven
 
-## A Site
+## Attack
 
-### A Long
+### A Site
+
+#### A Long
 
 Tuck into this corner:
 ![20250519010257.png](/screenshots/20250519010257.png)
@@ -16,7 +18,7 @@ Aim slightly to the right of this roof, but at the tip of the trees:
 Result:
 ![20250519010405.png](/screenshots/20250519010405.png)
 
-### Back site
+#### Back site
 
 Tuck into this corner:
 ![20250519011046.png](/screenshots/20250519011046.png)
@@ -25,7 +27,7 @@ Aim slightly left and above the corner of this roof:
 Result:
 ![20250519011154.png](/screenshots/20250519011154.png)
 
-### Back site (easy)
+#### Back site (easy)
 
 Stand at the bottom of A Long, and aim anywhere at this wooden frame, above the site box:
 ![20250519011746.png](/screenshots/20250519011746.png)
@@ -35,7 +37,7 @@ This is so you throw it high enough that it goes over the site box, but not too 
 Result:
 ![20250519011831.png](/screenshots/20250519011831.png)
 
-### Heaven (Version 1)
+#### Heaven (Version 1)
 
 Stand on top of this wheelbarrow:
 ![20250519021338.png](/screenshots/20250519021338.png)
@@ -45,7 +47,7 @@ Jump, and after the apex of your jump (i.e. while falling), throw the Ice Orb.
 Result:
 ![20250519021458.png](/screenshots/20250519021458.png)
 
-### Heaven (Version 2)
+#### Heaven (Version 2)
 
 Hug this wall:
 ![20250519011350.png](/screenshots/20250519011350.png)
@@ -55,7 +57,7 @@ Aim anywhere above the orange stripe, but within the window:
 Result:
 ![20250519011612.png](/screenshots/20250519011612.png)
 
-### CT Spawn
+#### CT Spawn
 
 Tuck into this corner:
 ![20250519012432.png](/screenshots/20250519012432.png)
@@ -65,13 +67,13 @@ This is just so you avoid accidentally bouncing the Ice Orb off the wall and int
 Result:
 ![20250519012633.png](/screenshots/20250519012633.png)
 
-## B Site
+### B Site
 
 placeholder
 
-## C Site
+### C Site
 
-### Back site
+#### Back site
 
 Stand along the line of this wall:
 ![20250519012910.png](/screenshots/20250519012910.png)
@@ -81,7 +83,7 @@ Run foward, jump and throw.
 Result:
 ![20250519013102.png](/screenshots/20250519013102.png)
 
-# Defense
+## Defense
 
 ### A Site stall / retake
 
@@ -141,7 +143,7 @@ Example result:
 ![20250519015816.png](/screenshots/20250519015816.png)
 **Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk A Long.
 
-# Honorable Mentions
+## Honorable Mentions
 
 I don't use these often, but they can sometimes be useful to know.
 

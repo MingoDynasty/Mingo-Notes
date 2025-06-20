@@ -2,11 +2,13 @@
 tags: ["valorant"]
 ---
 
-# Attack
+# Split
 
-## A Site
+## Attack
 
-### A Heaven / Window (Version 1, round start)
+### A Site
+
+#### A Heaven / Window (Version 1, round start)
 
 Tuck into this corner:
 ![20250518214042.png](/screenshots/20250518214042.png)
@@ -18,7 +20,7 @@ Results:
 ![20250518214945.png](/screenshots/20250518214945.png)
 ![20250518222656.png](/screenshots/20250518222656.png)
 
-### A Heaven / Window (Version 2, slow push)
+#### A Heaven / Window (Version 2, slow push)
 
 **Note**: easier but you do have to peek Heaven Rafters first.
 Hug this wall:
@@ -29,7 +31,7 @@ Results:
 ![20250518222407.png](/screenshots/20250518222407.png)
 ![20250518222437.png](/screenshots/20250518222437.png)
 
-### A Heaven / Window (Version 3)
+#### A Heaven / Window (Version 3)
 
 Stand on these flowers, and tuck into the corner:
 ![20250526233502.png](/screenshots/20250526233502.png)
@@ -39,7 +41,7 @@ Results:
 ![20250526233627.png](/screenshots/20250526233627.png)
 ![20250526233658.png](/screenshots/20250526233658.png)
 
-### Sign / Back site (left side)
+#### Sign / Back site (left side)
 
 Tuck into this corner:
 ![20250518214042.png](/screenshots/20250518214042.png)
@@ -48,7 +50,7 @@ Aim in between these two beams in the sky:
 Result:
 ![20250519120500.png](/screenshots/20250519120500.png)
 
-### Sign / Back site (right side)
+#### Sign / Back site (right side)
 
 Tuck into this corner:
 ![20250518214042.png](/screenshots/20250518214042.png)
@@ -62,7 +64,7 @@ Example combined results:
 4 crosshair lengths:
 ![20250519120822.png](/screenshots/20250519120822.png)
 
-### Screens (excludes Elbow)
+#### Screens (excludes Elbow)
 
 Stand on these flowers, and tuck into the corner:
 ![20250526233502.png](/screenshots/20250526233502.png)
@@ -73,14 +75,14 @@ Results:
 ![20250526234518.png](/screenshots/20250526234518.png)
 **Note**: Err slightly toward the right side, so there is a possibility of covering the Elbow peek.
 
-### Screens / Elbow (easy)
+#### Screens / Elbow (easy)
 
 Stand A main, and look aim at the right frame of Screens doorway. Try to use it as a backboard:
 ![20250518221515.png](/screenshots/20250518221515.png)
 Result:
 ![20250518221631.png](/screenshots/20250518221631.png)
 
-### Fighting for Heaven Control
+#### Fighting for Heaven Control
 
 Line yourself up with this wall:
 ![20250518223236.png](/screenshots/20250518223236.png)
@@ -89,9 +91,9 @@ Aim at the top right corner of the doorway frame, using it as a backboard:
 Result:
 ![20250518223652.png](/screenshots/20250518223652.png)
 
-## B Site
+### B Site
 
-### Back site (easy)
+#### Back site (easy)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
 ![20250518230030.png](/screenshots/20250518230030.png)
@@ -100,7 +102,7 @@ Example results:
 ![20250518230103.png](/screenshots/20250518230103.png)
 ![20250518230234.png](/screenshots/20250518230234.png)
 
-### Heaven
+#### Heaven
 
 Tuck here:
 ![20250518231537.png](/screenshots/20250518231537.png)
@@ -110,7 +112,7 @@ Line up the Slow ability's underline bar to be inside the tiny triangle railing 
 Result:
 ![20250518232050.png](/screenshots/20250518232050.png)
 
-### Hell
+#### Hell
 
 Tuck here:
 ![20250518232155.png](/screenshots/20250518232155.png)
@@ -119,11 +121,11 @@ Using this wall as a backboard, run and throw:
 Result:
 ![20250518232604.png](/screenshots/20250518232604.png)
 
-# Defense
+## Defense
 
 ### A Site Retake
 
-### From Heaven to Sign / Back site
+#### From Heaven to Sign / Back site
 
 Tuck here:
 ![20250518233707.png](/screenshots/20250518233707.png)
@@ -132,7 +134,7 @@ Aim in between the roof and the K symbol:
 Result:
 ![20250518233941.png](/screenshots/20250518233941.png)
 
-### From A Main to Sign / Back site
+#### From A Main to Sign / Back site
 
 Tuck here:
 ![20250518220510.png](/screenshots/20250518220510.png)
@@ -146,7 +148,7 @@ Keep the lightbulb at the bottom of your screen, while lining up the Heal abilit
 Result:
 ![20250518220732.png](/screenshots/20250518220732.png)
 
-### Back site / Elbow from A Main
+#### Back site / Elbow from A Main
 
 Tuck here:
 ![20250518220510.png](/screenshots/20250518220510.png)
@@ -157,9 +159,9 @@ Result:
 Combined results:
 ![20250518221358.png](/screenshots/20250518221358.png)
 
-## B Site Retake
+### B Site Retake
 
-### CT to Pillar
+#### CT to Pillar
 
 Tuck here:
 ![20250518224943.png](/screenshots/20250518224943.png)
@@ -169,7 +171,7 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250518225746.png](/screenshots/20250518225746.png)
 
-### Back site
+#### Back site
 
 Tuck here:
 ![20250518224943.png](/screenshots/20250518224943.png)
@@ -180,7 +182,7 @@ Result:
 Combined results:
 ![20250608001224.png](/screenshots/20250608001224.png)
 
-### Back site (easier)
+#### Back site (easier)
 
 Hug this wall:
 ![20250518232949.png](/screenshots/20250518232949.png)

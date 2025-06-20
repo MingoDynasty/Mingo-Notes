@@ -2,16 +2,18 @@
 tags: ["valorant"]
 ---
 
-# Attack
+# Ascent
 
-## A Site - walk contact
+## Attack
+
+### A Site - walk contact
 
 **Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team. That being said, most of the time contacting up won't be possible, so the Fast Execute lineups are more practical to learn first.
 
 Tuck in this corner:
 ![20250608020131.png](/screenshots/20250608020131.png)
 
-### Generator
+#### Generator
 
 Take note of this intersection of bricks above the middle wood arch:
 ![20250608020537.png](/screenshots/20250608020537.png)
@@ -20,7 +22,7 @@ The small bar between the Ice Orb and Heal ability; line up the right side of th
 Result:
 ![20250608020808.png](/screenshots/20250608020808.png)
 
-### Back site
+#### Back site
 
 Take note this intersection of bricks:
 ![20250608021339.png](/screenshots/20250608021339.png)
@@ -31,7 +33,7 @@ Result:
 Combo results (version 1):
 ![20250608021657.png](/screenshots/20250608021657.png)
 
-### Heaven
+#### Heaven
 
 Aim at the tip of this cloud in the sky:
 ![20250608022338.png](/screenshots/20250608022338.png)
@@ -40,21 +42,21 @@ Aim at the tip of this cloud in the sky:
 Result:
 ![20250608022405.png](/screenshots/20250608022405.png)
 
-## A Site - fast execute
+### A Site - fast execute
 
 **Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
 
 Tuck into this corner with the box:
 ![20250612003312.png](/screenshots/20250612003312.png)
 
-### Generator
+#### Generator
 
 Aim at this part in the cloud:
 ![20250612003728.png](/screenshots/20250612003728.png)
 Example result:
 ![20250612003751.png](/screenshots/20250612003751.png)
 
-### Back site
+#### Back site
 
 Note these spikes in the sky:
 ![20250612004716.png](/screenshots/20250612004716.png)
@@ -63,25 +65,25 @@ Line up the down arrow of the Ice Ob indicator in between the right two spikes:
 Result:
 ![20250612004928.png](/screenshots/20250612004928.png)
 
-### Heaven
+#### Heaven
 
 TODO
 
-## A Site - round start
+### A Site - round start
 
 **Note**: this is the fastest possible version. This is best when you know your team will execute fast _and_ your team has mobility duelists such as Jett, Neon, etc.
 
 Tuck between the box and the round start barrier:
 ![20250612004218.png](/screenshots/20250612004218.png)
 
-### Generator
+#### Generator
 
 Aim in the middle of these pockets of clouds:
 ![20250612004409.png](/screenshots/20250612004409.png)
 Result:
 ![20250612004441.png](/screenshots/20250612004441.png)
 
-### Back site
+#### Back site
 
 Note these spikes in the sky:
 ![20250612005436.png](/screenshots/20250612005436.png)
@@ -90,9 +92,9 @@ Line up the down arrow of the Ice Ob indicator in the middle of this spike:
 Result:
 ![20250612005503.png](/screenshots/20250612005503.png)
 
-## A Site
+### A Site
 
-### Generator (trapped behind smoke)
+#### Generator (trapped behind smoke)
 
 **Note**: use this when your team is temporarily trapped behind smoke, but team is soon to be executing onto site (e.g. Phoenix is equipping a Flash into his hands).
 
@@ -104,9 +106,9 @@ Aim anywhere at this vertical line above the generator:
 Example result:
 ![20250518234646.png](/screenshots/20250518234646.png)
 
-## B Site
+### B Site
 
-### CT
+#### CT
 
 Tuck into this corner:
 ![20250608024653.png](/screenshots/20250608024653.png)
@@ -115,7 +117,7 @@ Aim at the top of the left bar where it intersects with the window:
 Result:
 ![20250608025930.png](/screenshots/20250608025930.png)
 
-### Market
+#### Market
 
 Tuck into this corner:
 ![20250608024653.png](/screenshots/20250608024653.png)
@@ -124,7 +126,7 @@ Aim at the right bar, where it intersects with the back of the window:
 Result:
 ![20250608024917.png](/screenshots/20250608024917.png)
 
-### Boat House
+#### Boat House
 
 Tuck into this corner:
 ![20250519000449.png](/screenshots/20250519000449.png)
@@ -134,7 +136,7 @@ Jump and after the peak of your jump (i.e. while you're falling), throw the Ice 
 Result:
 ![20250519000612.png](/screenshots/20250519000612.png)
 
-### Stairs
+#### Stairs
 
 Tuck in this corner:
 ![20250519001055.png](/screenshots/20250519001055.png)
@@ -144,7 +146,7 @@ Result:
 ![20250519001238.png](/screenshots/20250519001238.png)
 ![20250519001300.png](/screenshots/20250519001300.png)
 
-# Defense
+## Defense
 
 ### From Tree to A Main orb
 
@@ -190,7 +192,7 @@ Result:
 
 TODO: CT to back site B ?
 
-# Honorable Mentions
+## Honorable Mentions
 
 ### Back site (easy)
 
