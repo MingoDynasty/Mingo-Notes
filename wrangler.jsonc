@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-docusaurus-app",
+	"name": "mingo-notes-v2",
 	"compatibility_date": "2025-06-19",
 	"assets": {
 		"directory": "./build"
