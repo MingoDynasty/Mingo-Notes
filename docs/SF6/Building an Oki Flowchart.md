@@ -10,7 +10,7 @@ For the purposes of this article, I will be using Ken as the example.
 
 A beginner flowchart usually starts like this:
 
-```
+```text
 Knockdown -> cr.LP xx cr.LP xx st.LP -> hit -> HP DP -> repeat
                               v---> blocked -> your turn ends
 ```
@@ -27,7 +27,7 @@ Now there are a couple issues with this:
 
 A number of characters are blessed with being able to link off of mediums or heavies. For example, Cammy can link off her `cr.HP`, and Chun Li can link off her `st.MP`. In Ken's case, he can link off his `st.MP`. So a slightly improved flowchart might look like this:
 
-```
+```text
 Knockdown -> st.MP -> hit -> cr.LP , st.LK xx HP DP -> repeat
              v--> blocked -> your turn ends
 ```
@@ -44,7 +44,7 @@ Now how do we get frame advantage when none of our buttons are plus on block? In
 
 ## Meaties
 
-<https://glossary.infil.net/?t=Meaty>
+https://glossary.infil.net/?t=Meaty
 Meaties are attacks that hits the opponent on the later frames of the move's active frames. Since attacks always have the same hitstun/blockstun, you will recover sooner and generate more frame advantage.
 
 Meaties also have the added benefit of limiting your opponents' options to block/invincible move/Parry, as anything else they try will simply get hit or counterhit.
@@ -141,7 +141,7 @@ And finally since we are +1 oB, we can continue with a strike/throw mixup.
 
 Our new flowchart now looks like this:
 
-```
+```text
 HP DP -> st.LK , st.MP -> hit -> cr.MP xx HP DP -> repeat
                  v--> blocked -> walk up throw
                       v-> cr.LP , st.LK -> hit -> xx HP DP
@@ -152,7 +152,7 @@ Excellent. We now have a 2-layered mixup. But how do we take things a step furth
 
 ## Spacing Traps
 
-<https://glossary.infil.net/?t=Spacing%20Trap>
+https://glossary.infil.net/?t=Spacing%20Trap
 A spacing trap is doing an attack that is minus on block, but being far enough away from your opponent that if they try to attack you after blocking this move, they will whiff. You can then immediately whiff punish them with another attack as punishment for trying to take their turn back.
 
 In our flowchart, we have the situation where the opponent has blocked the string `st.MP , cr.LP , st.LK`. While we are technically -2 and our turn should be over, we can take advantage of the specific spacing that we have created where most if not all of our opponent's options will whiff.
@@ -162,7 +162,7 @@ One easy option here is to use a wish punish.
 
 ### Wish Punish
 
-<https://glossary.infil.net/?t=Wish%20Punish>
+https://glossary.infil.net/?t=Wish%20Punish
 A "Wish Punish" is when a player doesn't react to a whiffed move, but instead swings wildly into empty space and hopes that the opponent just happens to get hit.
 
 In our example, we can use Ken's `st.HP` as a wish punish and option select behind it; e.g. buffer HP DP (TODO: link), or even buffer a (micro) walk up drive rush for additional pressure.
