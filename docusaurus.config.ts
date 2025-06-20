@@ -50,7 +50,7 @@ const config: Config = {
           sidebarCollapsed: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/MingoDynasty/Mingo-Notes-V2/tree/main/",
+          editUrl: "https://github.com/MingoDynasty/Mingo-Notes/tree/main/",
         },
         blog: false, // Optional: disable the blog plugin
         // blog: {
@@ -122,7 +122,7 @@ const config: Config = {
           to: "/",
         },
         {
-          href: "https://github.com/MingoDynasty/Mingo-Notes-V2",
+          href: "https://github.com/MingoDynasty/Mingo-Notes",
           label: "GitHub",
           position: "right",
         },

@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "mingo-notes-v2",
+	"name": "mingo-notes",
 	"compatibility_date": "2025-06-19",
 	"assets": {
 		"directory": "./build"
