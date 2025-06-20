@@ -79,7 +79,8 @@ const config: Config = {
       style: "dark",
       logo: {
         alt: "Mingo Notes Logo",
-        src: "img/logo.svg",
+        // src: "img/logo.svg",
+        src: "img/Ibuki3sport.gif",
       },
       items: [
         // {
