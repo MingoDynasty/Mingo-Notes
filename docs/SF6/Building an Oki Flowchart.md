@@ -2,6 +2,8 @@
 tags: ["sf6"]
 ---
 
+# Building an Oki Flowchart
+
 For the purposes of this article, I will be using Ken as the example.
 
 ## Beginner Flowchart - Version 1
@@ -42,7 +44,7 @@ Now how do we get frame advantage when none of our buttons are plus on block? In
 
 ## Meaties
 
-https://glossary.infil.net/?t=Meaty
+<https://glossary.infil.net/?t=Meaty>
 Meaties are attacks that hits the opponent on the later frames of the move's active frames. Since attacks always have the same hitstun/blockstun, you will recover sooner and generate more frame advantage.
 
 Meaties also have the added benefit of limiting your opponents' options to block/invincible move/Parry, as anything else they try will simply get hit or counterhit.
@@ -150,7 +152,7 @@ Excellent. We now have a 2-layered mixup. But how do we take things a step furth
 
 ## Spacing Traps
 
-https://glossary.infil.net/?t=Spacing%20Trap
+<https://glossary.infil.net/?t=Spacing%20Trap>
 A spacing trap is doing an attack that is minus on block, but being far enough away from your opponent that if they try to attack you after blocking this move, they will whiff. You can then immediately whiff punish them with another attack as punishment for trying to take their turn back.
 
 In our flowchart, we have the situation where the opponent has blocked the string `st.MP , cr.LP , st.LK`. While we are technically -2 and our turn should be over, we can take advantage of the specific spacing that we have created where most if not all of our opponent's options will whiff.
@@ -160,7 +162,7 @@ One easy option here is to use a wish punish.
 
 ### Wish Punish
 
-https://glossary.infil.net/?t=Wish%20Punish
+<https://glossary.infil.net/?t=Wish%20Punish>
 A "Wish Punish" is when a player doesn't react to a whiffed move, but instead swings wildly into empty space and hopes that the opponent just happens to get hit.
 
 In our example, we can use Ken's `st.HP` as a wish punish and option select behind it; e.g. buffer HP DP (TODO: link), or even buffer a (micro) walk up drive rush for additional pressure.
@@ -202,10 +204,8 @@ TODO: Excalidraw screenshot
 
 Start with a basic set of options, and add things one at a time.
 
-# TODO
+## Miscellaneous
 
-# Miscellaneous
-
-## Choosing a combo ender - Advanced
+### Choosing a combo ender - Advanced
 
 A lot of this has to do with combo routing and the decision making process that happens upon landing the first hit of a combo, or sometimes even mid-combo. For example, with Ryu, your opponent whiffs a DP, and you start your punish with `st.HK , st.HP`. Do you end your combo with HP DP? Or qcf+HK? Or qcb+K? Things get more complicated when you're willing to spend meter to unlock additional combo routes (e.g. Chun Li).
