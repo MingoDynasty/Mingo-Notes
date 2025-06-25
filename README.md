@@ -32,4 +32,4 @@ This command generates static content into the `build` directory and can be serv
 npm deploy
 ```
 
-By default, this will deploy to Cloudflare Pages.
+By default, this will deploy to Cloudflare Pages. See: https://mingo-notes.pages.dev/
