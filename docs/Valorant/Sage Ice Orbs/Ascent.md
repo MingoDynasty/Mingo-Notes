@@ -6,6 +6,33 @@ tags: ["valorant"]
 
 ## Attack
 
+### A Site - fast execute
+
+**Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
+
+Tuck into this corner with the box:
+![20250612003312.png](/screenshots/20250612003312.png)
+
+#### Generator
+
+Aim at this part in the cloud:
+![20250612003728.png](/screenshots/20250612003728.png)
+Example result:
+![20250612003751.png](/screenshots/20250612003751.png)
+
+#### Back site
+
+Note these spikes in the sky:
+![20250612004716.png](/screenshots/20250612004716.png)
+Line up the down arrow of the Ice Ob indicator in between the right two spikes:
+![20250612004759.png](/screenshots/20250612004759.png)
+Result:
+![20250612004928.png](/screenshots/20250612004928.png)
+
+#### Heaven
+
+TODO
+
 ### A Site - walk contact
 
 **Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team. That being said, most of the time contacting up won't be possible, so the Fast Execute lineups are more practical to learn first.
@@ -42,32 +69,6 @@ Aim at the tip of this cloud in the sky:
 Result:
 ![20250608022405.png](/screenshots/20250608022405.png)
 
-### A Site - fast execute
-
-**Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
-
-Tuck into this corner with the box:
-![20250612003312.png](/screenshots/20250612003312.png)
-
-#### Generator
-
-Aim at this part in the cloud:
-![20250612003728.png](/screenshots/20250612003728.png)
-Example result:
-![20250612003751.png](/screenshots/20250612003751.png)
-
-#### Back site
-
-Note these spikes in the sky:
-![20250612004716.png](/screenshots/20250612004716.png)
-Line up the down arrow of the Ice Ob indicator in between the right two spikes:
-![20250612004759.png](/screenshots/20250612004759.png)
-Result:
-![20250612004928.png](/screenshots/20250612004928.png)
-
-#### Heaven
-
-TODO
 
 ### A Site - round start
 
