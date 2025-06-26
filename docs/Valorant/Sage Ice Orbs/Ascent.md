@@ -97,10 +97,19 @@ Result:
 
 ### B Site
 
+Tuck in this corner:
+![20250519001055.png](/screenshots/20250519001055.png)
+
+#### Stairs
+
+Aim at the bottom of the middle bar:
+![20250519001217.png](/screenshots/20250519001217.png)
+Result:
+![20250519001238.png](/screenshots/20250519001238.png)
+![20250519001300.png](/screenshots/20250519001300.png)
+
 #### CT
 
-Tuck into this corner:
-![20250608024653.png](/screenshots/20250608024653.png)
 Aim at the top of the left bar where it intersects with the window:
 ![20250608025437.png](/screenshots/20250608025437.png)
 Result:
@@ -108,8 +117,6 @@ Result:
 
 #### Market
 
-Tuck into this corner:
-![20250608024653.png](/screenshots/20250608024653.png)
 Aim at the right bar, where it intersects with the back of the window:
 ![20250608024824.png](/screenshots/20250608024824.png)
 Result:
@@ -124,16 +131,6 @@ Aim at this corner, but still through the window:
 Jump and after the peak of your jump (i.e. while you're falling), throw the Ice Orb.
 Result:
 ![20250519000612.png](/screenshots/20250519000612.png)
-
-#### Stairs
-
-Tuck in this corner:
-![20250519001055.png](/screenshots/20250519001055.png)
-Aim at the bottom of the middle bar:
-![20250519001217.png](/screenshots/20250519001217.png)
-Result:
-![20250519001238.png](/screenshots/20250519001238.png)
-![20250519001300.png](/screenshots/20250519001300.png)
 
 ## Defense
 
