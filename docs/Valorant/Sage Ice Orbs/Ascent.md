@@ -31,7 +31,10 @@ Result:
 
 #### Heaven
 
-TODO
+Aim in the middle of this island cloud in the sky:
+![20250626160137.png](/screenshots/20250626160137.png)
+Result:
+![20250626160210.png](/screenshots/20250626160210.png)
 
 ### A Site - walk contact
 
@@ -68,7 +71,6 @@ Aim at the tip of this cloud in the sky:
 
 Result:
 ![20250608022405.png](/screenshots/20250608022405.png)
-
 
 ### A Site - round start
 
