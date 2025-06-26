@@ -95,20 +95,6 @@ Line up the down arrow of the Ice Ob indicator in the middle of this spike:
 Result:
 ![20250612005503.png](/screenshots/20250612005503.png)
 
-### A Site
-
-#### Generator (trapped behind smoke)
-
-**Note**: use this when your team is temporarily trapped behind smoke, but team is soon to be executing onto site (e.g. Phoenix is equipping a Flash into his hands).
-
-Tuck in this corner:
-![20250518234437.png](/screenshots/20250518234437.png)
-Aim anywhere at this vertical line above the generator:
-![20250518234600.png](/screenshots/20250518234600.png)
-**Note**: as long as the Ice Orb is thrown above the generator, then it will bounce roughly into the same spot.
-Example result:
-![20250518234646.png](/screenshots/20250518234646.png)
-
 ### B Site
 
 #### CT
@@ -197,7 +183,21 @@ TODO: CT to back site B ?
 
 ## Honorable Mentions
 
-### Back site (easy)
+### A Site
+
+#### Generator (trapped behind smoke)
+
+**Note**: use this when your team is temporarily trapped behind smoke, but team is soon to be executing onto site (e.g. Phoenix is equipping a Flash into his hands).
+
+Tuck in this corner:
+![20250518234437.png](/screenshots/20250518234437.png)
+Aim anywhere at this vertical line above the generator:
+![20250518234600.png](/screenshots/20250518234600.png)
+**Note**: as long as the Ice Orb is thrown above the generator, then it will bounce roughly into the same spot.
+Example result:
+![20250518234646.png](/screenshots/20250518234646.png)
+
+#### Back site (easy)
 
 Hug anywhere along this wall:
 ![20250518234729.png](/screenshots/20250518234729.png)
@@ -206,7 +206,7 @@ Aim above this wooden wall, using it as a backboard:
 Example result:
 ![20250518235251.png](/screenshots/20250518235251.png)
 
-### Back site / Hell
+#### Back site / Hell
 
 Hug this wall:
 ![20250518235325.png](/screenshots/20250518235325.png)
@@ -217,7 +217,7 @@ Line up the transparent part of the team's round wins with the top left lamp pos
 Result:
 ![20250519000004.png](/screenshots/20250519000004.png)
 
-### Heaven (easy)
+#### Heaven (easy)
 
 Hug this wall:
 ![20250518234729.png](/screenshots/20250518234729.png)
