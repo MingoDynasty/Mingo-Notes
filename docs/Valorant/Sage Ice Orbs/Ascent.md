@@ -205,18 +205,6 @@ Result:
 Combined results:
 ![20250626171304.png](/screenshots/20250626171304.png)
 
-### B Site retake
-
-#### Lane
-
-TODO
-
-#### Boat House
-
-TODO
-
-TODO: CT to back site B ?
-
 ## Honorable Mentions
 
 ### A Site
