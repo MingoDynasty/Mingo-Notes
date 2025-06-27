@@ -67,10 +67,6 @@ This is just so you avoid accidentally bouncing the Ice Orb off the wall and int
 Result:
 ![20250519012633.png](/screenshots/20250519012633.png)
 
-### B Site
-
-placeholder
-
 ### C Site
 
 #### Back site
@@ -95,21 +91,6 @@ Aim anywhere along this orange stripe, at the top half of it:
 Result:
 ![20250519021039.png](/screenshots/20250519021039.png)
 
-### A Long stall from C Site
-
-Hug the left side of this wooden frame:
-![20250519023045.png](/screenshots/20250519023045.png)
-
-Follow this wooden frame vertically into the sky:
-![20250519023615.png](/screenshots/20250519023615.png)
-
-Run, jump, and throw:
-![20250519023644.png](/screenshots/20250519023644.png)
-
-Example result:
-![20250519023318.png](/screenshots/20250519023318.png)
-**Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk C Long.
-
 ### C Site retake
 
 Tuck into this corner:
@@ -128,9 +109,37 @@ Result:
 ![20250610214853.png](/screenshots/20250610214853.png)
 **Note**: this version discourages the enemy team from planting for Long (can easily combo with a Sova ult or something). It can also be useful to help stall for someone holding back site.
 
-### C Site stall from A Site
+## Honorable Mentions
 
-TODO: move these to honorable mentions
+I don't use these often, but they can sometimes be useful to know.
+
+### A Long stall from C Site
+
+Hug the left side of this wooden frame:
+![20250519023045.png](/screenshots/20250519023045.png)
+
+Follow this wooden frame vertically into the sky:
+![20250519023615.png](/screenshots/20250519023615.png)
+
+Run, jump, and throw:
+![20250519023644.png](/screenshots/20250519023644.png)
+
+Example result:
+![20250519023318.png](/screenshots/20250519023318.png)
+**Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk C Long.
+
+### C Site stall / retake (railing version)
+
+This can be useful if you find yourself rotating through CT Spawn.
+
+Stand on this and tuck as far upward as you can:
+![20250519021724.png](/screenshots/20250519021724.png)
+Aim slightly to the left of the bottom light:
+![20250519021759.png](/screenshots/20250519021759.png)
+Result:
+![20250519021836.png](/screenshots/20250519021836.png)
+
+### C Site stall from A Site
 
 Hug this wall standing in front of this wooden frame:
 ![20250519015634.png](/screenshots/20250519015634.png)
@@ -142,16 +151,3 @@ Run, jump and throw:
 Example result:
 ![20250519015816.png](/screenshots/20250519015816.png)
 **Note**: can also be used to bait the enemy into thinking that Sage is on site with the teammate, while you continue to lurk A Long.
-
-## Honorable Mentions
-
-I don't use these often, but they can sometimes be useful to know.
-
-### C Site stall / retake (railing version)
-
-Stand on this and tuck as far upward as you can:
-![20250519021724.png](/screenshots/20250519021724.png)
-Aim slightly to the left of the bottom light:
-![20250519021759.png](/screenshots/20250519021759.png)
-Result:
-![20250519021836.png](/screenshots/20250519021836.png)
