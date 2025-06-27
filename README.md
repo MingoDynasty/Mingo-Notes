@@ -21,7 +21,7 @@ This command starts a local development server and opens up a browser window. Mo
 ## Build
 
 ```bash
-npm build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
@@ -29,7 +29,7 @@ This command generates static content into the `build` directory and can be serv
 ## Deployment
 
 ```bash
-npm deploy
+npm run deploy
 ```
 
 By default, this will deploy to Cloudflare Pages. See: https://mingo-notes.pages.dev/
