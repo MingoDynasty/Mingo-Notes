@@ -28,4 +28,17 @@ There are good lineups, and then there are bad lineups.
 
 ## When to use Ice Orbs on Defense?
 
-TODO: stall vs retake ice slows
+There are two primary ways of using Ice Slows: **stalls**, and **retake**.
+
+### Stall
+
+The idea is to maintain the "neutral" state between both teams, _stalling_ the enemy team's push until your team rotates to help deal with the push. In an ideal scenario, the stall results in your team being able to take an isolated fight with one of the attackers, or your team is able to take valuable space around the rest of the map while the enemy team is stuck at the choke.
+
+Rule of thumbs:
+
+1. **Timing**. Wait until the enemy team is committing before using Slow Orbs. Usually there will be clues such as enemy smokes, ultimates, initiator utility, flashes, etc. that allow you to anticipate the push.
+2. **Expected Value**. Ideally, the Slow Orb splits the enemy team's push and allows your defending team to get a kill. If your team is not able to take any isolated fights, and the enemy team will eventually take site anyways (e.g. you have no teammates on site, or the enemy team is committing multiple ultimates, etc.), then consider saving your utility for Retake instead.
+
+### Retake
+
+Think about common positions that the attackers want to play from during post plant. Throw Ice Slows at these areas, making it easier for your team to retake and reducing the risk of running into a crossfire or trade scenario.
