@@ -8,10 +8,12 @@ tags: ["valorant"]
 
 ### A Site
 
-#### A Heaven / Window (Version 1, round start)
+#### Position 1 - Flower Pot
 
 Tuck into this corner:
 ![20250518214042.png](/screenshots/20250518214042.png)
+
+##### A Heaven / Window
 
 Aim slightly above this lightbulb:
 ![20250518214906.png](/screenshots/20250518214906.png)
@@ -20,40 +22,15 @@ Results:
 ![20250518214945.png](/screenshots/20250518214945.png)
 ![20250518222656.png](/screenshots/20250518222656.png)
 
-#### A Heaven / Window (Version 2, slow push)
+##### Sign / Back site (left side)
 
-**Note**: easier but you do have to peek Heaven Rafters first.
-Hug this wall:
-![20250518221947.png](/screenshots/20250518221947.png)
-Expose yourself to Window, but not far enough to peek Flowers. Aim at where these two intersections meet:
-![20250518222218.png](/screenshots/20250518222218.png)
-Results:
-![20250518222407.png](/screenshots/20250518222407.png)
-![20250518222437.png](/screenshots/20250518222437.png)
-
-#### A Heaven / Window (Version 3)
-
-Stand on these flowers, and tuck into the corner:
-![20250526233502.png](/screenshots/20250526233502.png)
-Aim at this corner:
-![20250526233550.png](/screenshots/20250526233550.png)
-Results:
-![20250526233627.png](/screenshots/20250526233627.png)
-![20250526233658.png](/screenshots/20250526233658.png)
-
-#### Sign / Back site (left side)
-
-Tuck into this corner:
-![20250518214042.png](/screenshots/20250518214042.png)
 Aim in between these two beams in the sky:
 ![20250519120413.png](/screenshots/20250519120413.png)
 Result:
 ![20250519120500.png](/screenshots/20250519120500.png)
 
-#### Sign / Back site (right side)
+##### Sign / Back site (right side)
 
-Tuck into this corner:
-![20250518214042.png](/screenshots/20250518214042.png)
 Aim about 3-4 crosshair lengths above this beam in the sky. Going to 4 crosshair lengths will prioritize the right corner of back site instead of sign, though sign is still pretty covered:
 ![20250519120658.png](/screenshots/20250519120658.png)
 Result:
@@ -64,10 +41,21 @@ Example combined results:
 4 crosshair lengths:
 ![20250519120822.png](/screenshots/20250519120822.png)
 
-#### Screens (excludes Elbow)
+#### Position 2 - Grassy
 
 Stand on these flowers, and tuck into the corner:
 ![20250526233502.png](/screenshots/20250526233502.png)
+
+##### A Heaven / Window
+
+Aim at this corner:
+![20250526233550.png](/screenshots/20250526233550.png)
+Results:
+![20250526233627.png](/screenshots/20250526233627.png)
+![20250526233658.png](/screenshots/20250526233658.png)
+
+##### Screens (excludes Elbow)
+
 Aim to the right of the top window:
 ![20250526234425.png](/screenshots/20250526234425.png)
 Results:
@@ -75,14 +63,27 @@ Results:
 ![20250526234518.png](/screenshots/20250526234518.png)
 **Note**: Err slightly toward the right side, so there is a possibility of covering the Elbow peek.
 
-#### Screens / Elbow (easy)
+#### Impromptu Positions
+
+##### A Heaven / Window (slow push)
+
+**Note**: easier but you do have to peek Heaven Rafters first.
+Hug this wall:
+![20250518221947.png](/screenshots/20250518221947.png)
+Expose yourself to Window, but not far enough to peek Flowers. Aim at where these two intersections meet:
+![20250518222218.png](/screenshots/20250518222218.png)
+Results:
+![20250518222407.png](/screenshots/20250518222407.png)
+![20250518222437.png](/screenshots/20250518222437.png)
+
+##### Screens / Elbow (easy)
 
 Stand A main, and look aim at the right frame of Screens doorway. Try to use it as a backboard:
 ![20250518221515.png](/screenshots/20250518221515.png)
 Result:
 ![20250518221631.png](/screenshots/20250518221631.png)
 
-#### Fighting for Heaven Control
+##### Fighting for Heaven Control
 
 Line yourself up with this wall:
 ![20250518223236.png](/screenshots/20250518223236.png)
@@ -125,19 +126,24 @@ Result:
 
 ### A Site Retake
 
-#### From Heaven to Sign / Back site
+#### From Heaven
 
 Tuck here:
 ![20250518233707.png](/screenshots/20250518233707.png)
+
+##### Sign / Back site
+
 Aim in between the roof and the K symbol:
 ![20250518233902.png](/screenshots/20250518233902.png)
 Result:
 ![20250518233941.png](/screenshots/20250518233941.png)
 
-#### From A Main to Sign / Back site
+#### From A Main
 
 Tuck here:
 ![20250518220510.png](/screenshots/20250518220510.png)
+
+##### Sign / Back site
 
 Take note of this lightbulb:
 ![20250518220541.png](/screenshots/20250518220541.png)
@@ -148,10 +154,8 @@ Keep the lightbulb at the bottom of your screen, while lining up the Heal abilit
 Result:
 ![20250518220732.png](/screenshots/20250518220732.png)
 
-#### Back site / Elbow from A Main
+##### Back site / Elbow
 
-Tuck here:
-![20250518220510.png](/screenshots/20250518220510.png)
 Line up the tip of the Q ability arrow with the A on the building:
 ![20250518221132.png](/screenshots/20250518221132.png)
 Result:
@@ -161,10 +165,10 @@ Combined results:
 
 ### B Site Retake
 
-#### CT to Pillar
-
 Tuck here:
 ![20250518224943.png](/screenshots/20250518224943.png)
+
+#### CT to Pillar
 
 The small bar between the Ice Orb and Heal ability; line up the right side of the bar with the left side building's wooden frame:
 ![20250518225656.png](/screenshots/20250518225656.png)
@@ -173,8 +177,6 @@ Result:
 
 #### Back site
 
-Tuck here:
-![20250518224943.png](/screenshots/20250518224943.png)
 Put the top of your crosshair below the tip of this leaf:
 ![20250608001026.png](/screenshots/20250608001026.png)
 Result:
@@ -182,7 +184,7 @@ Result:
 Combined results:
 ![20250608001224.png](/screenshots/20250608001224.png)
 
-#### Back site (easier)
+#### Impromptu Back site
 
 Hug this wall:
 ![20250518232949.png](/screenshots/20250518232949.png)
