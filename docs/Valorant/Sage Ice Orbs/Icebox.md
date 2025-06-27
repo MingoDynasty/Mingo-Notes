@@ -73,3 +73,4 @@ Aim to the left of this star in the sky:
 ![20250520114652.png](/screenshots/20250520114652.png)
 Result:
 ![20250520114722.png](/screenshots/20250520114722.png)
+TODO: fix this screenshot

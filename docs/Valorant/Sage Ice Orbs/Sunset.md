@@ -8,28 +8,30 @@ tags: ["valorant"]
 
 ### A Site
 
-#### A Link
+#### Position 1
 
 Tuck into this corner:
 ![20250519085304.png](/screenshots/20250519085304.png)
+
+##### A Link
 
 Aim slightly over the box and slightly away from the wall, to avoid accidental bounce back:
 ![20250519085602.png](/screenshots/20250519085602.png)
 Result:
 ![20250519085622.png](/screenshots/20250519085622.png)
 
-#### On site generator
+##### On site generator
 
-TODO: need to find another lineup for gen, since once you have A Main control, sometimes your team executes too quickly onto site (especially Jett/Neon).
-
-Tuck into this corner:
-![20250519085304.png](/screenshots/20250519085304.png)
 Place the top of the bottom left HUD line into the second orange solar panel:
 ![20250519085911.png](/screenshots/20250519085911.png)
 ![20250519085854.png](/screenshots/20250519085854.png)
 **Note**: have to pre-aim this with a weapon, as hands may block your view.
 Result:
 ![20250519090011.png](/screenshots/20250519090011.png)
+
+#### Position 2
+
+TODO: need to find another lineup for gen, since once you have A Main control, sometimes your team executes too quickly onto site (especially Jett/Neon).
 
 ### B Site
 
@@ -57,10 +59,11 @@ Both results:
 
 ### A Site stall
 
-#### A Link
-
 Hug this this doorway frame:
 ![20250519091156.png](/screenshots/20250519091156.png)
+
+#### A Link
+
 Place the letter E to the corner of the roof:
 ![20250519091333.png](/screenshots/20250519091333.png)
 ![20250519091245.png](/screenshots/20250519091245.png)
@@ -69,8 +72,6 @@ Result:
 
 #### Elbow
 
-Hug this this doorway frame:
-![20250519091156.png](/screenshots/20250519091156.png)
 Aim at this light bulb:
 ![20250519091911.png](/screenshots/20250519091911.png)
 Take two character steps forward:

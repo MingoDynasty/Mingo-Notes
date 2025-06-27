@@ -60,3 +60,5 @@ Aim at the orange strip directly above this intersection:
 Jump, and while falling, throw.
 Result:
 ![20250519024701.png](/screenshots/20250519024701.png)
+
+TODO: retake B, B Long ice slow?
