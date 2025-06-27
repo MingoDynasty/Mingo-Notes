@@ -174,7 +174,46 @@ Result:
 
 **Tradeoff**: you slow more of Lane but less of Logs.
 
-**TODO**: A site retake, slow Gen, Dice. Should be possible to do from Cat Cubby?
+### A Site retake
+
+#### Generator
+
+Tuck into this corner:
+![20250626164103.png](/screenshots/20250626164103.png)
+**Note**: don't jump on the boxes.
+
+Notice the `>` symbol or Pacman of green leaves to the right of the crosshair:
+![20250626164155.png](/screenshots/20250626164155.png)
+
+The separator bar between the Wall and Slow symbols; tuck the right side of it into the Pacman leaves:
+![20250626164235.png](/screenshots/20250626164235.png)
+Result:
+![20250626164330.png](/screenshots/20250626164330.png)
+
+#### Hell / Dice
+
+Notice the bottom left of this alarm box:
+![20250626170857.png](/screenshots/20250626170857.png)
+
+Put the bottom left of the tilde UI on the bottom left of the alarm box:
+![20250626170934.png](/screenshots/20250626170934.png)
+**Note**: err slightly upwards, since if you are too far down then you might accidentally slow Heaven.
+
+Result:
+![20250626171133.png](/screenshots/20250626171133.png)
+
+Combined results:
+![20250626171304.png](/screenshots/20250626171304.png)
+
+### B Site retake
+
+#### Lane
+
+TODO
+
+#### Boat House
+
+TODO
 
 TODO: CT to back site B ?
 
