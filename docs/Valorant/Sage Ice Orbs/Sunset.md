@@ -29,9 +29,33 @@ Place the top of the bottom left HUD line into the second orange solar panel:
 Result:
 ![20250519090011.png](/screenshots/20250519090011.png)
 
-#### Position 2
+#### Position 2 (round start)
 
-TODO: need to find another lineup for gen, since once you have A Main control, sometimes your team executes too quickly onto site (especially Jett/Neon).
+##### Elbow
+
+Tuck into this corner at the round start barrier:
+![20250708200508.png](/screenshots/20250708200508.png)
+
+Aim at the top of this window, in the middle:
+![20250708200547.png](/screenshots/20250708200547.png)
+
+**Note**: aiming at the window bars can have unexpected bounces. Therefore we aim inside the window to avoid these bounces.
+
+Result:
+![20250708200711.png](/screenshots/20250708200711.png)
+
+##### On site generator
+
+Note this pointy part of the roof:
+![20250708201627.png](/screenshots/20250708201627.png)
+
+The left pointy of the Ice Orb counter outline; line this up with the pointy of the roof:
+![20250708201648.png](/screenshots/20250708201648.png)
+
+Example result:
+![20250708202139.png](/screenshots/20250708202139.png)
+
+**Note**: depending on pixels, the Ice Orb can sometimes bounce off the generator. Though generally it still covers the same area.
 
 ### B Site
 
