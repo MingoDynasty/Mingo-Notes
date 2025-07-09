@@ -62,26 +62,27 @@ check_unused_files(config['obsidian_screenshots_directory'], config['obsidian_ma
 #
 # 2. Copy screenshots from Obsidian to Git Repository
 #
-# remove all screenshots from target directory, in case some screenshots are no longer used
-for filename in os.listdir(config['git_screenshots_directory']):
-    file_path = os.path.join(config['git_screenshots_directory'], filename)
-    if os.path.isfile(file_path) and filename.endswith('.png'):
-        os.remove(file_path)
+if config['copy_screenshots']:
+    # remove all screenshots from target directory, in case some screenshots are no longer used
+    for filename in os.listdir(config['git_screenshots_directory']):
+        file_path = os.path.join(config['git_screenshots_directory'], filename)
+        if os.path.isfile(file_path) and filename.endswith('.png'):
+            os.remove(file_path)
 
-screenshots_in_repo = set()
-for screenshot in os.listdir(config['git_screenshots_directory']):
-    screenshots_in_repo.add(screenshot)
+    screenshots_in_repo = set()
+    for screenshot in os.listdir(config['git_screenshots_directory']):
+        screenshots_in_repo.add(screenshot)
 
-num_screenshots_copied = 0
-for screenshot in os.listdir(config['obsidian_screenshots_directory']):
-    original_screenshot = screenshot
-    screenshot = screenshot[13:]
-    if screenshot not in screenshots_in_repo:
-        src_file = os.path.join(config['obsidian_screenshots_directory'], original_screenshot)
-        dst_file = os.path.join(config['git_screenshots_directory'], screenshot)
-        shutil.copy(src_file, dst_file)
-        num_screenshots_copied += 1
-logger.info("Copied {} screenshots.".format(num_screenshots_copied))
+    num_screenshots_copied = 0
+    for screenshot in os.listdir(config['obsidian_screenshots_directory']):
+        original_screenshot = screenshot
+        screenshot = screenshot[13:]
+        if screenshot not in screenshots_in_repo:
+            src_file = os.path.join(config['obsidian_screenshots_directory'], original_screenshot)
+            dst_file = os.path.join(config['git_screenshots_directory'], screenshot)
+            shutil.copy(src_file, dst_file)
+            num_screenshots_copied += 1
+    logger.info("Copied {} screenshots.".format(num_screenshots_copied))
 
 
 def line_prepender(filename, line):

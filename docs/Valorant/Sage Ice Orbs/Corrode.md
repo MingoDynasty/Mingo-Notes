@@ -11,6 +11,18 @@ tags: ["valorant"]
 Tuck into this corner with the box:
 ![20250708151509.png](/screenshots/20250708151509.png)
 
+#### Pocket
+
+Take note of this section of the crane:
+![20250708152409.png](/screenshots/20250708152409.png)
+
+The separator bar between the Ice Orb and Heal symbols; tuck the right side of it into the right side of that crane platform:
+![20250708152442.png](/screenshots/20250708152442.png)
+
+Results:
+![20250708152640.png](/screenshots/20250708152640.png)
+![20250708152707.png](/screenshots/20250708152707.png)
+
 #### Yard (slower)
 
 **Note**: this lineup takes about 7 seconds to land.
@@ -30,18 +42,6 @@ Line up the down arrow of the Ice Ob indicator inside the canon:
 
 Result:
 ![20250708155317.png](/screenshots/20250708155317.png)
-
-#### Pocket
-
-Take note of this section of the crane:
-![20250708152409.png](/screenshots/20250708152409.png)
-
-The separator bar between the Ice Orb and Heal symbols; tuck the right side of it into the right side of that crane platform:
-![20250708152442.png](/screenshots/20250708152442.png)
-
-Results:
-![20250708152640.png](/screenshots/20250708152640.png)
-![20250708152707.png](/screenshots/20250708152707.png)
 
 ### B Site
 
