@@ -31,10 +31,10 @@ Result:
 
 #### Position 2 (round start)
 
-##### Elbow
-
 Tuck into this corner at the round start barrier:
 ![20250708200508.png](/screenshots/20250708200508.png)
+
+##### Elbow (version 1)
 
 Aim at the top of this window, in the middle:
 ![20250708200547.png](/screenshots/20250708200547.png)
@@ -43,6 +43,28 @@ Aim at the top of this window, in the middle:
 
 Result:
 ![20250708200711.png](/screenshots/20250708200711.png)
+
+**Tradeoffs**: this version 1 makes clearing Elbow safer, but can potentially slow down the team's push if your team executes fast.
+
+##### Elbow (version 2)
+
+Aim at the right side of the billboard light:
+![20250708202859.png](/screenshots/20250708202859.png)
+
+Result:
+![20250708203101.png](/screenshots/20250708203101.png)
+
+**Tradeoffs**: this version 2 still prevents an enemy from escaping from Elbow, but doesn't stop their aggressive peek from happening. However, it is less likely to accidentally slow down your team's push.
+
+##### Elbow (version 3)
+
+Aim at this section of the billboard light, where it intersects with the curved bar:
+![20250708203444.png](/screenshots/20250708203444.png)
+
+Result:
+![20250708203716.png](/screenshots/20250708203716.png)
+
+**Tradeoffs**: this version 3 goes deep as possible into Elbow, and is the least likely to accidentally slow your team's push. But it does not help if the enemy team crossfires A Main. This is a better option if your team uses other utility to help take A Main control.
 
 ##### On site generator
 
