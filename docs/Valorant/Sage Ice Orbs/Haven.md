@@ -69,13 +69,32 @@ Result:
 
 ### C Site
 
+#### Back site (round start)
+
+Tuck into this corner:
+![20250708193708.png](/screenshots/20250708193708.png)
+
+Aim at the bottom left of this wooden piece:
+![20250708193752.png](/screenshots/20250708193752.png)
+
+**Note:** don't aim too far left that you hit the wall to your left.
+
+Jump, and while falling, throw.
+Result:
+![20250708193907.png](/screenshots/20250708193907.png)
+
+Slight variation if you want the Ice to be more leftward (e.g. stop someone on Platform from escaping). Take a slight step to the right, while keeping your crosshair aimed at the same spot.
+
+Example result:
+![20250708194130.png](/screenshots/20250708194130.png)
+
 #### Back site
 
 Stand along the line of this wall:
 ![20250519012910.png](/screenshots/20250519012910.png)
 Aim at this wooden roof:
 ![20250519013035.png](/screenshots/20250519013035.png)
-Run foward, jump and throw.
+Run forward, jump and throw.
 Result:
 ![20250519013102.png](/screenshots/20250519013102.png)
 
