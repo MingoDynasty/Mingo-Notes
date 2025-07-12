@@ -22,7 +22,7 @@ logger.debug(f"Loaded config: {config}")
 #
 # 1. Check for unused screenshots. If any are found, throw warnings/errors.
 #
-def check_unused_files(screenshots_dir: str, md_dir: str) -> None:
+def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
     # Screenshots in the screenshots directory
     screenshots_found = set()
     for screenshot in os.listdir(screenshots_dir):
@@ -53,11 +53,12 @@ def check_unused_files(screenshots_dir: str, md_dir: str) -> None:
     if not unused_screenshots:
         logger.info("No unused screenshots found.")
     else:
-        logger.error("Found {} unused screenshots.".format(len(unused_screenshots)))
-        sys.exit(1)
+        logger.warning("Found {} unused screenshots.".format(len(unused_screenshots)))
+        # sys.exit(1)
+    return unused_screenshots
 
 
-check_unused_files(config['obsidian_screenshots_directory'], config['obsidian_markdown_dir'])
+unused_screenshots = check_unused_files(config['obsidian_screenshots_directory'], config['obsidian_markdown_dir'])
 
 #
 # 2. Copy screenshots from Obsidian to Git Repository
@@ -76,6 +77,10 @@ if config['copy_screenshots']:
     num_screenshots_copied = 0
     for screenshot in os.listdir(config['obsidian_screenshots_directory']):
         original_screenshot = screenshot
+        if original_screenshot in unused_screenshots:
+            logger.warning("Skipping unused screenshot: {}".format(screenshot))
+            continue
+
         screenshot = screenshot[13:]
         if screenshot not in screenshots_in_repo:
             src_file = os.path.join(config['obsidian_screenshots_directory'], original_screenshot)
