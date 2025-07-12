@@ -73,3 +73,29 @@ Aim to the left of this star in the sky:
 ![20250520114652.png](/screenshots/20250520114652.png)
 Result:
 ![20250708194345.png](/screenshots/20250708194345.png)
+
+### B Site retake
+
+#### Yellow
+
+Tuck into this corner:
+![20250711204616.png](/screenshots/20250711204616.png)
+
+##### Hut Position
+
+Aim at this star:
+![20250711204659.png](/screenshots/20250711204659.png)
+
+Result:
+![20250711204734.png](/screenshots/20250711204734.png)
+
+##### Snowman Position
+
+Tuck into this corner:
+![20250711205356.png](/screenshots/20250711205356.png)
+
+Aim at this star:
+![20250711205439.png](/screenshots/20250711205439.png)
+
+Result:
+![20250711205503.png](/screenshots/20250711205503.png)

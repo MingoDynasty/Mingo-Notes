@@ -71,13 +71,11 @@ Result:
 Note this pointy part of the roof:
 ![20250708201627.png](/screenshots/20250708201627.png)
 
-The left pointy of the Ice Orb counter outline; line this up with the pointy of the roof:
-![20250708201648.png](/screenshots/20250708201648.png)
+The right pointy of the Ice Orb counter outline; line this up with the pointy of the roof:
+![20250712061045.png](/screenshots/20250712061045.png)
 
-Example result:
-![20250708202139.png](/screenshots/20250708202139.png)
-
-**Note**: depending on pixels, the Ice Orb can sometimes bounce off the generator. Though generally it still covers the same area.
+Result:
+![20250712061234.png](/screenshots/20250712061234.png)
 
 ### B Site
 
