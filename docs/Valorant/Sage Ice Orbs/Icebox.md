@@ -8,7 +8,112 @@ tags: ["valorant"]
 
 ### A Site
 
-TODO: Grim Ice Slow into rafters / right side site ?
+#### Rafters
+
+##### From T Spawn
+
+Hug this wall:
+![20250804030213.png](/screenshots/20250804030213.png)
+Aim along this black horizontal line:
+![20250804030450.png](/screenshots/20250804030450.png)
+Note: avoid the yellow glow, as it has the risk of bouncing off the top site wall.
+
+Result:
+![20250804030554.png](/screenshots/20250804030554.png)
+
+##### From Pipes
+
+Stand on pipes, and take note of this light strip:
+![20250804030741.png](/screenshots/20250804030741.png)
+
+Aim at the dark grey above the gap in the wall, lined up with the middle of the light strip:
+![20250804030847.png](/screenshots/20250804030847.png)
+
+Example result:
+![20250804030907.png](/screenshots/20250804030907.png)
+
+##### From Belt (back)
+
+![20250804031205.png](/screenshots/20250804031205.png)
+
+Aim above the black strip:
+![20250804031331.png](/screenshots/20250804031331.png)
+
+Example result:
+![20250804031354.png](/screenshots/20250804031354.png)
+
+**Note**: somehow the ice spreads more optimally when standing back Belt instead of front Belt.
+
+##### From Belt (front)
+
+![20250804031855.png](/screenshots/20250804031855.png)
+
+Aim at the grill:
+![20250804031955.png](/screenshots/20250804031955.png)
+
+Example result:
+![20250804032111.png](/screenshots/20250804032111.png)
+
+#### Top Site
+
+Note the orange zipline, as well as the vertical line in this wall. We can use this to help aim our lineups.
+![20250804033401.png](/screenshots/20250804033401.png)
+
+##### From T Spawn
+
+Hug this wall:
+![20250804032658.png](/screenshots/20250804032658.png)
+
+Aim along this amber strip, to the right of this red arrow:
+![20250804032902.png](/screenshots/20250804032902.png)
+
+Result:
+![20250804033009.png](/screenshots/20250804033009.png)
+![20250804032937.png](/screenshots/20250804032937.png)
+
+**Note**: this lineup is also very strong for post plant.
+
+##### From Jail
+
+Aim at the vertical line, the intersection:
+![20250804033625.png](/screenshots/20250804033625.png)
+
+##### From A Main
+
+![20250804033805.png](/screenshots/20250804033805.png)
+
+#### Default Post Plant
+
+##### From T Spawn
+
+Hug this wall:
+![20250804030213.png](/screenshots/20250804030213.png)
+
+Aim at this intersection in this wall:
+![20250804034613.png](/screenshots/20250804034613.png)
+
+Result:
+![20250804034647.png](/screenshots/20250804034647.png)
+
+##### From Pipes
+
+Note these two objects in the destruction in the wall:
+![20250804035207.png](/screenshots/20250804035207.png)
+
+Aim between them, but also below this light colored horizontal strip on pipes:
+![20250804035249.png](/screenshots/20250804035249.png)
+
+Example result:
+![20250804035342.png](/screenshots/20250804035342.png)
+
+##### From Jail
+
+Aim at this intersection in the ceiling:
+![20250804035740.png](/screenshots/20250804035740.png)
+**Note**: careful not to peek too far left and accidentally expose yourself to the defuser while performing the lineup.
+
+Example result:
+![20250804035857.png](/screenshots/20250804035857.png)
 
 ### B Site
 
@@ -84,7 +189,7 @@ Tuck into this corner:
 ##### Hut Position
 
 Aim at this star:
-![20250711204659.png](/screenshots/20250711204659.png)
+![20250804024651.png](/screenshots/20250804024651.png)
 
 Result:
 ![20250711204734.png](/screenshots/20250711204734.png)
