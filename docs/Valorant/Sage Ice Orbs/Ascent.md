@@ -36,6 +36,17 @@ Aim in the middle of this island cloud in the sky:
 Result:
 ![20250626160210.png](/screenshots/20250626160210.png)
 
+#### Tree
+
+Notice this line in the electrical box:
+![20250806185658.png](/screenshots/20250806185658.png)
+The separator bar between the Slow and Heart symbols; lineup the right side of it with the line in the electrical box:
+![20250806185727.png](/screenshots/20250806185727.png)
+**Note**: careful not to go too far left that the Ice Slow accidentally bounces off the ceiling to your left.
+Result:
+![20250806185840.png](/screenshots/20250806185840.png)
+![20250806185910.png](/screenshots/20250806185910.png)
+
 ### A Site - walk contact
 
 **Note**: this version is best for walk contact, as it does take some time to set up. The advantage is that you can immediately grab the orb and can more quickly rejoin your team. That being said, most of the time contacting up won't be possible, so the Fast Execute lineups are more practical to learn first.
