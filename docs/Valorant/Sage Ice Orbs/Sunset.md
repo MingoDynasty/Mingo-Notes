@@ -20,7 +20,7 @@ Aim slightly over the box and slightly away from the wall, to avoid accidental b
 Result:
 ![20250519085622.png](/screenshots/20250519085622.png)
 
-##### On site generator
+##### Safe / Dice
 
 Place the top of the bottom left HUD line into the second orange solar panel:
 ![20250519085911.png](/screenshots/20250519085911.png)
@@ -66,7 +66,7 @@ Result:
 
 **Tradeoffs**: this version 3 goes deep as possible into Elbow, and is the least likely to accidentally slow your team's push. But it does not help if the enemy team crossfires A Main. This is a better option if your team uses other utility to help take A Main control.
 
-##### On site generator
+##### Safe / Dice
 
 Note this pointy part of the roof:
 ![20250708201627.png](/screenshots/20250708201627.png)

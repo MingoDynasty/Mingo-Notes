@@ -123,7 +123,7 @@ Run and throw. Example result:
 
 ### B Site Retake
 
-##### Position 1
+##### Position 1 (Elbow door)
 
 Hug this door:
 ![20250813073558.png](/screenshots/20250813073558.png)
@@ -134,7 +134,7 @@ Put your crosshair slightly right of this part of the wall, below the window:
 Jump, and while falling, throw. Example result:
 ![20250813074012.png](/screenshots/20250813074012.png)
 
-##### Position 2
+##### Position 2 (Elbow wall)
 
 Stand along this wall and hug this vertical line:
 ![20250813073025.png](/screenshots/20250813073025.png)
