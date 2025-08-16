@@ -20,16 +20,16 @@
 		"@docusaurus/preset-classic": "3.8.1",
 		"@mdx-js/react": "^3.0.0",
 		"clsx": "^2.0.0",
-		"prism-react-renderer": "^2.3.0",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"prism-react-renderer": "^2.3.0"
 	},
 	"devDependencies": {
 		"@docusaurus/module-type-aliases": "3.8.1",
 		"@docusaurus/tsconfig": "3.8.1",
 		"@docusaurus/types": "3.8.1",
-		"typescript": "~5.6.2",
-		"wrangler": "^4.22.0"
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"typescript": "^5.9.2",
+		"wrangler": "^4.29.1"
 	},
 	"browserslist": {
 		"production": [
