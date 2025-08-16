@@ -8,6 +8,38 @@ tags: ["valorant"]
 
 ### A Site
 
+#### Maze
+
+##### From Bottom Belt
+
+Tuck into these boxes:
+![20250814204447.png](/screenshots/20250814204447.png)
+
+Aim above Belt, and slightly to the right of the Yellow glow:
+![20250814204831.png](/screenshots/20250814204831.png)
+**Note**: this lineup is lenient due to using Top Site as a backboard.
+
+Result:
+![20250814205017.png](/screenshots/20250814205017.png)
+
+##### From Belt (version 1)
+
+Aim at the top of this triangle:
+![20250814205815.png](/screenshots/20250814205815.png)
+
+Result:
+![20250814205836.png](/screenshots/20250814205836.png)
+
+##### From Belt (version 2)
+
+**Note**: this version catches more area behind 410.
+
+Aim at this intersection in the Top Site wall:
+![20250814205518.png](/screenshots/20250814205518.png)
+
+Result:
+![20250814205554.png](/screenshots/20250814205554.png)
+
 #### Rafters
 
 ##### From T Spawn
@@ -16,7 +48,7 @@ Hug this wall:
 ![20250804030213.png](/screenshots/20250804030213.png)
 Aim along this black horizontal line:
 ![20250804030450.png](/screenshots/20250804030450.png)
-Note: avoid the yellow glow, as it has the risk of bouncing off the top site wall.
+**Note**: avoid the yellow glow, as it has the risk of bouncing off the top site wall.
 
 Result:
 ![20250804030554.png](/screenshots/20250804030554.png)

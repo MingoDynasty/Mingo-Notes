@@ -20,12 +20,34 @@ Result:
 
 #### Back site
 
+**Note**: sometimes this is slightly too slow if you have mobility duelists (Jett, Raze, Yoru, etc.) who run it down with no util. If you want a faster version, see "Back site (round start)".
+
 Tuck into this corner:
 ![20250519011046.png](/screenshots/20250519011046.png)
-Aim slightly left and above the corner of this roof:
-![20250519011116.png](/screenshots/20250519011116.png)
+
+Note this corner of the building:
+![20250816071342.png](/screenshots/20250816071342.png)
+
+The separator bar between the Ice Orb and Heart icons; put the left side of this bar onto that corner of windows:
+![20250816071642.png](/screenshots/20250816071642.png)
+
 Result:
-![20250519011154.png](/screenshots/20250519011154.png)
+![20250816071825.png](/screenshots/20250816071825.png)
+![20250816071919.png](/screenshots/20250816071919.png)
+
+#### Back site (round start)
+
+Stand on top of the 1st level ledge and tuck into the barrier:
+![20250816070548.png](/screenshots/20250816070548.png)
+
+Take note of this intersection of bricks:
+![20250816070645.png](/screenshots/20250816070645.png)
+
+The separator bar between the Ice Orb and Heart icons; put the right side of this bar into that intersection of bricks:
+![20250816070707.png](/screenshots/20250816070707.png)
+
+Result:
+![20250816070733.png](/screenshots/20250816070733.png)
 
 #### Back site (easy)
 
