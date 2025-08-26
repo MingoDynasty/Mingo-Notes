@@ -127,10 +127,26 @@ Result:
 Tuck into this corner:
 ![20250519020944.png](/screenshots/20250519020944.png)
 
+##### Sewer
+
+Notice these two lines in this roof:
+![20250824204905.png](/screenshots/20250824204905.png)
+
+Line up the bottom left line of your HUD with that line in the roof:
+![20250824204937.png](/screenshots/20250824204937.png)
+
+Result:
+![20250824205028.png](/screenshots/20250824205028.png)
+
+##### Front site
+
 Aim anywhere along this orange stripe, at the top half of it:
 ![20250519021019.png](/screenshots/20250519021019.png)
 Result:
 ![20250519021039.png](/screenshots/20250519021039.png)
+
+Combined results:
+![20250824205145.png](/screenshots/20250824205145.png)
 
 ### C Site retake
 

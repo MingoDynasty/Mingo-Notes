@@ -6,6 +6,8 @@ tags: ["valorant"]
 
 ## Attack
 
+Todo ascent a site post plant lineup (cat, a main) for gen or dice or tall box
+
 ### A Site - fast execute
 
 **Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
@@ -105,6 +107,85 @@ Line up the down arrow of the Ice Ob indicator in the middle of this spike:
 ![20250612005555.png](/screenshots/20250612005555.png)
 Result:
 ![20250612005503.png](/screenshots/20250612005503.png)
+
+### A Site Post Plant
+
+#### From A Main
+
+Tuck here:
+![20250824212456.png](/screenshots/20250824212456.png)
+
+##### Generator
+
+Nice this white spike in the sky:
+![20250824212952.png](/screenshots/20250824212952.png)
+
+The separator bar between the Slow and Heart symbols; line up the left side of it with the bottom of the white spike:
+![20250824212929.png](/screenshots/20250824212929.png)
+
+Result:
+![20250824213106.png](/screenshots/20250824213106.png)
+
+##### Dice
+
+TODO
+
+##### Tall Box
+
+Notice this intersection of bricks:
+![20250824212623.png](/screenshots/20250824212623.png)
+
+The bottom left line of your HUD, line up the right pointy with those bricks:
+![20250824212555.png](/screenshots/20250824212555.png)
+
+Result:
+![20250824212743.png](/screenshots/20250824212743.png)
+
+#### From Cat
+
+Tuck here:
+TODO
+
+##### Generator
+
+TODO
+
+##### Dice
+
+TODO
+
+##### Tall Box
+
+TODO
+
+Notice this small square with white outline:
+![20250824211906.png](/screenshots/20250824211906.png)
+
+The Slow Orb indicator, line up the right side of that pointy with the top part of that white square:
+![20250824211944.png](/screenshots/20250824211944.png)
+
+Result:
+![20250824212118.png](/screenshots/20250824212118.png)
+
+#### From Wine
+
+**Note**: this is not a very common position except maybe if KillJoy ults for retake.
+
+Tuck here:
+TODO
+
+##### Generator
+
+TODO
+![20250824213821.png](/screenshots/20250824213821.png)
+
+##### Dice
+
+TODO
+
+##### Tall Box
+
+TODO
 
 ### B Site
 

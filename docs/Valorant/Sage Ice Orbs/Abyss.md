@@ -75,7 +75,7 @@ TODO: which part of Rafters is important? Maybe just in front of Heaven?
 
 #### Position 2 (impromptu)
 
-**Tradeoffs**: this position is faster but you are more exposed to site and potential defensive pushes. Use this position if your team executes very fast, or you're not worried about initial gunfights between defenders at B Site and attackers at B Main/Window.
+**Tradeoffs**: this position is faster but you are more exposed to site and potential defensive pushes. Use this position if your team executes faster, or you're not worried about initial gunfights between defenders at B Site and attackers at B Main/Window.
 
 ##### Back Site
 
@@ -97,6 +97,12 @@ Example result:
 ![20250821192723.png](/screenshots/20250821192723.png)
 
 **Note**: depending on the height, the Slow Orb might bounce differently, but the result is similar.
+
+#### Position 3 (round start)
+
+**Note**: use this if your team just runs it down.
+
+TODO
 
 ### Mid
 
