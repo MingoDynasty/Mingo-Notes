@@ -6,7 +6,7 @@ tags: ["valorant"]
 
 ## Attack
 
-Todo ascent a site post plant lineup (cat, a main) for gen or dice or tall box
+TODO: Ascent A site post plant lineup (Cat, A Main) for Generator or Dice or Tall Box
 
 ### A Site - fast execute
 

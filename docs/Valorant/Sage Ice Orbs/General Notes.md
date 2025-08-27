@@ -42,3 +42,14 @@ Rule of thumbs:
 ### Retake
 
 Think about common positions that the attackers want to play from during post plant. Throw Ice Slows at these areas, making it easier for your team to retake and reducing the risk of running into a crossfire or trade scenario.
+
+## Agents with similar lineups
+
+See: https://valorant.fandom.com/wiki/Deployment_types#Projectile
+
+Sage's Ice Orb is a Class 3 projectile, and shares the same trajectory with:
+
+1. Brimstone's molly (careful of the extra bounces)
+2. Clove's decay
+3. Viper's molly
+4. Vyse's thorns

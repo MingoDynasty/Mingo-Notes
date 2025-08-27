@@ -38,6 +38,8 @@ Result:
 Results:
 ![20250821164322.png](/screenshots/20250821164322.png)
 
+**Note**: if the choke is smoked off, then standing on the A Main platform (level 1 or 2) will produce relatively similar results.
+
 ### B Site
 
 #### Position 1 (platform tuck)
@@ -102,7 +104,19 @@ Example result:
 
 **Note**: use this if your team just runs it down.
 
-TODO
+Tuck between this wall and the barrier:
+![20250827012958.png](/screenshots/20250827012958.png)
+
+##### Back Site
+
+Notice this electrical box:
+![20250827012439.png](/screenshots/20250827012439.png)
+
+Put the corner of that electrical box between the outlines of your ability icons 1 and 2:
+![20250827012312.png](/screenshots/20250827012312.png)
+
+Result:
+![20250827012919.png](/screenshots/20250827012919.png)
 
 ### Mid
 
