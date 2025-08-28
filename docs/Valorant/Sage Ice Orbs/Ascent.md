@@ -128,35 +128,62 @@ Result:
 
 ##### Dice
 
-TODO
+Notice this brick that sticks out:
+![20250827225037.png](/screenshots/20250827225037.png)
+
+The separator bar between the Slow and Heal symbols; line up the left side of it with the top right corner of the brick that sticks out:
+![20250827224858.png](/screenshots/20250827224858.png)
+
+Result:
+![20250827224920.png](/screenshots/20250827224920.png)
 
 ##### Tall Box
 
-Notice this intersection of bricks:
-![20250824212623.png](/screenshots/20250824212623.png)
+Notice this diamond-shaped metal plate in the wall:
+![20250827230647.png](/screenshots/20250827230647.png)
 
-The bottom left line of your HUD, line up the right pointy with those bricks:
-![20250824212555.png](/screenshots/20250824212555.png)
+The Wall letter (in this example: C), line up the letter with the top of that metal plate:
+![20250827231027.png](/screenshots/20250827231027.png)
 
 Result:
-![20250824212743.png](/screenshots/20250824212743.png)
+![20250827231130.png](/screenshots/20250827231130.png)
+
+**Note**: err on the side of slightly higher (i.e. don't overlap the letter with the metal plate). Otherwise there's a tiny chance that the orb bounces off the white ledge next to the Tall Box. The bomb will still be slowed, but just the ice spread won't be as optimal.
 
 #### From Cat
 
-Tuck here:
-TODO
+Tuck into this corner next to the dog:
+![20250827231500.png](/screenshots/20250827231500.png)
 
 ##### Generator
 
-TODO
+Notice this corner of metal:
+![20250827232219.png](/screenshots/20250827232219.png)
+
+The separator bar between the Heal and Rez symbols; line up the right side of it with that corner of metal:
+![20250827232307.png](/screenshots/20250827232307.png)
+
+Result:
+![20250827232350.png](/screenshots/20250827232350.png)
 
 ##### Dice
 
-TODO
+Note this spot between the metal grille and foliage:
+![20250827225537.png](/screenshots/20250827225537.png)
+
+The separator bar between the Slow and Heal symbols; line up the right side of it with the corner of that metal grille:
+![20250827225613.png](/screenshots/20250827225613.png)
+
+Result:
+![20250827225633.png](/screenshots/20250827225633.png)
+
+Alternatively, aim slightly lower so the bar is in the foliage instead:
+![20250827225736.png](/screenshots/20250827225736.png)
+
+This way the Ice Orb will land on top of the box. Example result:
+![20250827225759.png](/screenshots/20250827225759.png)
 
 ##### Tall Box
-
-TODO
 
 Notice this small square with white outline:
 ![20250824211906.png](/screenshots/20250824211906.png)
@@ -172,12 +199,11 @@ Result:
 **Note**: this is not a very common position except maybe if KillJoy ults for retake.
 
 Tuck here:
-TODO
+![20250827232552.png](/screenshots/20250827232552.png)
 
 ##### Generator
 
 TODO
-![20250824213821.png](/screenshots/20250824213821.png)
 
 ##### Dice
 
