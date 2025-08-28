@@ -6,8 +6,6 @@ tags: ["valorant"]
 
 ## Attack
 
-TODO: Ascent A site post plant lineup (Cat, A Main) for Generator or Dice or Tall Box
-
 ### A Site - fast execute
 
 **Note**: this version is in between "walk contact" speed and "run it down" speed. Best used when your team is executing quickly but still needs a couple seconds to take A Main control.
