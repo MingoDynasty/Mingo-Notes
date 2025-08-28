@@ -125,6 +125,30 @@ Result:
 
 ### A Site retake
 
+#### A Main / A Link
+
+Hug this door:
+![20250828012213.png](/screenshots/20250828012213.png)
+
+Aim here at this reddish orange roof outline, where the curve meets the straight roof:
+![20250828011555.png](/screenshots/20250828011555.png)
+
+Run backwards, jump and while falling, throw. Example result:
+![20250828012103.png](/screenshots/20250828012103.png)
+
+#### Safe / Dice
+
+Hug this corner:
+![20250828010724.png](/screenshots/20250828010724.png)
+
+Aim above the wall in front of you, but next to the taller wooden roof:
+![20250828010837.png](/screenshots/20250828010837.png)
+
+Result:
+![20250828010951.png](/screenshots/20250828010951.png)
+
+**Note**: this lineup is fairly lenient as the Ice Orb will bounce into the corner of site. But some care must be taken so there are no unexpected bounces.
+
 #### Elbow
 
 Hug this wall in CT Alley
