@@ -8,10 +8,12 @@ tags: ["valorant"]
 
 ### A Site
 
+#### Position 1 (A Main)
+
 Tuck into this corner:
 ![20250821163315.png](/screenshots/20250821163315.png)
 
-#### Back site (left side)
+##### Back site (left side)
 
 Note this white rectangle:
 ![20250821164033.png](/screenshots/20250821164033.png)
@@ -22,7 +24,7 @@ Aim at the horizontal line just above that white rectangle:
 Result:
 ![20250821164209.png](/screenshots/20250821164209.png)
 
-#### Back site (right side)
+##### Back site (right side)
 
 Note this triangle:
 ![20250821163859.png](/screenshots/20250821163859.png)
@@ -33,12 +35,28 @@ Aim at the tip of the triangle that points upward:
 Result:
 ![20250821164000.png](/screenshots/20250821164000.png)
 
-#### Back site (combined)
+##### Back site (combined)
 
 Results:
 ![20250821164322.png](/screenshots/20250821164322.png)
 
 **Note**: if the choke is smoked off, then standing on the A Main platform (level 1 or 2) will produce relatively similar results.
+
+#### Position 2 (round start)
+
+Tuck in between these two boxes:
+![20250829003231.png](/screenshots/20250829003231.png)
+
+##### Back site (right side)
+
+Take note of this camera:
+![20250829003335.png](/screenshots/20250829003335.png)
+
+The separator bar between the Wall and Ice Orb symbols; place the right side of it slightly above the lens of that camera:
+![20250829003357.png](/screenshots/20250829003357.png)
+
+Result:
+![20250829003650.png](/screenshots/20250829003650.png)
 
 ### B Site
 
@@ -54,7 +72,7 @@ Tuck into this corner between the platform and small barrels:
 Note the corner of this wooden roof:
 ![20250821193714.png](/screenshots/20250821193714.png)
 
-The separator bar:
+The separator bar between the Ice Orb and Heart symbols; line up the right side of it with the corner of the wooden roof:
 ![20250821194549.png](/screenshots/20250821194549.png)
 
 Result:
