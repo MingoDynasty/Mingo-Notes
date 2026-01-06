@@ -157,9 +157,39 @@ Result:
 
 ## Defense
 
-## B Site Retake
+### B Site Retake
 
-### From CT
+#### From CT part 1
 
 Tuck into this corner:
 ![20260105231704.png](/screenshots/20260105231704.png)
+
+Aim about 2 crosshair lengths above this box:
+![20260105231932.png](/screenshots/20260105231932.png)
+
+Result:
+![20260105232004.png](/screenshots/20260105232004.png)
+
+#### From CT part 2
+
+Tuck into this corner:
+![20260105232445.png](/screenshots/20260105232445.png)
+
+Aim in between these two dark pieces in the wall:
+![20260105232735.png](/screenshots/20260105232735.png)
+
+Result:
+![20260105232902.png](/screenshots/20260105232902.png)
+
+#### From Heaven
+
+Simply use this tower as a backboard:
+![20260105233118.png](/screenshots/20260105233118.png)
+
+Example result (stationary):
+![20260105233151.png](/screenshots/20260105233151.png)
+
+If you run while throwing, then the Ice Orb will bounce farther. If you do so, aim slightly left, so you don't accidentally throw the Ice Orb into the Abyss.
+
+Example result (running):
+![20260105233211.png](/screenshots/20260105233211.png)
