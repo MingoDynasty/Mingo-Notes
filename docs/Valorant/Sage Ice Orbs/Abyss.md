@@ -76,9 +76,9 @@ The separator bar between the Ice Orb and Heart symbols; line up the right side 
 ![20250821194549.png](/screenshots/20250821194549.png)
 
 Result:
-![20250821194610.png](/screenshots/20250821194610.png)
+![20251017194018.png](/screenshots/20251017194018.png)
 
-##### CT
+##### CT (old) TODO: does this still work?
 
 Notice this crack:
 ![20250822175949.png](/screenshots/20250822175949.png)
@@ -89,11 +89,29 @@ Aim at the middle of this crack:
 Result:
 ![20250822180024.png](/screenshots/20250822180024.png)
 
-##### Rafters
+##### CT (new)
 
-TODO: which part of Rafters is important? Maybe just in front of Heaven?
+Notice this green leaf sticking out from the mushrooms:
+![20251017193614.png](/screenshots/20251017193614.png)
 
-#### Position 2 (impromptu)
+The bottom left HUD line to the left of the Wall icon, line up the end of the right line with that green leaf:
+![20251017193721.png](/screenshots/20251017193721.png)
+
+Example result:
+![20251017193903.png](/screenshots/20251017193903.png)
+
+##### Heaven
+
+Note the corner of this wood piece:
+![20251017194610.png](/screenshots/20251017194610.png)
+
+The separator bar between the Wall and Ice Orb symbols; line up the right side of that with that corner wood piece:
+![20251017194656.png](/screenshots/20251017194656.png)
+
+Result:
+![20251017194737.png](/screenshots/20251017194737.png)
+
+#### Position 2 (impromptu) TODO: verify still works
 
 **Tradeoffs**: this position is faster but you are more exposed to site and potential defensive pushes. Use this position if your team executes faster, or you're not worried about initial gunfights between defenders at B Site and attackers at B Main/Window.
 
@@ -118,7 +136,7 @@ Example result:
 
 **Note**: depending on the height, the Slow Orb might bounce differently, but the result is similar.
 
-#### Position 3 (round start)
+#### Position 3 (round start) TODO: probably doesn't work
 
 **Note**: use this if your team just runs it down.
 
