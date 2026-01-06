@@ -78,17 +78,6 @@ The separator bar between the Ice Orb and Heart symbols; line up the right side 
 Result:
 ![20251017194018.png](/screenshots/20251017194018.png)
 
-##### CT (old) TODO: does this still work?
-
-Notice this crack:
-![20250822175949.png](/screenshots/20250822175949.png)
-
-Aim at the middle of this crack:
-![20250822175924.png](/screenshots/20250822175924.png)
-
-Result:
-![20250822180024.png](/screenshots/20250822180024.png)
-
 ##### CT (new)
 
 Notice this green leaf sticking out from the mushrooms:
@@ -111,7 +100,7 @@ The separator bar between the Wall and Ice Orb symbols; line up the right side o
 Result:
 ![20251017194737.png](/screenshots/20251017194737.png)
 
-#### Position 2 (impromptu) TODO: verify still works
+#### Position 2 (impromptu)
 
 **Tradeoffs**: this position is faster but you are more exposed to site and potential defensive pushes. Use this position if your team executes faster, or you're not worried about initial gunfights between defenders at B Site and attackers at B Main/Window.
 
@@ -121,38 +110,39 @@ Hug anywhere along this wall:
 ![20250821192843.png](/screenshots/20250821192843.png)
 
 Aim at the left of this gold pattern:
-![20250821192953.png](/screenshots/20250821192953.png)
+![20260105230138.png](/screenshots/20260105230138.png)
 
 Example result:
-![20250821193045.png](/screenshots/20250821193045.png)
+![20260105230225.png](/screenshots/20260105230225.png)
 
 If you want to be slightly safer, then you can hide from the site angle, and only expose to top site.
 
 Aim slightly above the light output of this lamp:
-![20250821192626.png](/screenshots/20250821192626.png)
+![20260105230325.png](/screenshots/20260105230325.png)
 
 Example result:
-![20250821192723.png](/screenshots/20250821192723.png)
+![20260105230416.png](/screenshots/20260105230416.png)
 
 **Note**: depending on the height, the Slow Orb might bounce differently, but the result is similar.
 
-#### Position 3 (round start) TODO: probably doesn't work
+#### Position 3 (round start)
 
 **Note**: use this if your team just runs it down.
 
 Tuck between this wall and the barrier:
-![20250827012958.png](/screenshots/20250827012958.png)
+![20260105230824.png](/screenshots/20260105230824.png)
 
 ##### Back Site
 
-Notice this electrical box:
-![20250827012439.png](/screenshots/20250827012439.png)
+Notice these two bright windows:
+![20260105231120.png](/screenshots/20260105231120.png)
 
-Put the corner of that electrical box between the outlines of your ability icons 1 and 2:
-![20250827012312.png](/screenshots/20250827012312.png)
+The wall green trapezoid, line up the right side of it with halfway into the left window:
+![20260105231157.png](/screenshots/20260105231157.png)
 
 Result:
-![20250827012919.png](/screenshots/20250827012919.png)
+![20260105231338.png](/screenshots/20260105231338.png)
+![20260105231411.png](/screenshots/20260105231411.png)
 
 ### Mid
 
@@ -166,3 +156,10 @@ Result:
 ![20250821191634.png](/screenshots/20250821191634.png)
 
 ## Defense
+
+## B Site Retake
+
+### From CT
+
+Tuck into this corner:
+![20260105231704.png](/screenshots/20260105231704.png)
