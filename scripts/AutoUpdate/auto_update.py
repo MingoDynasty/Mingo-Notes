@@ -6,6 +6,8 @@ import subprocess
 import sys
 import tomllib
 
+from utilities import get_screenshots_used_in_markdown_file
+
 logger = logging.getLogger(__name__)
 log_format = "%(asctime)-15s - %(levelname)s - %(message)s"
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=log_format)
@@ -18,10 +20,14 @@ with open("app.conf", "rb") as f:
 
 logger.debug(f"Loaded config: {config}")
 
-
 #
 # 1. Check for unused screenshots. If any are found, throw warnings/errors.
 #
+corrode_wall_screenshots = get_screenshots_used_in_markdown_file(
+    "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md")
+killjoy_screenshots = get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
+
+
 def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
     # Screenshots in the screenshots directory
     screenshots_found = set()
@@ -32,24 +38,20 @@ def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
     screenshots_used = set()
     for file in os.listdir(md_dir):
         full_filename = os.path.join(md_dir, file)
-        with open(full_filename, "r") as file_handle:
-            for line in file_handle:
-                line = line.strip()
-                if line.endswith('.png]]'):
-                    if line.startswith('![[attachments/Pasted image '):
-                        filename = line.split('/')[-1][:-2]
-                        screenshots_used.add(filename)
-                    if line.startswith('![[Pasted image '):
-                        filename = line[3:-2]
-                        screenshots_used.add(filename)
+        screenshots_used.update(get_screenshots_used_in_markdown_file(full_filename))
 
     unused_screenshots = set()
     for screenshot in screenshots_found:
         if screenshot in screenshots_used:
             continue
         else:
-            logger.warning("Found an unused screenshot: {}".format(screenshot))
-            unused_screenshots.add(screenshot)
+            if screenshot in corrode_wall_screenshots:
+                logger.debug("Protecting Corrode screenshot: {}".format(screenshot))
+            elif screenshot in killjoy_screenshots:
+                logger.debug("Protecting KillJoy screenshot: {}".format(screenshot))
+            else:
+                logger.warning("Found an unused screenshot: {}".format(screenshot))
+                unused_screenshots.add(screenshot)
     if not unused_screenshots:
         logger.info("No unused screenshots found.")
     else:
@@ -63,12 +65,21 @@ unused_screenshots = check_unused_files(config['obsidian_screenshots_directory']
 #
 # 2. Copy screenshots from Obsidian to Git Repository
 #
+
+# TODO: move/organize screenshots into directories based on the map name
 if config['copy_screenshots']:
     # remove all screenshots from target directory, in case some screenshots are no longer used
     for filename in os.listdir(config['git_screenshots_directory']):
         file_path = os.path.join(config['git_screenshots_directory'], filename)
         if os.path.isfile(file_path) and filename.endswith('.png'):
-            os.remove(file_path)
+            # protect the Corrode Wall screenshots for now
+            # TODO: not sure if this logic is necessary anymore
+            if filename in corrode_wall_screenshots:
+                logger.debug("Protecting Corrode screenshot: {}".format(filename))
+            elif filename in killjoy_screenshots:
+                logger.debug("Protecting KillJoy screenshot: {}".format(filename))
+            else:
+                os.remove(file_path)
 
     screenshots_in_repo = set()
     for screenshot in os.listdir(config['git_screenshots_directory']):
