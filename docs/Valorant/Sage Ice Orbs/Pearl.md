@@ -29,14 +29,33 @@ Combined results:
 
 ### B Site
 
+Hug this corner:
+![20260105185726.png](/screenshots/20260105185726.png)
+
 #### Pillar
 
-Aim along this line:
-![20250527003057.png](/screenshots/20250527003057.png)
-**Note**: exposing yourself to the 2nd lamp is not required.
-**Note**: aiming up to the horizontal orange strip is okay.
+Aim at this intersection:
+![20260105190031.png](/screenshots/20260105190031.png)
+
+Result:
+![20260105190048.png](/screenshots/20260105190048.png)
+
+#### Heaven
+
+Aim slightly to the left of this crack:
+![20260105190159.png](/screenshots/20260105190159.png)
+
+Result:
+![20260105190229.png](/screenshots/20260105190229.png)
+![20260105190249.png](/screenshots/20260105190249.png)
+
+#### U-Haul (right side)
+
+Take one loud step backwards. Jump and throw over this roof:
+![20260105190504.png](/screenshots/20260105190504.png)
+
 Example result:
-![20250527003141.png](/screenshots/20250527003141.png)
+![20260105190549.png](/screenshots/20260105190549.png)
 
 ## Defense
 
@@ -53,10 +72,33 @@ Result:
 
 ### B Site Retake
 
+#### From CT
+
+Tuck in between these boxes:
+![20260105191346.png](/screenshots/20260105191346.png)
+
+Note this dark part of the window:
+![20260105191502.png](/screenshots/20260105191502.png)
+
+Start to lineup bottom left HUD with that dark part of the window:
+![20260105191545.png](/screenshots/20260105191545.png)
+
+Note this little pointed part of the shade:
+![20260105191735.png](/screenshots/20260105191735.png)
+Move your "C" ability letter rightward until it is directly above that pointed part:
+![20260105191841.png](/screenshots/20260105191841.png)
+
+Result:
+![20260105191900.png](/screenshots/20260105191900.png)
+
+#### From B Link
+
 Tuck into this corner:
 ![20250519024259.png](/screenshots/20250519024259.png)
-Aim at the orange strip directly above this intersection:
-![20250519024614.png](/screenshots/20250519024614.png)
-Jump, and while falling, throw.
-Result:
-![20250519024701.png](/screenshots/20250519024701.png)
+Note this diamond-shaped intersection:
+![20260105192645.png](/screenshots/20260105192645.png)
+Put your letter "E" on top of that diamond-shape:
+![20260105192719.png](/screenshots/20260105192719.png)
+
+Example result:
+![20260105192800.png](/screenshots/20260105192800.png)
