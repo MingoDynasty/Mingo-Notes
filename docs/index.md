@@ -15,5 +15,5 @@ Feedback? Questions? Contact me!
 :::warning
 This website is no longer updated due to a Cloudflare Pages issue.
 
-All further updates are now being published to: **https://mingo-notes.icy-frost-4f1e.workers.dev**
+All further updates are now being published to: **https://notes.mingodynasty.com**
 :::
