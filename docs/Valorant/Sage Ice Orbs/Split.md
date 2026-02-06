@@ -121,6 +121,9 @@ The separator bar between the Ice Orb and Heart icons; line up the left side of 
 Example result:
 ![20260205181341.png](/screenshots/20260205181341.png)
 
+Combined results:
+![20260205182439.png](/screenshots/20260205182439.png)
+
 #### Back site (impromptu)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
@@ -129,6 +132,7 @@ Aim at this wooden frame, using it as a backboard. Run and throw so it bounces b
 Example results:
 ![20250518230103.png](/screenshots/20250518230103.png)
 ![20250518230234.png](/screenshots/20250518230234.png)
+
 #### Hell (impromptu)
 
 Tuck here:
