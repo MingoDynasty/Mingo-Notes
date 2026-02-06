@@ -127,11 +127,10 @@ Combined results:
 #### Back site (impromptu)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
-![20250518230030.png](/screenshots/20250518230030.png)
+![20260205185748.png](/screenshots/20260205185748.png)
 **Note**: results may vary slightly depending on angle and toss, but generally the result is good enough.
-Example results:
-![20250518230103.png](/screenshots/20250518230103.png)
-![20250518230234.png](/screenshots/20250518230234.png)
+Example result:
+![20260205185816.png](/screenshots/20260205185816.png)
 
 #### Hell (impromptu)
 
