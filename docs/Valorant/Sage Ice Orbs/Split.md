@@ -94,7 +94,34 @@ Result:
 
 ### B Site
 
-#### Back site (easy)
+#### Round Start
+
+Tuck here:
+![20250518231537.png](/screenshots/20250518231537.png)
+
+##### Heaven
+
+Note this cable coming from this satellite:
+![20260205131655.png](/screenshots/20260205131655.png)
+
+The Slow ability's indicator box, line up the top right corner of it with that cable:
+![20260205131750.png](/screenshots/20260205131750.png)
+
+Result:
+![20260205131942.png](/screenshots/20260205131942.png)
+
+##### Hell
+
+Note the dirt on this broken mirror:
+![20260205181144.png](/screenshots/20260205181144.png)
+
+The separator bar between the Ice Orb and Heart icons; line up the left side of this bar to be slightly above this dirt:
+![20260205133427.png](/screenshots/20260205133427.png)
+
+Example result:
+![20260205181341.png](/screenshots/20260205181341.png)
+
+#### Back site (impromptu)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
 ![20250518230030.png](/screenshots/20250518230030.png)
@@ -102,18 +129,7 @@ Aim at this wooden frame, using it as a backboard. Run and throw so it bounces b
 Example results:
 ![20250518230103.png](/screenshots/20250518230103.png)
 ![20250518230234.png](/screenshots/20250518230234.png)
-
-#### Heaven
-
-Tuck here:
-![20250518231537.png](/screenshots/20250518231537.png)
-Line up the Slow ability's underline bar to be inside the tiny triangle railing above the satellite:
-![20250518231651.png](/screenshots/20250518231651.png)
-![20250518231945.png](/screenshots/20250518231945.png)
-Result:
-![20250518232050.png](/screenshots/20250518232050.png)
-
-#### Hell
+#### Hell (impromptu)
 
 Tuck here:
 ![20250518232155.png](/screenshots/20250518232155.png)
