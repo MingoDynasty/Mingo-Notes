@@ -53,3 +53,4 @@ Sage's Ice Orb is a Class 3 projectile, and shares the same trajectory with:
 2. Clove's decay
 3. Viper's molly
 4. Vyse's thorns
+5. Mik's stun/heal

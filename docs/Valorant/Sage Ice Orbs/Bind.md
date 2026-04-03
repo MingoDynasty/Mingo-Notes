@@ -74,6 +74,48 @@ Combined results with Back Site Boxes:
 
 ### B Site
 
+#### From Link
+
+Stand in this corner, on top of the wheelbarrow:
+![20260331044953.png](/screenshots/20260331044953.png)
+
+##### B Garden
+
+**Note**: this is best when the team is defaulting and taking space. Avoid using this if your team has two mobility duelists and/or fast executing.
+
+Note the joint that connects the lamp post stem to the wall:
+![20260331045037.png](/screenshots/20260331045037.png)
+
+The second separator bar, line up the left side of it with that joint:
+![20260331045128.png](/screenshots/20260331045128.png)
+
+Result:
+![20260331045203.png](/screenshots/20260331045203.png)
+
+#### From B Short
+
+Tuck into the corner of this box:
+![20260331050125.png](/screenshots/20260331050125.png)
+
+##### Back site (left side)
+
+Notice these thorns:
+![20260331050154.png](/screenshots/20260331050154.png)
+
+The Ice Orb indicator, line up the bottom point of it with that roof with the thorn sticking out:
+![20260331050244.png](/screenshots/20260331050244.png)
+
+Result:
+![20260331050359.png](/screenshots/20260331050359.png)
+
+##### Back site (right side)
+
+This cloud in the sky, imagine an intersection point between this gap, forming a rectangle:
+![20260331051109.png](/screenshots/20260331051109.png)
+
+Example result:
+![20260331051257.png](/screenshots/20260331051257.png)
+
 #### From Hookah
 
 Stand along the line of this wall to your right, while standing in Hookah:

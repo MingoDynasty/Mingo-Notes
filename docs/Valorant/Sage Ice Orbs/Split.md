@@ -167,7 +167,7 @@ Tuck here:
 Take note of this lightbulb:
 ![20250518220541.png](/screenshots/20250518220541.png)
 
-Keep the lightbulb at the bottom of your screen, while lining up the Heal ability bar with the
+Keep the lightbulb at the bottom of your screen, while lining up the Heal ability bar with the slanted roof:
 ![20250518220622.png](/screenshots/20250518220622.png)
 
 Result:

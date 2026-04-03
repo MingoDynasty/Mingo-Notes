@@ -64,10 +64,12 @@ Result:
 
 **Tradeoffs**: this position is safer, but also slower. It also has more flexibility (more lineups available) and accuracy (tucked into a corner).
 
-##### Back Site
-
 Tuck into this corner between the platform and small barrels:
 ![20250821193439.png](/screenshots/20250821193439.png)
+
+##### Back Site
+
+**Note**: often times your team wants to push left side. Communicate with your team before you use this so they know to play around it (e.g. dashing on top of site instead, or comboing with utility).
 
 Note the corner of this wooden roof:
 ![20250821193714.png](/screenshots/20250821193714.png)
@@ -78,7 +80,9 @@ The separator bar between the Ice Orb and Heart symbols; line up the right side 
 Result:
 ![20251017194018.png](/screenshots/20251017194018.png)
 
-##### CT (new)
+##### CT Top of Boxes
+
+**Note**: this lineup is great to cover the top box and some grass surrounding the boxes. But the lineup is very finnicky, so I would not rely on it to cover grass outside of the box. For that use case, use the other two lineups.
 
 Notice this green leaf sticking out from the mushrooms:
 ![20251017193614.png](/screenshots/20251017193614.png)
@@ -88,6 +92,31 @@ The bottom left HUD line to the left of the Wall icon, line up the end of the ri
 
 Example result:
 ![20251017193903.png](/screenshots/20251017193903.png)
+
+##### CT Behind Boxes
+
+Notice this wood piece sticking out:
+![20260302015209.png](/screenshots/20260302015209.png)
+
+The Heart green trapezoid, lineup the right side of it with that wood piece:
+![20260302015248.png](/screenshots/20260302015248.png)
+
+Result:
+![20260302015429.png](/screenshots/20260302015429.png)
+
+##### CT Front Boxes
+
+Note this shade in the mountain:
+![20260302015515.png](/screenshots/20260302015515.png)
+
+Move your crosshair upward until the right side of the Heart green trapezoid lines up with that shade:
+![20260302015633.png](/screenshots/20260302015633.png)
+
+Result:
+![20260302015651.png](/screenshots/20260302015651.png)
+
+Combined results:
+![20260302015721.png](/screenshots/20260302015721.png)
 
 ##### Heaven
 

@@ -79,6 +79,12 @@ Aim anywhere above the orange stripe, but within the window:
 Result:
 ![20250519011612.png](/screenshots/20250519011612.png)
 
+Alternatively, if you are standing on top of the orb:
+![20260331043129.png](/screenshots/20260331043129.png)
+
+Then aim below the orange strip:
+![20260331043221.png](/screenshots/20260331043221.png)
+
 #### CT Spawn
 
 Tuck into this corner:
