@@ -4,6 +4,37 @@ tags: ["valorant"]
 
 # General Notes
 
+## Wall Stats
+
+As of patch v11.08 (https://valorant.fandom.com/wiki/Patch_Notes/11.08#Sage), Wall fortifies more quickly at 2 seconds, but has less health at 600 HP.
+
+Common weapon breakpoints:
+
+| Weapon             | Hits (assuming no damage fall-off) | Bullets Remaining in Mag |
+| ------------------ | ---------------------------------- | ------------------------ |
+| Knife (left click) | 6                                  |                          |
+| Classic            | 24                                 | 0 (reload)               |
+| Sheriff            | 11                                 | 1                        |
+| Judge              | 3                                  | 2                        |
+| Guardian           | 10                                 | 2                        |
+| Phantom            | 16                                 | 14                       |
+| Vandal             | 15                                 | 10                       |
+
+Use this information to predict exactly when the wall will break.
+
+Note: when the wall fortifies, the wall health is not reset. In other words, any damage taken during the fortification time carries over after fortification.
+
+Wiki notes: https://valorant.fandom.com/wiki/Barrier_Orb
+
+Wall lasts for 40 seconds. Add ~2 seconds for fortification time.
+Common timing: if Sage insta-walls at round start, then the wall will break when the round timer reaches 0:58.
+
+The wall decays for 5 seconds at the end of its duration. That is, the wall starts to decay for a percentage of its remaining health starting at 35 seconds.
+
+> Segments with less health than others will not expire before them, and all remaining segments will expire simultaneously.
+
+That is, if a section is partially damaged (e.g. someone shot at it), then it will still break on its own at the same time. During the decay phase, the wall will decay down to 1 HP, then all sections will break at the same time.
+
 ## What can Wall be used for?
 
 Obvious answers:
