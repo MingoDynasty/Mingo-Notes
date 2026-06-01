@@ -74,15 +74,16 @@ Result:
 Hug this wall:
 ![20250519011350.png](/screenshots/20250519011350.png)
 
-Aim anywhere above the orange stripe, but within the window:
-![20250519011527.png](/screenshots/20250519011527.png)
+Using the middle bump in the wall as reference point, aim slightly above the middle bump:
+![20260529230510.png](/screenshots/20260529230510.png)
+
 Result:
 ![20250519011612.png](/screenshots/20250519011612.png)
 
 Alternatively, if you are standing on top of the orb:
 ![20260331043129.png](/screenshots/20260331043129.png)
 
-Then aim below the orange strip:
+Then aim below the middle bump:
 ![20260331043221.png](/screenshots/20260331043221.png)
 
 #### CT Spawn

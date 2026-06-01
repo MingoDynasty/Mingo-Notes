@@ -68,6 +68,7 @@ Example result:
 ![20260325024349.png](/screenshots/20260325024349.png)
 
 Note: give caution to your teammates about this lineup. It's common for a mobility duelist teammate to want to quickly scale site and into Heaven.
+
 #### From Arcade
 
 Tuck into this corner:

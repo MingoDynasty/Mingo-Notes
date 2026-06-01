@@ -23,9 +23,16 @@ logger.debug(f"Loaded config: {config}")
 #
 # 1. Check for unused screenshots. If any are found, throw warnings/errors.
 #
-corrode_wall_screenshots = get_screenshots_used_in_markdown_file(
-    "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md")
-killjoy_screenshots = get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
+# corrode_wall_screenshots = get_screenshots_used_in_markdown_file(
+#     "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md")
+# killjoy_screenshots = get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
+protected_screenshots = {
+    "Breeze": get_screenshots_used_in_markdown_file(
+        "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Breeze.md"),
+    "Corrode": get_screenshots_used_in_markdown_file(
+        "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md"),
+    "KillJoy": get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
+}
 
 
 def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
@@ -45,11 +52,15 @@ def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
         if screenshot in screenshots_used:
             continue
         else:
-            if screenshot in corrode_wall_screenshots:
-                logger.debug("Protecting Corrode screenshot: {}".format(screenshot))
-            elif screenshot in killjoy_screenshots:
-                logger.debug("Protecting KillJoy screenshot: {}".format(screenshot))
-            else:
+            is_protected = False
+            for map_name, screenshots in protected_screenshots.items():
+                if screenshot in screenshots:
+                    logger.debug(
+                        f"Skipping screenshot from unused detection, since it is likely used in ({map_name}): {screenshot}")
+                    is_protected = True
+                    break
+
+            if not is_protected:
                 logger.warning("Found an unused screenshot: {}".format(screenshot))
                 unused_screenshots.add(screenshot)
     if not unused_screenshots:
@@ -72,13 +83,17 @@ if config['copy_screenshots']:
     for filename in os.listdir(config['git_screenshots_directory']):
         file_path = os.path.join(config['git_screenshots_directory'], filename)
         if os.path.isfile(file_path) and filename.endswith('.png'):
-            # protect the Corrode Wall screenshots for now
-            # TODO: not sure if this logic is necessary anymore
-            if filename in corrode_wall_screenshots:
-                logger.debug("Protecting Corrode screenshot: {}".format(filename))
-            elif filename in killjoy_screenshots:
-                logger.debug("Protecting KillJoy screenshot: {}".format(filename))
-            else:
+
+            # protect these screenshots for now
+            is_protected = False
+            for map_name, screenshots in protected_screenshots.items():
+                if filename in screenshots:
+                    logger.debug(f"Protecting {map_name} screenshot from deletion: {filename}")
+                    is_protected = True
+                    break
+
+            if not is_protected:
+                # print("Removing file: {}".format(file_path))
                 os.remove(file_path)
 
     screenshots_in_repo = set()

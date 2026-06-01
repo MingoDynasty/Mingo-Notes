@@ -124,6 +124,28 @@ Example result:
 Combined results:
 ![20260205182439.png](/screenshots/20260205182439.png)
 
+##### Pillar Right Side
+
+Note this intersection of wood panels in the roof:
+![20260517023003.png](/screenshots/20260517023003.png)
+
+The separator bar between the Ice Orb and Heart icons; line up the right side of this bar with this intersection. Ideally tuck it slightly toward the right wood piece for slightly better spread.
+![20260517023202.png](/screenshots/20260517023202.png)
+
+Example result:
+![20260517023348.png](/screenshots/20260517023348.png)
+
+##### Back Site
+
+Notice this corner of the wooden plank:
+![20260517024750.png](/screenshots/20260517024750.png)
+
+Line up the corner of that wooden plank in between the Wall and Ice Orb counter outlines. Then for optimal Ice spread, look up slightly so that the letter "C" is no longer touching the wooden plank:
+![20260517024847.png](/screenshots/20260517024847.png)
+
+Result:
+![20260517025432.png](/screenshots/20260517025432.png)
+
 #### Back site (impromptu)
 
 Aim at this wooden frame, using it as a backboard. Run and throw so it bounces back as much as possible:
@@ -162,25 +184,31 @@ Result:
 Tuck here:
 ![20250518220510.png](/screenshots/20250518220510.png)
 
-##### Sign / Back site
-
-Take note of this lightbulb:
-![20250518220541.png](/screenshots/20250518220541.png)
-
-Keep the lightbulb at the bottom of your screen, while lining up the Heal ability bar with the slanted roof:
-![20250518220622.png](/screenshots/20250518220622.png)
-
-Result:
-![20250518220732.png](/screenshots/20250518220732.png)
-
 ##### Back site / Elbow
 
 Line up the tip of the Q ability arrow with the A on the building:
 ![20250518221132.png](/screenshots/20250518221132.png)
+**Warning**: ensure that the tips are touching; even intersecting is okay. Do not leave a gap, as it may cause the Ice Orb to bounce off the roof shingles and land in unexpected spots (still relatively useful spots, but probably not the ideal spots that you want).
+
 Result:
 ![20250518221215.png](/screenshots/20250518221215.png)
+![20260529232511.png](/screenshots/20260529232511.png)
+
+##### Sign / Back site
+
+Take note of this railing in front of the tree:
+![20260529231843.png](/screenshots/20260529231843.png)
+
+Line up the bottom left line of your HUD with the intersection of the railing and edge of the tree:
+![20260529232006.png](/screenshots/20260529232006.png)
+
+Result:
+![20260529232150.png](/screenshots/20260529232150.png)
+
 Combined results:
-![20250518221358.png](/screenshots/20250518221358.png)
+![20260529232243.png](/screenshots/20260529232243.png)
+
+**Note**: when combining these two lineups, shoot the Elbow lineup first (since it usually takes longer to prepare, due to requiring Q ability HUD), then shoot the Sign lineup next (since it uses always-on HUD). Also when retaking from A Main, you typically want Elbow slowed first anyways.
 
 ### B Site Retake
 

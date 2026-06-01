@@ -115,7 +115,7 @@ Tuck here:
 
 ##### Generator
 
-Nice this white spike in the sky:
+Notice this white spike in the sky:
 ![20250824212952.png](/screenshots/20250824212952.png)
 
 The separator bar between the Slow and Heart symbols; line up the left side of it with the bottom of the white spike:
