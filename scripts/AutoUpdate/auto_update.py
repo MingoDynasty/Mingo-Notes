@@ -6,7 +6,7 @@ import subprocess
 import sys
 import tomllib
 
-from utilities import get_screenshots_used_in_markdown_file, rewrite_screenshot_embeds
+from utilities import SCREENSHOT_PREFIX, get_screenshots_used_in_markdown_file, rewrite_screenshot_embeds
 
 logger = logging.getLogger(__name__)
 log_format = "%(asctime)-15s - %(levelname)s - %(message)s"
@@ -23,16 +23,13 @@ logger.debug(f"Loaded config: {config}")
 #
 # 1. Check for unused screenshots. If any are found, throw warnings/errors.
 #
-# corrode_wall_screenshots = get_screenshots_used_in_markdown_file(
-#     "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md")
-# killjoy_screenshots = get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
-protected_screenshots = {
-    "Breeze": get_screenshots_used_in_markdown_file(
-        "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Breeze.md"),
-    "Corrode": get_screenshots_used_in_markdown_file(
-        "E:/Obsidian/Vaults/My Vault/Gaming/Valorant Sage Walls/Corrode.md"),
-    "KillJoy": get_screenshots_used_in_markdown_file("E:/Obsidian/Vaults/My Vault/Gaming/Valorant KillJoy.md")
-}
+protected_screenshots = {}
+for protected_markdown_file in config.get('protected_markdown_files', []):
+    if os.path.isfile(protected_markdown_file):
+        map_name = os.path.splitext(os.path.basename(protected_markdown_file))[0]
+        protected_screenshots[map_name] = get_screenshots_used_in_markdown_file(protected_markdown_file)
+    else:
+        logger.warning(f"Configured protected markdown file does not exist, skipping: {protected_markdown_file}")
 
 
 def check_unused_files(screenshots_dir: str, md_dir: str) -> set[str]:
@@ -79,20 +76,21 @@ unused_screenshots = check_unused_files(config['obsidian_screenshots_directory']
 
 # TODO: move/organize screenshots into directories based on the map name
 if config['copy_screenshots']:
+    protected_stripped = {
+        screenshot.removeprefix(SCREENSHOT_PREFIX)
+        for screenshots in protected_screenshots.values()
+        for screenshot in screenshots
+    }
+
     # remove all screenshots from target directory, in case some screenshots are no longer used
     for filename in os.listdir(config['git_screenshots_directory']):
         file_path = os.path.join(config['git_screenshots_directory'], filename)
         if os.path.isfile(file_path) and filename.endswith('.png'):
 
             # protect these screenshots for now
-            is_protected = False
-            for map_name, screenshots in protected_screenshots.items():
-                if filename in screenshots:
-                    logger.debug(f"Protecting {map_name} screenshot from deletion: {filename}")
-                    is_protected = True
-                    break
-
-            if not is_protected:
+            if filename in protected_stripped:
+                logger.debug(f"Protecting screenshot from deletion: {filename}")
+            else:
                 # print("Removing file: {}".format(file_path))
                 os.remove(file_path)
 
@@ -107,7 +105,7 @@ if config['copy_screenshots']:
             logger.warning("Skipping unused screenshot: {}".format(screenshot))
             continue
 
-        screenshot = screenshot[13:]
+        screenshot = screenshot.removeprefix(SCREENSHOT_PREFIX)
         if screenshot not in screenshots_in_repo:
             src_file = os.path.join(config['obsidian_screenshots_directory'], original_screenshot)
             dst_file = os.path.join(config['git_screenshots_directory'], screenshot)
