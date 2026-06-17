@@ -131,6 +131,14 @@ for file in os.listdir(config['obsidian_markdown_dir']):
     full_filename = os.path.join(config['obsidian_markdown_dir'], file)
     dst_file = os.path.join(config['git_markdown_directory'], file)
 
+    todo_markdowns = [
+        'Placeholder.md'
+    ]
+
+    if file in todo_markdowns:
+        logger.debug(f"Skipping Markdown file {file}.")
+        continue
+
     logger.debug("Copying markdown file: {}".format(file))
     shutil.copy(full_filename, dst_file)
     num_markdowns_copied += 1
