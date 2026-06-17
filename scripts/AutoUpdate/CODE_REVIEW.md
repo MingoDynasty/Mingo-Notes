@@ -2,8 +2,9 @@
 
 **Date:** 2026-06-16
 **Scope:** `scripts/AutoUpdate/` - `auto_update.py`, `utilities.py`, config files.
-**Status:** Findings agreed; no code changes made yet. Single source of truth, consolidated
-from two independent reviews (an initial pass and a Codex cross-review).
+**Status:** Commit 1 implemented (PR #2, branch `fix/autoupdate-sync-correctness`);
+Commits 2-3 pending — see section 6. Single source of truth, consolidated from two
+independent reviews (an initial pass and a Codex cross-review).
 
 ---
 
@@ -32,11 +33,14 @@ into this Docusaurus repo. It:
 
 ---
 
-## 2. Validation performed
+## 2. Validation performed (at review time)
 
-- `uv run mypy auto_update.py utilities.py` (Python 3.14; mypy is a declared dependency).
-  Confirms the `-> set()` annotation errors (F4). Independently confirmed in the Codex
-  cross-review via `.venv\Scripts\python.exe -m mypy auto_update.py utilities.py`.
+This section records what was checked during the review. Current per-PR verification lives in
+each PR description; in particular, the F4 annotations below are now fixed and mypy passes.
+
+- `uv run mypy auto_update.py utilities.py` (Python 3.14; mypy is a declared dependency)
+  confirmed the `-> set()` annotation errors (F4) at review time; independently confirmed in
+  the Codex cross-review via `.venv\Scripts\python.exe -m mypy auto_update.py utilities.py`.
 - `python -m py_compile auto_update.py utilities.py` - both compile.
 - Confirmed repo screenshots are stored **without** the `"Pasted image "` prefix
   (e.g. `20250518214042.png`), which is what makes F5 a real mismatch.
@@ -166,8 +170,10 @@ F8 and F10 (see remediation plan).
 `auto_update.py:150` (`fileinput.input(... inplace=True)`)
 **Impact:** On Windows the default text encoding is cp1252. Notes with em-dashes, smart
 quotes, accents, or emoji can raise `UnicodeDecodeError` or round-trip incorrectly.
-**Fix:** `encoding="utf-8"` on every text open; `fileinput.input(..., openhook=
-fileinput.hook_encoded("utf-8"))` for the inplace rewrite.
+**Fix:** `encoding="utf-8"` on every text open, including the inplace rewrite:
+`fileinput.input(dst_file, inplace=True, encoding="utf-8")`. Note: `openhook` is rejected in
+inplace mode (`ValueError: FileInput cannot use an opening hook in inplace mode`), so
+`hook_encoded` cannot be used here - pass `encoding=` instead.
 **Provenance:** v1 + v2 agree.
 
 ---
