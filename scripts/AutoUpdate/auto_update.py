@@ -6,7 +6,7 @@ import subprocess
 import sys
 import tomllib
 
-from utilities import get_screenshots_used_in_markdown_file
+from utilities import get_screenshots_used_in_markdown_file, rewrite_screenshot_embeds
 
 logger = logging.getLogger(__name__)
 log_format = "%(asctime)-15s - %(levelname)s - %(message)s"
@@ -35,7 +35,7 @@ protected_screenshots = {
 }
 
 
-def check_unused_files(screenshots_dir: str, md_dir: str) -> set():
+def check_unused_files(screenshots_dir: str, md_dir: str) -> set[str]:
     # Screenshots in the screenshots directory
     screenshots_found = set()
     for screenshot in os.listdir(screenshots_dir):
@@ -117,7 +117,7 @@ if config['copy_screenshots']:
 
 
 def line_prepender(filename, line):
-    with open(filename, 'r+') as f:
+    with open(filename, 'r+', encoding="utf-8") as f:
         content = f.read()
         f.seek(0, 0)
         f.write(line + '\n' + content)
@@ -131,31 +131,37 @@ for file in os.listdir(config['obsidian_markdown_dir']):
     full_filename = os.path.join(config['obsidian_markdown_dir'], file)
     dst_file = os.path.join(config['git_markdown_directory'], file)
 
+    todo_markdowns = [
+        'Placeholder.md'
+    ]
+
+    if file in todo_markdowns:
+        logger.debug(f"Skipping Markdown file {file}.")
+        continue
+
     logger.debug("Copying markdown file: {}".format(file))
     shutil.copy(full_filename, dst_file)
     num_markdowns_copied += 1
 
-    if config['enable_markdown_auto_format']:
-        logger.debug("Formatting markdown file: {}".format(file))
-        subprocess.run(["npx", "prettier", full_filename, "--write"], shell=True, check=False)
-
-    for line in fileinput.input(dst_file, inplace=True):
-        line = line.rstrip()
-
-        if line.endswith('.png]]'):
-            if line.startswith('![[attachments/Pasted image '):
-                alt_text = line.split('![[attachments/Pasted image ')[1][:-2]
-                print(f"![{alt_text}](/screenshots/{alt_text})")
-            if line.startswith('![[Pasted image '):
-                alt_text = line.split('![[Pasted image ')[1][:-2]
-                print(f"![{alt_text}](/screenshots/{alt_text})")
-        else:
-            print(line)
-            # print('{} {}'.format(fileinput.filelineno(), line), end='') # for Python 3
+    # Rewrite Obsidian image embeds into Docusaurus links (operates on the repo copy).
+    for line in fileinput.input(dst_file, inplace=True, encoding="utf-8"):
+        print(rewrite_screenshot_embeds(line.rstrip()))
 
     content = f"""---
 tags: ["valorant"]
 ---
 """
     line_prepender(dst_file, content)
+
+    # Format the repo copy last, so Prettier sees the final content (links +
+    # frontmatter). Never format the Obsidian source vault.
+    if config['enable_markdown_auto_format']:
+        logger.debug("Formatting markdown file: {}".format(file))
+        try:
+            result = subprocess.run(["npx.cmd", "prettier", dst_file, "--write"], check=False)
+        except FileNotFoundError:
+            logger.warning("Could not run Prettier: 'npx.cmd' not found on PATH.")
+        else:
+            if result.returncode != 0:
+                logger.warning(f"Prettier exited with code {result.returncode} for {dst_file}")
 logger.info("Copied {} markdown files.".format(num_markdowns_copied))
