@@ -144,8 +144,7 @@ for file in os.listdir(config['obsidian_markdown_dir']):
     num_markdowns_copied += 1
 
     # Rewrite Obsidian image embeds into Docusaurus links (operates on the repo copy).
-    for line in fileinput.input(dst_file, inplace=True,
-                                openhook=fileinput.hook_encoded("utf-8")):
+    for line in fileinput.input(dst_file, inplace=True, encoding="utf-8"):
         print(rewrite_screenshot_embeds(line.rstrip()))
 
     content = f"""---
