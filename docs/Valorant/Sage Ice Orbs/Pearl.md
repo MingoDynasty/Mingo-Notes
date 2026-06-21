@@ -6,7 +6,43 @@ tags: ["valorant"]
 
 ## Attack
 
-### A Site
+### A Site (faster push)
+
+**Note**: these lineups are best when your team is executing extremely fast (e.g. double mobility duelists, or team barely clears A Main properly).
+
+Tuck into this corner:
+![20260615210839.png](/screenshots/20260615210839.png)
+
+### Back site
+
+Notice this diamond shape in the sky:
+![20260615211207.png](/screenshots/20260615211207.png)
+
+Put your "E" ability letter into the middle of that diamond shape:
+![20260615211233.png](/screenshots/20260615211233.png)
+
+Result:
+![20260615211328.png](/screenshots/20260615211328.png)
+
+### Secret
+
+Note this curve of the bottom right of the diamond:
+![20260615212737.png](/screenshots/20260615212737.png)
+
+Put your "Q" ability letter in the middle of that curve:
+![20260615212811.png](/screenshots/20260615212811.png)
+
+**Note**: Alternatively for easy memory, you could simply place the Q in the middle of the diamond, same with the letter E. Though in that case, the ice spread is slightly overlapped and therefore slightly suboptimal.
+
+Result:
+![20260615212857.png](/screenshots/20260615212857.png)
+
+Combined results:
+![20260615213050.png](/screenshots/20260615213050.png)
+
+### A Site (slower push)
+
+**Note**: due to the timing of the lineups, this is best if your team your team executes at a reasonable pace. If you have double mobility duelists, or your team is simply running it down, then consider using the "Faster Push" version instead.
 
 Tuck into this corner:
 ![20250527001546.png](/screenshots/20250527001546.png)
@@ -72,29 +108,13 @@ Result:
 
 ### B Site Retake
 
-#### From CT
-
-Tuck in between these boxes:
-![20260105191346.png](/screenshots/20260105191346.png)
-
-Note this dark part of the window:
-![20260105191502.png](/screenshots/20260105191502.png)
-
-Start to lineup bottom left HUD with that dark part of the window:
-![20260105191545.png](/screenshots/20260105191545.png)
-
-Note this little pointed part of the shade:
-![20260105191735.png](/screenshots/20260105191735.png)
-Move your "C" ability letter rightward until it is directly above that pointed part:
-![20260105191841.png](/screenshots/20260105191841.png)
-
-Result:
-![20260105191900.png](/screenshots/20260105191900.png)
-
 #### From B Link
 
 Tuck into this corner:
 ![20250519024259.png](/screenshots/20250519024259.png)
+
+##### Left Side U-Haul
+
 Note this diamond-shaped intersection:
 ![20260105192645.png](/screenshots/20260105192645.png)
 Put your letter "E" on top of that diamond-shape:
@@ -102,3 +122,52 @@ Put your letter "E" on top of that diamond-shape:
 
 Example result:
 ![20260105192800.png](/screenshots/20260105192800.png)
+
+##### Corner near Generator
+
+Notice this shade in the wall to your left:
+![20260615215411.png](/screenshots/20260615215411.png)
+
+Line up:
+![20260615215451.png](/screenshots/20260615215451.png)
+
+Result:
+![20260615215510.png](/screenshots/20260615215510.png)
+
+#### From CT
+
+Tuck in between these boxes:
+![20260105191346.png](/screenshots/20260105191346.png)
+
+Note these 3 gaps in the brick shade:
+![20260615203159.png](/screenshots/20260615203159.png)
+
+##### Left Side U-Haul
+
+Put your "C" ability letter into the middle shade:
+![20260105191841.png](/screenshots/20260105191841.png)
+
+Result:
+![20260105191900.png](/screenshots/20260105191900.png)
+
+##### Corner near Generator
+
+Line up the bottom pointy part of your Heart icon with the middle shade:
+![20260615214923.png](/screenshots/20260615214923.png)
+
+Result:
+![20260615214946.png](/screenshots/20260615214946.png)
+
+### From B Link to A Main Choke
+
+Tuck into this corner:
+![20260615205422.png](/screenshots/20260615205422.png)
+
+Notice this window frame:
+![20260615205451.png](/screenshots/20260615205451.png)
+
+Trace the edge of the window frame until you're aiming at the edge of the roof:
+![20260615205512.png](/screenshots/20260615205512.png)
+
+Example result:
+![20260615205601.png](/screenshots/20260615205601.png)

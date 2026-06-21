@@ -290,6 +290,37 @@ Result:
 
 **Tradeoff**: you slow more of Lane but less of Logs.
 
+### From B Site to A Main Choke
+
+Tuck into this wall:
+![20260615200011.png](/screenshots/20260615200011.png)
+
+Notice this connection part of the tubing:
+![20260615200116.png](/screenshots/20260615200116.png)
+
+The bottom right corner of the wall indicator, line it up with the bottom right of that connector tubing:
+![20260615200039.png](/screenshots/20260615200039.png)
+
+Jump and immediately throw at the same time.
+**Note**: recommend practicing the timing of the jump + throw. If you mistime it, then you risk accidentally slowing Tree instead, which negatively affects your team.
+
+Example result:
+![20260615200439.png](/screenshots/20260615200439.png)
+
+### From Market to A main Choke
+
+Tuck into this corner:
+![20260615201832.png](/screenshots/20260615201832.png)
+
+Notice this intersection of wood panels:
+![20260615201900.png](/screenshots/20260615201900.png)
+
+When using a plus crosshair, lineup the bottom of the plus with this intersection of wood panels:
+![20260615201928.png](/screenshots/20260615201928.png)
+
+Example result:
+![20260615202156.png](/screenshots/20260615202156.png)
+
 ### A Site retake
 
 #### Generator

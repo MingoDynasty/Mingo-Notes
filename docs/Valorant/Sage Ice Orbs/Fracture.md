@@ -97,4 +97,6 @@ Line up the bottom left of your UI with that intersection:
 Result:
 ![20260325025910.png](/screenshots/20260325025910.png)
 
+**Note**: if you scale really fast then it can sometimes be awkward to clear Arcade Box. This Slow is more useful when combined with a molly, or if you're really worried about an Arcade fight. In most situations, simply Slowing B Heaven is sufficient to isolate fights.
+
 ## Defense

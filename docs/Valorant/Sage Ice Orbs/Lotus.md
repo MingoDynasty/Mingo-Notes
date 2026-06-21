@@ -10,6 +10,20 @@ tags: ["valorant"]
 
 ### B Site
 
+#### Heaven
+
+Stand on top of the smaller box, and tuck into the bigger box:
+![20260615191752.png](/screenshots/20260615191752.png)
+
+Notice this roof with the flower:
+![20260615191924.png](/screenshots/20260615191924.png)
+
+The second separator bar, lineup the left side of it with the edge of that roof:
+![20260615192004.png](/screenshots/20260615192004.png)
+
+Result:
+![20260615192055.png](/screenshots/20260615192055.png)
+
 ### C Site
 
 #### Back site
