@@ -109,10 +109,11 @@ def check_unused_files(
     md_dir: str,
     protected_screenshots: dict[str, set[str]],
 ) -> set[str]:
-    # Screenshots in the screenshots directory
+    # Screenshots in the screenshots directory (PNG only, matching the copy/delete loops)
     screenshots_found = set()
     for screenshot in os.listdir(screenshots_dir):
-        screenshots_found.add(screenshot)
+        if screenshot.endswith(".png"):
+            screenshots_found.add(screenshot)
 
     # Screenshots from the Markdown files
     screenshots_used = set()
