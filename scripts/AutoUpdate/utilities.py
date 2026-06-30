@@ -9,16 +9,22 @@ _EMBED_RE = re.compile(r"!\[\[(?:attachments/)?(?P<name>Pasted image [^\[\]]*\.p
 
 
 def rewrite_screenshot_embeds(line: str) -> str:
-    """Rewrite Obsidian image embeds in ``line`` into Docusaurus image links.
+    """Rewrite Obsidian image embeds in ``line`` into Docusaurus image tags.
 
-    ``![[Pasted image X.png]]`` (or the ``attachments/`` form) becomes
-    ``![X.png](/screenshots/X.png)``, preserving any surrounding text. Lines
-    without a recognized embed are returned unchanged.
+    ``![[Pasted image X.png]]`` (or the ``attachments/`` form) becomes a raw
+    self-closing ``<img src="/screenshots/X.png" alt="X.png" />`` tag,
+    preserving any surrounding text. Lines without a recognized embed are
+    returned unchanged.
+
+    A raw ``<img>`` tag (rather than Markdown ``![](...)``) keeps Docusaurus's
+    webpack from ingesting every screenshot into its asset pipeline at build
+    time, which otherwise duplicates them and drives huge RAM/disk usage. The
+    tag must be self-closing because Docusaurus parses ``.md`` files as MDX.
     """
 
     def _replace(match: re.Match) -> str:
         stripped = match.group("name").removeprefix(SCREENSHOT_PREFIX)
-        return f"![{stripped}](/screenshots/{stripped})"
+        return f'<img src="/screenshots/{stripped}" alt="{stripped}" />'
 
     return _EMBED_RE.sub(_replace, line)
 
