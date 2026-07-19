@@ -32,6 +32,16 @@ AVIF_SUBSAMPLING = "4:4:4"
 AVIF_SPEED = 6
 
 
+def encoder_fingerprint() -> str:
+    """Identifies the settings that produced an output.
+
+    Recorded alongside each generated asset so that changing any of them
+    re-encodes the corpus, instead of leaving a silent mix of old and new
+    settings that nothing would ever reconcile.
+    """
+    return f"avif-q{AVIF_QUALITY}-{AVIF_SUBSAMPLING}-speed{AVIF_SPEED}"
+
+
 def convert_screenshot(src: Path, dst: Path, quality: int = AVIF_QUALITY) -> None:
     """Convert one screenshot to AVIF at native resolution.
 

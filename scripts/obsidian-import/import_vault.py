@@ -1,3 +1,5 @@
+import hashlib
+import json
 import logging  # Provides access to logging api.
 import os
 from pathlib import Path
@@ -8,7 +10,7 @@ import tempfile
 import tomllib
 from typing import Any, NoReturn, TypedDict, cast
 
-from images import convert_screenshot
+from images import convert_screenshot, encoder_fingerprint
 from utilities import (
     SCREENSHOT_PREFIX,
     get_screenshot_srcs_in_file,
@@ -31,6 +33,12 @@ SKIPPED_MARKDOWN_FILES = ("Placeholder.md",)
 # What the screenshots directory is allowed to contain, and therefore what the
 # stale-pruning step is allowed to delete.
 IMAGE_SUFFIXES = frozenset({".avif", ".png", ".webp", ".jpg", ".jpeg", ".gif"})
+
+# Records which vault source, at which content hash and encoder settings, produced
+# each generated asset. Committed, because it has to survive a fresh checkout --
+# that is precisely the case mtimes cannot answer. Kept out of static/ so it is
+# not served by the site.
+MANIFEST_FILENAME = "screenshot_manifest.json"
 
 FRONTMATTER = """---
 tags: ["valorant"]
@@ -286,32 +294,81 @@ def preflight_existing_images(required: set[str], destination_dir: Path) -> None
         )
 
 
-def needs_conversion(source: Path, destination: Path) -> bool:
+def source_digest(path: Path) -> str:
+    """Content fingerprint of a vault source."""
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def load_manifest(path: Path) -> dict[str, dict[str, str]]:
+    """Read the source fingerprint recorded for each generated asset."""
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            data = json.load(handle)
+    except FileNotFoundError:
+        return {}
+    except json.JSONDecodeError as exc:
+        logger.warning("Manifest is unreadable (%s); every screenshot will reconvert.", exc)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_manifest(path: Path, manifest: dict[str, dict[str, str]]) -> None:
+    with open(path, "w", encoding="utf-8", newline="\n") as handle:
+        json.dump(manifest, handle, indent=2, sort_keys=True)
+        handle.write("\n")
+
+
+def needs_conversion(
+    name: str,
+    source: Path,
+    destination: Path,
+    manifest: dict[str, dict[str, str]],
+    fingerprint: str,
+) -> bool:
     """Whether a required screenshot has to be (re)converted.
 
-    Existence alone is not enough: a vault screenshot edited in place — recropped
-    or retaken under the same filename — would leave the repo copy stale forever,
-    and invisibly, because nothing else compares the two. Comparing mtimes keeps
-    re-runs cheap while closing that gap. A vault whose mtimes are all reset
-    (a full Syncthing re-sync, say) costs one needless re-encode pass; the output
-    is deterministic, so it produces no diff.
+    Keyed on the *content* of the vault source rather than its timestamp. Git
+    does not preserve mtimes, so a fresh clone or worktree stamps every asset
+    with the checkout time: a source edited before that checkout would compare
+    "older" than its own output and be skipped, silently serving a stale image.
+    Timestamps from two independent filesystems cannot answer this question;
+    only the bytes can.
+
+    The recorded encoder fingerprint is checked too, so changing quality,
+    subsampling or speed reconverts the corpus instead of leaving a silent mix
+    of settings.
     """
     if not destination.exists():
         return True
-    return source.stat().st_mtime > destination.stat().st_mtime
+    entry = manifest.get(name)
+    if entry is None:
+        return True
+    if entry.get("encoder") != fingerprint:
+        return True
+    return entry.get("source_sha256") != source_digest(source)
 
 
 def convert_required_images(
-    required: set[str], source_index: dict[str, Path], destination_dir: Path
+    required: set[str],
+    source_index: dict[str, Path],
+    destination_dir: Path,
+    manifest: dict[str, dict[str, str]],
 ) -> int:
     """Step (d): every required screenshot must convert before documents move."""
+    fingerprint = encoder_fingerprint()
     pending = [
         name
         for name in sorted(required)
-        if needs_conversion(source_index[name], destination_dir / name)
+        if needs_conversion(name, source_index[name], destination_dir / name, manifest, fingerprint)
     ]
     for index, name in enumerate(pending, 1):
-        convert_screenshot(source_index[name], destination_dir / name)
+        source = source_index[name]
+        convert_screenshot(source, destination_dir / name)
+        manifest[name] = {"source_sha256": source_digest(source), "encoder": fingerprint}
         if index % 50 == 0:
             logger.info("Converted %s/%s screenshots...", index, len(pending))
     return len(pending)
@@ -429,9 +486,16 @@ def main() -> None:
 
         if config["copy_screenshots"]:
             # (d) convert everything required, before any document or asset moves
-            converted = convert_required_images(required, source_index, git_screenshots_directory)
+            manifest_path = Path(__file__).resolve().parent / MANIFEST_FILENAME
+            manifest = load_manifest(manifest_path)
+            converted = convert_required_images(
+                required, source_index, git_screenshots_directory, manifest
+            )
             # (e) only now: swap documents and drop what nothing references
             removed = remove_stale_images(required, git_screenshots_directory)
+            for name in set(manifest) - required:
+                del manifest[name]
+            save_manifest(manifest_path, manifest)
             logger.info("Converted %s screenshot(s); removed %s stale file(s).", converted, removed)
             unused = len(source_index) - len(required)
             if unused:

@@ -29,8 +29,13 @@ the whole import is known to be satisfiable:
    already be in the repo.
 4. **Converts** every required screenshot to AVIF (when `copy_screenshots =
    true`). Originals stay PNG in the vault; only the repo copy is converted.
-   A screenshot is reconverted when its vault source is newer than the repo
-   copy, so an image edited in place does not go stale.
+   A screenshot is reconverted when the vault source's **content** no longer
+   matches what produced the repo copy, so an image edited in place does not go
+   stale. Timestamps are deliberately not used: git does not preserve mtimes, so
+   after a fresh checkout a source edited earlier would look "older" than its own
+   output. The mapping lives in `screenshot_manifest.json`, which is committed
+   for exactly that reason. Changing quality, subsampling or speed also
+   reconverts, rather than leaving a mix of settings.
    AVIF 4:4:4 is deliberate: lossy WebP is always 4:2:0 chroma, which visibly
    desaturates the thin green crosshair at every quality level. See the module
    docstring in [`images.py`](images.py) for the measured rationale.

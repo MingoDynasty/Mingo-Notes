@@ -9,16 +9,19 @@ from pathlib import Path
 import pytest
 from PIL import Image
 
-from images import convert_screenshot
+from images import convert_screenshot, encoder_fingerprint
 from import_vault import (
     PreflightError,
     ValidationError,
     build_source_index,
     derive_required_images,
+    load_manifest,
     needs_conversion,
     preflight,
     preflight_existing_images,
     remove_stale_images,
+    save_manifest,
+    source_digest,
     swap_documents,
     validate_both_directions,
 )
@@ -295,32 +298,95 @@ def test_validation_failure_is_not_a_preflight_error():
     assert not issubclass(ValidationError, PreflightError)
 
 
+def _entry(source: Path) -> dict[str, str]:
+    return {"source_sha256": source_digest(source), "encoder": encoder_fingerprint()}
+
+
 def test_edited_source_is_reconverted_even_though_output_exists(tmp_path):
     # A vault screenshot recropped under the same filename would otherwise leave
     # the repo copy stale forever, with nothing to notice it.
     src = tmp_path / "src.png"
     dst = tmp_path / "out.avif"
-    src.write_bytes(b"x")
-    dst.write_bytes(b"y")
-    os.utime(dst, (1_000_000, 1_000_000))
-    os.utime(src, (2_000_000, 2_000_000))
-    assert needs_conversion(src, dst) is True
+    src.write_bytes(b"original")
+    dst.write_bytes(b"rendered")
+    manifest = {"out.avif": _entry(src)}
+    assert needs_conversion("out.avif", src, dst, manifest, encoder_fingerprint()) is False
+
+    src.write_bytes(b"edited in place")
+    assert needs_conversion("out.avif", src, dst, manifest, encoder_fingerprint()) is True
+
+
+def test_edited_source_is_reconverted_even_when_its_mtime_is_older(tmp_path):
+    # Git does not preserve mtimes: a fresh checkout stamps the output with the
+    # checkout time, so a source edited beforehand looks "older" than its own
+    # output. Timestamps from two independent filesystems cannot answer this.
+    src = tmp_path / "src.png"
+    dst = tmp_path / "out.avif"
+    src.write_bytes(b"original")
+    dst.write_bytes(b"rendered")
+    manifest = {"out.avif": _entry(src)}
+
+    src.write_bytes(b"edited before the checkout")
+    os.utime(src, (1_000_000, 1_000_000))
+    os.utime(dst, (2_000_000, 2_000_000))
+    assert src.stat().st_mtime < dst.stat().st_mtime  # the trap
+    assert needs_conversion("out.avif", src, dst, manifest, encoder_fingerprint()) is True
 
 
 def test_unchanged_source_is_not_reconverted(tmp_path):
     src = tmp_path / "src.png"
     dst = tmp_path / "out.avif"
-    src.write_bytes(b"x")
-    dst.write_bytes(b"y")
-    os.utime(src, (1_000_000, 1_000_000))
-    os.utime(dst, (2_000_000, 2_000_000))
-    assert needs_conversion(src, dst) is False
+    src.write_bytes(b"stable")
+    dst.write_bytes(b"rendered")
+    manifest = {"out.avif": _entry(src)}
+    assert needs_conversion("out.avif", src, dst, manifest, encoder_fingerprint()) is False
 
 
 def test_missing_output_needs_conversion(tmp_path):
     src = tmp_path / "src.png"
     src.write_bytes(b"x")
-    assert needs_conversion(src, tmp_path / "absent.avif") is True
+    manifest = {"absent.avif": _entry(src)}
+    assert needs_conversion("absent.avif", src, tmp_path / "absent.avif", manifest,
+                            encoder_fingerprint()) is True
+
+
+def test_missing_manifest_entry_needs_conversion(tmp_path):
+    src = tmp_path / "src.png"
+    dst = tmp_path / "out.avif"
+    src.write_bytes(b"x")
+    dst.write_bytes(b"y")
+    assert needs_conversion("out.avif", src, dst, {}, encoder_fingerprint()) is True
+
+
+def test_changed_encoder_settings_force_reconversion(tmp_path):
+    # Otherwise a quality change leaves a silent mix of old and new settings
+    # that nothing would ever reconcile.
+    src = tmp_path / "src.png"
+    dst = tmp_path / "out.avif"
+    src.write_bytes(b"x")
+    dst.write_bytes(b"y")
+    manifest = {"out.avif": {"source_sha256": source_digest(src), "encoder": "avif-q60-4:2:0-speed6"}}
+    assert needs_conversion("out.avif", src, dst, manifest, encoder_fingerprint()) is True
+
+
+def test_manifest_round_trips(tmp_path):
+    path = tmp_path / "manifest.json"
+    manifest = {"b.avif": {"source_sha256": "2", "encoder": "e"},
+                "a.avif": {"source_sha256": "1", "encoder": "e"}}
+    save_manifest(path, manifest)
+    assert load_manifest(path) == manifest
+    # sorted keys keep the committed diff stable across runs
+    assert path.read_text(encoding="utf-8").index('"a.avif"') < path.read_text(encoding="utf-8").index('"b.avif"')
+
+
+def test_missing_manifest_is_not_an_error(tmp_path):
+    assert load_manifest(tmp_path / "absent.json") == {}
+
+
+def test_corrupt_manifest_degrades_to_full_reconversion(tmp_path):
+    path = tmp_path / "manifest.json"
+    path.write_text("{not json", encoding="utf-8")
+    assert load_manifest(path) == {}
 
 
 def test_stale_pruning_leaves_non_image_files_alone(tmp_path):
