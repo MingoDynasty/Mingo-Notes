@@ -27,3 +27,5 @@ yarn-error.log*
 .netlify
 
 scripts/obsidian-import/ignore/
+
+ignore/
