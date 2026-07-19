@@ -4,4 +4,8 @@ version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
     "mypy>=1.11",
+    # 11.3 is the first release whose official wheels bundle libavif; earlier
+    # 11.x resolves fine but cannot write the AVIF this importer emits.
+    "pillow>=11.3",
+    "pytest>=8",
 ]

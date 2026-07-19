@@ -9,20 +9,46 @@ The import is one-directional (vault → repo) and is run manually.
 
 ## What it does
 
-For each run it:
+Each run follows a strict order, so that nothing in the repo is mutated until
+the whole import is known to be satisfiable:
 
-1. **Scans for unused screenshots** — warns about images in the vault's
-   attachments folder that no Markdown file references (skipping any listed in
-   `protected_markdown_files`).
-2. **Copies screenshots** (when `copy_screenshots = true`) from the vault into
-   `static/screenshots/`, stripping the `Pasted image ` prefix. Screenshots in
-   the target dir that are no longer referenced (and not protected) are deleted
-   first. Deletions are guarded to stay inside the repo.
-3. **Copies Markdown** from the vault into the docs dir, and for each file:
-   - rewrites Obsidian embeds `![[Pasted image X.png]]` into raw
-     `<img src="/screenshots/X.png" alt="X.png" />` tags,
-   - prepends `tags: ["valorant"]` frontmatter,
-   - optionally runs Prettier (`enable_markdown_auto_format`).
+1. **Renders the incoming documents** into a temp directory — rewriting Obsidian
+   embeds `![[Pasted image X.png]]` into raw
+   `<img src="/screenshots/X.avif" alt="X.avif" loading="lazy" />` tags,
+   prepending `tags: ["valorant"]` frontmatter, and optionally running Prettier
+   (`enable_markdown_auto_format`).
+2. **Combines them with the site documents this run does not generate** (for
+   example the Sage Ice Walls pages) and derives the complete set of screenshots
+   the site will reference. The set has to come from these *prospective*
+   documents: a newly added screenshot is referenced only by incoming markdown,
+   never by the current contents of `docs/`.
+3. **Preflights, and fails before writing anything** on a referenced screenshot
+   with no vault source, two vault files reducing to the same name, or two
+   outputs differing only by case. With `copy_screenshots = false` nothing will
+   be converted, so it additionally requires every referenced screenshot to
+   already be in the repo.
+4. **Converts** every required screenshot to AVIF (when `copy_screenshots =
+   true`). Originals stay PNG in the vault; only the repo copy is converted.
+   A screenshot is reconverted when the vault source's **content** no longer
+   matches what produced the repo copy, so an image edited in place does not go
+   stale. Timestamps are deliberately not used: git does not preserve mtimes, so
+   after a fresh checkout a source edited earlier would look "older" than its own
+   output. The mapping lives in `screenshot_manifest.json`, which is committed
+   for exactly that reason. Changing quality, subsampling or speed also
+   reconverts, rather than leaving a mix of settings.
+   AVIF 4:4:4 is deliberate: lossy WebP is always 4:2:0 chroma, which visibly
+   desaturates the thin green crosshair at every quality level. See the module
+   docstring in [`images.py`](images.py) for the measured rationale.
+5. **Swaps in the documents and removes stale screenshots** — only once every
+   image is in place. Deletions are guarded to stay inside the repo, and only
+   image files are removed; anything else is left alone and reported.
+6. **Validates both directions**: every referenced screenshot exists on disk,
+   and nothing unreferenced is left behind.
+
+> Screenshots referenced by hand-maintained pages are picked up automatically in
+> step 2 — there is no list of protected files to keep in sync. A hand-written
+> tag that points at a missing image fails the preflight in step 3 rather than
+> 404ing silently in production.
 
 > Raw `<img>` tags are used instead of Markdown `![](...)` on purpose: Markdown
 > images get pulled through Docusaurus's webpack asset pipeline, which duplicates
@@ -31,12 +57,17 @@ For each run it:
 
 ## Requirements
 
-- **Python 3.14+** (see [`pyproject.toml`](pyproject.toml)). The script itself
-  uses only the standard library.
-- [**uv**](https://docs.astral.sh/uv/) for the dev environment (optional — only
-  needed for the `mypy` type-check dependency).
+- **Python 3.14+** (see [`pyproject.toml`](pyproject.toml)).
+- [**uv**](https://docs.astral.sh/uv/) — required, for **Pillow** (screenshot
+  conversion) alongside the `mypy` and `pytest` dev dependencies.
 - **Prettier** via `npx prettier`, only if `enable_markdown_auto_format = true`.
 - Windows is assumed (Prettier is invoked as `npx.cmd`; example paths use `E:/`).
+
+## Tests
+
+```sh
+uv run pytest
+```
 
 ## Setup
 
@@ -55,8 +86,7 @@ cp example_app.conf app.conf
 | `git_screenshots_directory` | Target: `static/screenshots/` in this repo |
 | `git_markdown_directory` | Target: the docs folder in this repo |
 | `enable_markdown_auto_format` | Run Prettier on copied Markdown (`true`/`false`) |
-| `copy_screenshots` | Copy/prune screenshots (`true`/`false`) |
-| `protected_markdown_files` | *(optional)* Files whose screenshots are exempt from unused-warnings and deletion |
+| `copy_screenshots` | Convert/prune screenshots (`true`/`false`) |
 
 ## Usage
 
