@@ -1,18 +1,37 @@
-import fileinput
 import logging  # Provides access to logging api.
 import os
 from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 import tomllib
 from typing import Any, NoReturn, TypedDict, cast
 
-from utilities import SCREENSHOT_PREFIX, get_screenshots_used_in_markdown_file, rewrite_screenshot_embeds
+from images import convert_screenshot
+from utilities import (
+    SCREENSHOT_PREFIX,
+    get_screenshot_srcs_in_file,
+    get_screenshot_srcs_in_text,
+    rewrite_screenshot_embeds,
+    screenshot_output_name,
+)
 
 logger = logging.getLogger(__name__)
 log_format = "%(asctime)-15s - %(levelname)s - %(message)s"
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format=log_format)
+
+# Pillow logs a couple of DEBUG lines per chunk per image, which at 569 4K PNGs
+# buries this script's own output entirely.
+logging.getLogger("PIL").setLevel(logging.INFO)
+
+# Vault notes that are drafts, not site pages.
+SKIPPED_MARKDOWN_FILES = ("Placeholder.md",)
+
+FRONTMATTER = """---
+tags: ["valorant"]
+---
+"""
 
 
 class AppConfig(TypedDict):
@@ -22,7 +41,6 @@ class AppConfig(TypedDict):
     git_markdown_directory: str
     enable_markdown_auto_format: bool
     copy_screenshots: bool
-    protected_markdown_files: list[str]
 
 
 REQUIRED_CONFIG_KEYS = (
@@ -45,12 +63,24 @@ BOOLEAN_CONFIG_KEYS = (
 )
 
 
+class PreflightError(Exception):
+    """Raised when the import cannot proceed safely.
+
+    Every check that raises this runs *before* any file is written, so a failure
+    leaves the repo exactly as it was.
+    """
+
+
 def default_config_path() -> Path:
     return Path(__file__).resolve().parent / "app.conf"
 
 
 def repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
+
+
+def docs_root() -> Path:
+    return repo_root() / "docs"
 
 
 def exit_config_error(message: str) -> NoReturn:
@@ -73,13 +103,6 @@ def validate_config(config: dict[str, Any]) -> AppConfig:
     for key in BOOLEAN_CONFIG_KEYS:
         if not isinstance(config[key], bool):
             exit_config_error(f"{key} must be true or false.")
-
-    protected_markdown_files = config.setdefault("protected_markdown_files", [])
-    if (
-        not isinstance(protected_markdown_files, list)
-        or not all(isinstance(filename, str) for filename in protected_markdown_files)
-    ):
-        exit_config_error("protected_markdown_files must be a list of file paths.")
 
     return cast(AppConfig, config)
 
@@ -104,166 +127,263 @@ def assert_within_repo(path: str | os.PathLike[str], root: Path | None = None) -
     return target
 
 
-def check_unused_files(
-    screenshots_dir: str,
-    md_dir: str,
-    protected_screenshots: dict[str, set[str]],
-) -> set[str]:
-    # Screenshots in the screenshots directory (PNG only, matching the copy/delete loops)
-    screenshots_found = set()
-    for screenshot in os.listdir(screenshots_dir):
-        if screenshot.endswith(".png"):
-            screenshots_found.add(screenshot)
+def build_source_index(screenshots_dir: str | Path) -> dict[str, Path]:
+    """Map served filename -> vault source path, failing on ambiguity.
 
-    # Screenshots from the Markdown files
-    screenshots_used = set()
-    for file in os.listdir(md_dir):
-        full_filename = os.path.join(md_dir, file)
-        screenshots_used.update(get_screenshots_used_in_markdown_file(full_filename))
+    Two preflight failures live here because both are ambiguities in the *source*
+    set, detectable before anything is written:
 
-    unused_screenshots = set()
-    for screenshot in screenshots_found:
-        if screenshot in screenshots_used:
+    * duplicate basename — two vault files reduce to the same served name (e.g.
+      ``Pasted image A.png`` alongside ``A.png``). Obsidian's paste-time dedup
+      only covers a single flat folder, so this becomes reachable the moment
+      attachments are reorganised.
+    * output collision — two sources whose outputs differ only by case
+      (``A.png`` and ``a.png``). Git is case-sensitive and the vault syncs across
+      devices, but the Windows checkout is not: both would resolve to one file,
+      and a page would show the wrong screenshot.
+    """
+    screenshots_dir = Path(screenshots_dir)
+    by_stripped: dict[str, list[Path]] = {}
+    by_output: dict[str, Path] = {}
+
+    for entry in sorted(os.listdir(screenshots_dir)):
+        source = screenshots_dir / entry
+        if not source.is_file() or not entry.lower().endswith(".png"):
             continue
-        else:
-            is_protected = False
-            for map_name, screenshots in protected_screenshots.items():
-                if screenshot in screenshots:
-                    logger.debug(
-                        f"Skipping screenshot from unused detection, since it is likely used in ({map_name}): {screenshot}")
-                    is_protected = True
-                    break
+        by_stripped.setdefault(entry.removeprefix(SCREENSHOT_PREFIX), []).append(source)
+        by_output[screenshot_output_name(entry)] = source
 
-            if not is_protected:
-                logger.warning("Found an unused screenshot: {}".format(screenshot))
-                unused_screenshots.add(screenshot)
-    if not unused_screenshots:
-        logger.info("No unused screenshots found.")
-    else:
-        logger.warning("Found {} unused screenshots.".format(len(unused_screenshots)))
-        # sys.exit(1)
-    return unused_screenshots
+    duplicates = {name: paths for name, paths in by_stripped.items() if len(paths) > 1}
+    if duplicates:
+        detail = "; ".join(
+            f"{name} <- {', '.join(p.name for p in paths)}" for name, paths in sorted(duplicates.items())
+        )
+        raise PreflightError(f"Duplicate screenshot basename(s) in the vault: {detail}")
+
+    folded: dict[str, list[str]] = {}
+    for name in by_output:
+        folded.setdefault(name.lower(), []).append(name)
+    collisions = {key: names for key, names in folded.items() if len(names) > 1}
+    if collisions:
+        detail = "; ".join(f"{' vs '.join(sorted(names))}" for names in sorted(collisions.values()))
+        raise PreflightError(f"Output collision(s), differing only by case: {detail}")
+
+    return by_output
 
 
-def line_prepender(filename, line):
-    with open(filename, 'r+', encoding="utf-8") as f:
-        content = f.read()
-        f.seek(0, 0)
-        f.write(line + '\n' + content)
+def render_document(source_path: Path) -> str:
+    """Produce the site document for one vault note, without writing to the repo."""
+    body = source_path.read_text(encoding="utf-8")
+    rewritten = "\n".join(rewrite_screenshot_embeds(line) for line in body.splitlines())
+    return FRONTMATTER + rewritten + "\n"
+
+
+def format_documents(directory: Path) -> None:
+    """Run Prettier over generated documents, so it sees links + frontmatter."""
+    try:
+        result = subprocess.run(
+            ["npx.cmd", "prettier", str(directory), "--write"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError:
+        logger.warning("Could not run Prettier: 'npx.cmd' not found on PATH.")
+        return
+    if result.returncode != 0:
+        logger.warning("Prettier exited with code %s: %s", result.returncode, result.stderr.strip())
+
+
+def generate_prospective_documents(config: AppConfig, staging_dir: Path) -> list[Path]:
+    """Step (a): render the incoming documents into a staging directory.
+
+    Nothing under the repo is touched here. The required-image set has to come
+    from these *prospective* documents rather than from current ``docs/**``,
+    because a newly added screenshot is referenced only by incoming markdown.
+    """
+    generated = []
+    for filename in sorted(os.listdir(config["obsidian_markdown_dir"])):
+        if not filename.endswith(".md"):
+            continue
+        if filename in SKIPPED_MARKDOWN_FILES:
+            logger.debug("Skipping Markdown file %s.", filename)
+            continue
+        destination = staging_dir / filename
+        destination.write_text(
+            render_document(Path(config["obsidian_markdown_dir"]) / filename), encoding="utf-8"
+        )
+        generated.append(destination)
+
+    if config["enable_markdown_auto_format"]:
+        format_documents(staging_dir)
+    return generated
+
+
+def collect_retained_documents(generated_dir: Path) -> list[Path]:
+    """Step (b): site documents this run does not generate.
+
+    These pages reference screenshots too (the Sage Walls pages, for instance),
+    and their needs are derived here rather than from a hand-maintained
+    protected-file list.
+    """
+    generated_dir = generated_dir.resolve()
+    return [
+        path
+        for path in sorted(docs_root().rglob("*.md"))
+        if not path.resolve().is_relative_to(generated_dir)
+    ]
+
+
+def derive_required_images(prospective: list[Path], retained: list[Path]) -> set[str]:
+    """Step (c): the complete set of screenshots the site will reference."""
+    required: set[str] = set()
+    for path in prospective:
+        required |= get_screenshot_srcs_in_text(path.read_text(encoding="utf-8"))
+    for path in retained:
+        required |= get_screenshot_srcs_in_file(path)
+    return required
+
+
+def preflight(required: set[str], source_index: dict[str, Path]) -> None:
+    """Step (c): fail before any mutation if a required screenshot has no source."""
+    missing = sorted(name for name in required if name not in source_index)
+    if missing:
+        preview = ", ".join(missing[:10])
+        suffix = f" (and {len(missing) - 10} more)" if len(missing) > 10 else ""
+        raise PreflightError(
+            f"{len(missing)} referenced screenshot(s) have no vault source: {preview}{suffix}"
+        )
+
+
+def convert_required_images(
+    required: set[str], source_index: dict[str, Path], destination_dir: Path
+) -> int:
+    """Step (d): every required screenshot must convert before documents move."""
+    converted = 0
+    for index, name in enumerate(sorted(required), 1):
+        destination = destination_dir / name
+        if destination.exists():
+            continue
+        convert_screenshot(source_index[name], destination)
+        converted += 1
+        if converted % 50 == 0:
+            logger.info("Converted %s/%s screenshots...", index, len(required))
+    return converted
+
+
+def remove_stale_images(required: set[str], destination_dir: Path) -> int:
+    """Step (e): drop repo screenshots nothing references any more."""
+    removed = 0
+    for entry in sorted(os.listdir(destination_dir)):
+        path = destination_dir / entry
+        if not path.is_file():
+            continue
+        if entry in required:
+            continue
+        os.remove(path)
+        removed += 1
+    return removed
+
+
+def swap_documents(prospective: list[Path], destination_dir: Path) -> tuple[int, int]:
+    """Step (e): replace the generated documents, last, once images are in place.
+
+    Documents the vault no longer produces are deleted rather than left behind.
+    A lingering one would keep referencing screenshots that this run has already
+    pruned as unreferenced — a page of broken images that the reference-set
+    validation, which only knows about required images, would not catch.
+    """
+    expected = {path.name for path in prospective}
+    for path in prospective:
+        shutil.copyfile(path, destination_dir / path.name)
+
+    removed = 0
+    for existing in sorted(destination_dir.glob("*.md")):
+        if existing.name not in expected:
+            os.remove(existing)
+            removed += 1
+    return len(prospective), removed
+
+
+def validate_both_directions(
+    required: set[str], destination_dir: Path, manages_screenshots: bool = True
+) -> None:
+    """Every referenced image exists on disk, and every image on disk is referenced.
+
+    Closes the audit finding that raw ``<img>`` tags bypass Docusaurus's
+    broken-link checking, so a deleted screenshot 404s silently in production.
+
+    A missing screenshot is always an error — the site would ship a broken image.
+    An orphan is only an error when this run manages the screenshot directory;
+    with ``copy_screenshots = false`` the run has no mandate to prune, so it
+    reports rather than fails.
+    """
+    on_disk = {
+        entry for entry in os.listdir(destination_dir) if (destination_dir / entry).is_file()
+    }
+    missing = sorted(required - on_disk)
+    if missing:
+        raise PreflightError(f"Referenced screenshots missing from the repo: {', '.join(missing[:10])}")
+    orphaned = sorted(on_disk - required)
+    if orphaned:
+        if manages_screenshots:
+            raise PreflightError(
+                f"Unreferenced screenshots left in the repo: {', '.join(orphaned[:10])}"
+            )
+        logger.warning("%s unreferenced screenshot(s) in the repo.", len(orphaned))
 
 
 def main() -> None:
-    #
-    # 0. Pull arguments from a config file.
-    #
     config = load_config()
+    logger.debug("Loaded config: %s", config)
 
-    logger.debug(f"Loaded config: {config}")
+    git_screenshots_directory = assert_within_repo(config["git_screenshots_directory"])
+    git_markdown_directory = assert_within_repo(config["git_markdown_directory"])
 
-    #
-    # 1. Check for unused screenshots. If any are found, throw warnings/errors.
-    #
-    protected_screenshots = {}
-    for protected_markdown_file in config['protected_markdown_files']:
-        if os.path.isfile(protected_markdown_file):
-            map_name = os.path.splitext(os.path.basename(protected_markdown_file))[0]
-            protected_screenshots[map_name] = get_screenshots_used_in_markdown_file(protected_markdown_file)
+    with tempfile.TemporaryDirectory(prefix="obsidian-import-") as staging:
+        staging_dir = Path(staging)
+
+        # (a) render incoming documents, (b) add the pages this run does not own
+        prospective = generate_prospective_documents(config, staging_dir)
+        retained = collect_retained_documents(git_markdown_directory)
+        logger.info(
+            "Generated %s document(s); combined with %s existing site document(s).",
+            len(prospective),
+            len(retained),
+        )
+
+        # (c) derive the required set and refuse to mutate anything if it is unsatisfiable
+        required = derive_required_images(prospective, retained)
+        source_index = build_source_index(config["obsidian_screenshots_directory"])
+        preflight(required, source_index)
+        logger.info(
+            "%s screenshot(s) required; %s available in the vault.",
+            len(required),
+            len(source_index),
+        )
+
+        if config["copy_screenshots"]:
+            # (d) convert everything required, before any document or asset moves
+            converted = convert_required_images(required, source_index, git_screenshots_directory)
+            # (e) only now: swap documents and drop what nothing references
+            removed = remove_stale_images(required, git_screenshots_directory)
+            logger.info("Converted %s screenshot(s); removed %s stale file(s).", converted, removed)
+            unused = len(source_index) - len(required)
+            if unused:
+                logger.info("%s vault attachment(s) are not referenced by the site.", unused)
         else:
-            logger.warning(f"Configured protected markdown file does not exist, skipping: {protected_markdown_file}")
+            logger.info("copy_screenshots is false; leaving %s untouched.", git_screenshots_directory)
 
-    unused_screenshots = check_unused_files(
-        config['obsidian_screenshots_directory'],
-        config['obsidian_markdown_dir'],
-        protected_screenshots,
-    )
+        copied, dropped = swap_documents(prospective, git_markdown_directory)
+        logger.info("Copied %s markdown files; removed %s no longer in the vault.", copied, dropped)
 
-    #
-    # 2. Copy screenshots from Obsidian to Git Repository
-    #
-
-    # TODO: move/organize screenshots into directories based on the map name
-    if config['copy_screenshots']:
-        git_screenshots_directory = assert_within_repo(config['git_screenshots_directory'])
-        protected_stripped = {
-            screenshot.removeprefix(SCREENSHOT_PREFIX)
-            for screenshots in protected_screenshots.values()
-            for screenshot in screenshots
-        }
-
-        # remove all screenshots from target directory, in case some screenshots are no longer used
-        for filename in os.listdir(git_screenshots_directory):
-            file_path = git_screenshots_directory / filename
-            if os.path.isfile(file_path) and filename.endswith('.png'):
-
-                # protect these screenshots for now
-                if filename in protected_stripped:
-                    logger.debug(f"Protecting screenshot from deletion: {filename}")
-                else:
-                    # print("Removing file: {}".format(file_path))
-                    os.remove(file_path)
-
-        screenshots_in_repo = set()
-        for screenshot in os.listdir(git_screenshots_directory):
-            screenshots_in_repo.add(screenshot)
-
-        num_screenshots_copied = 0
-        for screenshot in os.listdir(config['obsidian_screenshots_directory']):
-            original_screenshot = screenshot
-            if original_screenshot in unused_screenshots:
-                logger.warning("Skipping unused screenshot: {}".format(screenshot))
-                continue
-
-            screenshot = screenshot.removeprefix(SCREENSHOT_PREFIX)
-            if screenshot not in screenshots_in_repo:
-                src_file = os.path.join(config['obsidian_screenshots_directory'], original_screenshot)
-                dst_screenshot_file = git_screenshots_directory / screenshot
-                shutil.copy(src_file, dst_screenshot_file)
-                num_screenshots_copied += 1
-        logger.info("Copied {} screenshots.".format(num_screenshots_copied))
-
-    #
-    # 3. Copy markdown files from Obsidian to Git Repository
-    #
-    num_markdowns_copied = 0
-    for file in os.listdir(config['obsidian_markdown_dir']):
-        full_filename = os.path.join(config['obsidian_markdown_dir'], file)
-        dst_file = os.path.join(config['git_markdown_directory'], file)
-
-        todo_markdowns = [
-            'Placeholder.md'
-        ]
-
-        if file in todo_markdowns:
-            logger.debug(f"Skipping Markdown file {file}.")
-            continue
-
-        logger.debug("Copying markdown file: {}".format(file))
-        shutil.copy(full_filename, dst_file)
-        num_markdowns_copied += 1
-
-        # Rewrite Obsidian image embeds into Docusaurus links (operates on the repo copy).
-        for line in fileinput.input(dst_file, inplace=True, encoding="utf-8"):
-            print(rewrite_screenshot_embeds(line.rstrip()))
-
-        content = f"""---
-tags: ["valorant"]
----
-"""
-        line_prepender(dst_file, content)
-
-        # Format the repo copy last, so Prettier sees the final content (links +
-        # frontmatter). Never format the Obsidian source vault.
-        if config['enable_markdown_auto_format']:
-            logger.debug("Formatting markdown file: {}".format(file))
-            try:
-                result = subprocess.run(["npx.cmd", "prettier", dst_file, "--write"], check=False)
-            except FileNotFoundError:
-                logger.warning("Could not run Prettier: 'npx.cmd' not found on PATH.")
-            else:
-                if result.returncode != 0:
-                    logger.warning(f"Prettier exited with code {result.returncode} for {dst_file}")
-    logger.info("Copied {} markdown files.".format(num_markdowns_copied))
+    validate_both_directions(required, git_screenshots_directory, config["copy_screenshots"])
+    logger.info("Validated %s screenshot reference(s) in both directions.", len(required))
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except PreflightError as exc:
+        logger.error("Preflight failed, no changes were made: %s", exc)
+        sys.exit(1)
