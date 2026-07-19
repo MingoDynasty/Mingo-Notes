@@ -10,11 +10,13 @@ import pytest
 from PIL import Image
 
 from images import convert_screenshot, encoder_fingerprint
+import import_vault
 from import_vault import (
     PreflightError,
     ValidationError,
     build_source_index,
     derive_required_images,
+    convert_required_images,
     load_manifest,
     needs_conversion,
     preflight,
@@ -401,3 +403,33 @@ def test_validation_ignores_non_image_files(tmp_path):
     # Matches the pruning rule: a stray README is not an orphaned screenshot.
     _touch(tmp_path, "keep.avif", "README.md")
     validate_both_directions({"keep.avif"}, tmp_path, manages_screenshots=True)
+
+
+def test_source_replaced_mid_conversion_fails_safe(tmp_path, monkeypatch):
+    # Syncthing writes into the vault continuously, so a source can be replaced
+    # after the encoder has read it. Recording the post-conversion digest would
+    # certify the new bytes against an output encoded from the old ones, marking
+    # a stale image current forever. The pre-conversion digest fails the other
+    # way: a mismatch next run, and a reconversion.
+    source = tmp_path / "Pasted image 1.png"
+    destination_dir = tmp_path / "out"
+    destination_dir.mkdir()
+    source.write_bytes(b"original bytes the encoder reads")
+    pre_race_digest = source_digest(source)
+
+    def racing_convert(src: Path, dst: Path) -> None:
+        dst.write_bytes(b"encoded from the original")
+        src.write_bytes(b"replaced after the encode")
+
+    monkeypatch.setattr(import_vault, "convert_screenshot", racing_convert)
+
+    manifest: dict[str, dict[str, str]] = {}
+    convert_required_images({"1.avif"}, {"1.avif": source}, destination_dir, manifest)
+
+    # the manifest must describe what was encoded, not what the file became
+    assert manifest["1.avif"]["source_sha256"] == pre_race_digest
+    assert manifest["1.avif"]["source_sha256"] != source_digest(source)
+    # so the next run notices and reconverts rather than trusting a stale output
+    assert needs_conversion(
+        "1.avif", source, destination_dir / "1.avif", manifest, encoder_fingerprint()
+    ) is True

@@ -367,8 +367,15 @@ def convert_required_images(
     ]
     for index, name in enumerate(pending, 1):
         source = source_index[name]
+        # Digest the source *before* handing it to the encoder. Syncthing writes
+        # into this vault continuously, so the file can be replaced mid-run.
+        # Hashing afterwards would certify the new bytes against an output
+        # encoded from the old ones, marking a stale image current forever.
+        # Recording the pre-conversion digest fails the other way: the next run
+        # sees a mismatch and reconverts.
+        digest = source_digest(source)
         convert_screenshot(source, destination_dir / name)
-        manifest[name] = {"source_sha256": source_digest(source), "encoder": fingerprint}
+        manifest[name] = {"source_sha256": digest, "encoder": fingerprint}
         if index % 50 == 0:
             logger.info("Converted %s/%s screenshots...", index, len(pending))
     return len(pending)
