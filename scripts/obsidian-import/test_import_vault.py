@@ -12,9 +12,12 @@ from PIL import Image
 from images import convert_screenshot
 from import_vault import (
     PreflightError,
+    ValidationError,
     build_source_index,
     derive_required_images,
+    needs_conversion,
     preflight,
+    preflight_existing_images,
     remove_stale_images,
     swap_documents,
     validate_both_directions,
@@ -207,13 +210,13 @@ def test_swap_documents_drops_pages_the_vault_no_longer_produces(tmp_path):
 
 
 def test_validate_fails_when_a_referenced_image_is_absent(tmp_path):
-    with pytest.raises(PreflightError, match="missing from the repo"):
+    with pytest.raises(ValidationError, match="missing from the repo"):
         validate_both_directions({"gone.avif"}, tmp_path)
 
 
 def test_validate_fails_on_orphans_when_managing_screenshots(tmp_path):
     _touch(tmp_path, "orphan.avif")
-    with pytest.raises(PreflightError, match="Unreferenced screenshots"):
+    with pytest.raises(ValidationError, match="Unreferenced screenshots"):
         validate_both_directions(set(), tmp_path, manages_screenshots=True)
 
 
@@ -265,3 +268,70 @@ def test_conversion_creates_missing_parent_directory(tmp_path):
     dst = tmp_path / "nested" / "out.avif"
     convert_screenshot(src, dst)
     assert dst.is_file()
+
+
+# --------------------------------------------------------------------------
+# review follow-ups (PR #5)
+# --------------------------------------------------------------------------
+
+
+def test_preflight_fails_when_not_converting_and_image_absent(tmp_path):
+    # With copy_screenshots=false nothing is converted, so a referenced image
+    # that is not already in the repo must stop the run *before* documents move.
+    _touch(tmp_path, "present.avif")
+    with pytest.raises(PreflightError, match="copy_screenshots is false"):
+        preflight_existing_images({"present.avif", "absent.avif"}, tmp_path)
+
+
+def test_preflight_existing_images_passes_when_all_present(tmp_path):
+    _touch(tmp_path, "a.avif", "b.avif")
+    preflight_existing_images({"a.avif"}, tmp_path)  # must not raise
+
+
+def test_validation_failure_is_not_a_preflight_error():
+    # The CLI reports "no changes were made" for PreflightError only; a closing
+    # validation failure happens after documents are swapped, so it must not be
+    # reportable that way.
+    assert not issubclass(ValidationError, PreflightError)
+
+
+def test_edited_source_is_reconverted_even_though_output_exists(tmp_path):
+    # A vault screenshot recropped under the same filename would otherwise leave
+    # the repo copy stale forever, with nothing to notice it.
+    src = tmp_path / "src.png"
+    dst = tmp_path / "out.avif"
+    src.write_bytes(b"x")
+    dst.write_bytes(b"y")
+    os.utime(dst, (1_000_000, 1_000_000))
+    os.utime(src, (2_000_000, 2_000_000))
+    assert needs_conversion(src, dst) is True
+
+
+def test_unchanged_source_is_not_reconverted(tmp_path):
+    src = tmp_path / "src.png"
+    dst = tmp_path / "out.avif"
+    src.write_bytes(b"x")
+    dst.write_bytes(b"y")
+    os.utime(src, (1_000_000, 1_000_000))
+    os.utime(dst, (2_000_000, 2_000_000))
+    assert needs_conversion(src, dst) is False
+
+
+def test_missing_output_needs_conversion(tmp_path):
+    src = tmp_path / "src.png"
+    src.write_bytes(b"x")
+    assert needs_conversion(src, tmp_path / "absent.avif") is True
+
+
+def test_stale_pruning_leaves_non_image_files_alone(tmp_path):
+    # Destructive steps should not remove things they do not recognise.
+    _touch(tmp_path, "keep.avif", "stale.avif", "README.md", "notes.txt")
+    removed = remove_stale_images({"keep.avif"}, tmp_path)
+    assert removed == 1
+    assert sorted(os.listdir(tmp_path)) == ["README.md", "keep.avif", "notes.txt"]
+
+
+def test_validation_ignores_non_image_files(tmp_path):
+    # Matches the pruning rule: a stray README is not an orphaned screenshot.
+    _touch(tmp_path, "keep.avif", "README.md")
+    validate_both_directions({"keep.avif"}, tmp_path, manages_screenshots=True)

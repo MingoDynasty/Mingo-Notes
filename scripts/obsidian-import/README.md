@@ -24,14 +24,19 @@ the whole import is known to be satisfiable:
    never by the current contents of `docs/`.
 3. **Preflights, and fails before writing anything** on a referenced screenshot
    with no vault source, two vault files reducing to the same name, or two
-   outputs differing only by case.
+   outputs differing only by case. With `copy_screenshots = false` nothing will
+   be converted, so it additionally requires every referenced screenshot to
+   already be in the repo.
 4. **Converts** every required screenshot to AVIF (when `copy_screenshots =
    true`). Originals stay PNG in the vault; only the repo copy is converted.
+   A screenshot is reconverted when its vault source is newer than the repo
+   copy, so an image edited in place does not go stale.
    AVIF 4:4:4 is deliberate: lossy WebP is always 4:2:0 chroma, which visibly
    desaturates the thin green crosshair at every quality level. See the module
    docstring in [`images.py`](images.py) for the measured rationale.
 5. **Swaps in the documents and removes stale screenshots** — only once every
-   image is in place. Deletions are guarded to stay inside the repo.
+   image is in place. Deletions are guarded to stay inside the repo, and only
+   image files are removed; anything else is left alone and reported.
 6. **Validates both directions**: every referenced screenshot exists on disk,
    and nothing unreferenced is left behind.
 

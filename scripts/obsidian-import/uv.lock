@@ -105,7 +105,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "mypy", specifier = ">=1.11" },
-    { name = "pillow", specifier = ">=11" },
+    { name = "pillow", specifier = ">=11.3" },
     { name = "pytest", specifier = ">=8" },
 ]
 

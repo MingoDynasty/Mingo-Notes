@@ -28,6 +28,10 @@ logging.getLogger("PIL").setLevel(logging.INFO)
 # Vault notes that are drafts, not site pages.
 SKIPPED_MARKDOWN_FILES = ("Placeholder.md",)
 
+# What the screenshots directory is allowed to contain, and therefore what the
+# stale-pruning step is allowed to delete.
+IMAGE_SUFFIXES = frozenset({".avif", ".png", ".webp", ".jpg", ".jpeg", ".gif"})
+
 FRONTMATTER = """---
 tags: ["valorant"]
 ---
@@ -68,6 +72,14 @@ class PreflightError(Exception):
 
     Every check that raises this runs *before* any file is written, so a failure
     leaves the repo exactly as it was.
+    """
+
+
+class ValidationError(Exception):
+    """Raised by the closing check, after documents are already in place.
+
+    Distinct from PreflightError so the CLI can never claim "no changes were
+    made" about a run that had in fact already swapped documents.
     """
 
 
@@ -255,33 +267,81 @@ def preflight(required: set[str], source_index: dict[str, Path]) -> None:
         )
 
 
+def preflight_existing_images(required: set[str], destination_dir: Path) -> None:
+    """Step (c) for runs that will not convert anything.
+
+    With ``copy_screenshots = false`` step (d) never runs, so having a vault
+    source is not enough — the image must already be in the repo. Without this,
+    a newly embedded screenshot passes preflight, the documents are swapped to
+    reference it, and only the closing validation notices it was never converted:
+    a mutation that the ordering guarantee says cannot happen.
+    """
+    missing = sorted(name for name in required if not (destination_dir / name).is_file())
+    if missing:
+        preview = ", ".join(missing[:10])
+        suffix = f" (and {len(missing) - 10} more)" if len(missing) > 10 else ""
+        raise PreflightError(
+            f"copy_screenshots is false, but {len(missing)} referenced screenshot(s) "
+            f"are not in the repo and would not be converted: {preview}{suffix}"
+        )
+
+
+def needs_conversion(source: Path, destination: Path) -> bool:
+    """Whether a required screenshot has to be (re)converted.
+
+    Existence alone is not enough: a vault screenshot edited in place — recropped
+    or retaken under the same filename — would leave the repo copy stale forever,
+    and invisibly, because nothing else compares the two. Comparing mtimes keeps
+    re-runs cheap while closing that gap. A vault whose mtimes are all reset
+    (a full Syncthing re-sync, say) costs one needless re-encode pass; the output
+    is deterministic, so it produces no diff.
+    """
+    if not destination.exists():
+        return True
+    return source.stat().st_mtime > destination.stat().st_mtime
+
+
 def convert_required_images(
     required: set[str], source_index: dict[str, Path], destination_dir: Path
 ) -> int:
     """Step (d): every required screenshot must convert before documents move."""
-    converted = 0
-    for index, name in enumerate(sorted(required), 1):
-        destination = destination_dir / name
-        if destination.exists():
-            continue
-        convert_screenshot(source_index[name], destination)
-        converted += 1
-        if converted % 50 == 0:
-            logger.info("Converted %s/%s screenshots...", index, len(required))
-    return converted
+    pending = [
+        name
+        for name in sorted(required)
+        if needs_conversion(source_index[name], destination_dir / name)
+    ]
+    for index, name in enumerate(pending, 1):
+        convert_screenshot(source_index[name], destination_dir / name)
+        if index % 50 == 0:
+            logger.info("Converted %s/%s screenshots...", index, len(pending))
+    return len(pending)
 
 
 def remove_stale_images(required: set[str], destination_dir: Path) -> int:
-    """Step (e): drop repo screenshots nothing references any more."""
+    """Step (e): drop repo screenshots nothing references any more.
+
+    Only image files are candidates for deletion. This directory is generated
+    output, but that is no reason for a destructive step to remove something it
+    does not recognise, so anything else is left alone and reported.
+    """
     removed = 0
+    foreign = []
     for entry in sorted(os.listdir(destination_dir)):
         path = destination_dir / entry
-        if not path.is_file():
+        if not path.is_file() or entry in required:
             continue
-        if entry in required:
+        if path.suffix.lower() not in IMAGE_SUFFIXES:
+            foreign.append(entry)
             continue
+        logger.debug("Removing stale screenshot: %s", entry)
         os.remove(path)
         removed += 1
+    if foreign:
+        logger.warning(
+            "Left %s non-image file(s) in the screenshots directory untouched: %s",
+            len(foreign),
+            ", ".join(foreign[:10]),
+        )
     return removed
 
 
@@ -319,15 +379,20 @@ def validate_both_directions(
     reports rather than fails.
     """
     on_disk = {
-        entry for entry in os.listdir(destination_dir) if (destination_dir / entry).is_file()
+        entry
+        for entry in os.listdir(destination_dir)
+        if (destination_dir / entry).is_file()
+        and Path(entry).suffix.lower() in IMAGE_SUFFIXES
     }
     missing = sorted(required - on_disk)
     if missing:
-        raise PreflightError(f"Referenced screenshots missing from the repo: {', '.join(missing[:10])}")
+        raise ValidationError(
+            f"Referenced screenshots missing from the repo: {', '.join(missing[:10])}"
+        )
     orphaned = sorted(on_disk - required)
     if orphaned:
         if manages_screenshots:
-            raise PreflightError(
+            raise ValidationError(
                 f"Unreferenced screenshots left in the repo: {', '.join(orphaned[:10])}"
             )
         logger.warning("%s unreferenced screenshot(s) in the repo.", len(orphaned))
@@ -372,6 +437,9 @@ def main() -> None:
             if unused:
                 logger.info("%s vault attachment(s) are not referenced by the site.", unused)
         else:
+            # Step (d) will not run, so the required images must already be here
+            # before anything is swapped.
+            preflight_existing_images(required, git_screenshots_directory)
             logger.info("copy_screenshots is false; leaving %s untouched.", git_screenshots_directory)
 
         copied, dropped = swap_documents(prospective, git_markdown_directory)
@@ -386,4 +454,7 @@ if __name__ == "__main__":
         main()
     except PreflightError as exc:
         logger.error("Preflight failed, no changes were made: %s", exc)
+        sys.exit(1)
+    except ValidationError as exc:
+        logger.error("Import ran, but the closing validation failed: %s", exc)
         sys.exit(1)
