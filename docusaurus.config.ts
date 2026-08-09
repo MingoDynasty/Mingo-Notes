@@ -18,7 +18,6 @@ const config: Config = {
   // derive from this, so a placeholder here is served to every crawler.
   url: "https://notes.mingodynasty.com",
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
   // Cloudflare serves each page at "/<path>/" and 307-redirects the
   // slash-less form, so emit the slashed one everywhere. Without this the
