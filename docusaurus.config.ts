@@ -14,16 +14,17 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  // The production url: canonical links, og:url, and sitemap entries all
+  // derive from this, so a placeholder here is served to every crawler.
+  url: "https://notes.mingodynasty.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  // Deploys use wrangler, not GitHub pages; these are metadata only.
+  organizationName: "MingoDynasty",
+  projectName: "Mingo-Notes",
 
   onBrokenLinks: "throw",
 
