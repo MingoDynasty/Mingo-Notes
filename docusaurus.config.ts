@@ -20,6 +20,10 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+  // Cloudflare serves each page at "/<path>/" and 307-redirects the
+  // slash-less form, so emit the slashed one everywhere. Without this the
+  // canonical, og:url, and sitemap entries all name a URL that redirects.
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // Deploys use wrangler, not GitHub pages; these are metadata only.
