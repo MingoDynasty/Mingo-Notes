@@ -28,3 +28,13 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/*
+ * medium-zoom (via docusaurus-plugin-image-zoom) sets no z-index on its
+ * overlay or on the zoomed image (a clone appended to <body>), so the sticky
+ * navbar painted over the top of screenshots zoomed to near full height.
+ */
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+}
