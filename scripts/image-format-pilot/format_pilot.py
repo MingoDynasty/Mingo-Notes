@@ -248,12 +248,16 @@ def select_images(source: Path, count: int, explicit: str | None) -> list[Path]:
 
 
 def run(images: list[Path], variants: list[Variant]) -> dict[str, list[Measurement]]:
-    """Encode every image at every variant, measuring as we go."""
+    """Encode every image at every variant, measuring as we go.
+
+    Results are keyed by filename, which is unique within the source directory.
+    The display name is not: `Pasted image X.png` and `X.png` both read as
+    `X.png`, and keying on that would silently drop one of them.
+    """
     results: dict[str, list[Measurement]] = {}
 
     for index, path in enumerate(images, start=1):
-        display = path.name.removeprefix(PASTE_PREFIX)
-        print(f"[{index}/{len(images)}] {display}")
+        print(f"[{index}/{len(images)}] {path.name.removeprefix(PASTE_PREFIX)}")
 
         with Image.open(path) as handle:
             source = handle.convert("RGB")
@@ -282,7 +286,7 @@ def run(images: list[Path], variants: list[Variant]) -> dict[str, list[Measureme
                     f"  {elapsed:5.2f}s  green {green:6.1f}"
                 )
 
-            results[display] = measurements
+            results[path.name] = measurements
 
     return results
 
@@ -339,7 +343,7 @@ def render(results: dict[str, list[Measurement]], corpus_count: int, corpus_byte
             for m in measurements
         )
         blocks.append(
-            f'<section class="shot"><h2>{name}</h2>'
+            f'<section class="shot"><h2>{name.removeprefix(PASTE_PREFIX)}</h2>'
             f'<p class="stats">{stats}</p>'
             f'<div class="panes">{"".join(panes)}</div></section>'
         )
