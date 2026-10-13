@@ -18,8 +18,12 @@ Usage (from this directory, using the import script's venv):
 
     python format_pilot.py                      # 6 largest originals, default variants
     python format_pilot.py --count 10
-    python format_pilot.py --images "20250601120000.png,20250602130000.png"
+    python format_pilot.py --images "Pasted image 20250601120000.png,Pasted image 20250602130000.png"
     python format_pilot.py --out ../../ignore/format-pilot
+
+--images takes filenames exactly as they are in the source directory, paste
+prefix included. The console and the report drop that prefix, so a name copied
+from a heading needs it put back.
 
 Output is written outside git (repo root `ignore/` is gitignored). The HTML is
 self-contained -- crops are inlined -- so it can be copied anywhere and opened
