@@ -200,7 +200,7 @@ def crop_data_uri(image: Image.Image, box: tuple[int, int, int, int]) -> str:
 MIN_CROSSHAIR_PIXELS = 60
 
 
-def select_images(source: Path, count: int, explicit: str | None, scan_limit: int = 30) -> list[Path]:
+def select_images(source: Path, count: int, explicit: str | None) -> list[Path]:
     """Which originals to test.
 
     Ordered by file size, because PNG size tracks scene complexity: the biggest
@@ -209,6 +209,10 @@ def select_images(source: Path, count: int, explicit: str | None, scan_limit: in
     chroma desaturation at all, so the page would quietly fail to demonstrate
     the thing it exists to test. Candidates are therefore skipped unless the
     original actually contains a green crosshair.
+
+    The scan runs down the size order until `count` images qualify or the corpus
+    runs out, and says so when it comes up short: a sample smaller than the one
+    asked for must not pass for the one asked for.
     """
     if explicit:
         names = [name.strip() for name in explicit.split(",") if name.strip()]
@@ -225,7 +229,7 @@ def select_images(source: Path, count: int, explicit: str | None, scan_limit: in
         raise SystemExit(f"No PNGs found in {source}")
 
     chosen, skipped = [], 0
-    for path in pngs[:scan_limit]:
+    for path in pngs:
         with Image.open(path) as handle:
             if len(crosshair_mask(handle.convert("RGB"))) >= MIN_CROSSHAIR_PIXELS:
                 chosen.append(path)
@@ -237,10 +241,9 @@ def select_images(source: Path, count: int, explicit: str | None, scan_limit: in
     if skipped:
         print(f"Skipped {skipped} candidate(s) with no green crosshair to measure.")
     if not chosen:
-        raise SystemExit(
-            f"No images with a detectable green crosshair in the {scan_limit} largest. "
-            "Pass --images explicitly."
-        )
+        raise SystemExit(f"No images with a detectable green crosshair in {source}. Pass --images explicitly.")
+    if len(chosen) < count:
+        print(f"Only {len(chosen)} of the {count} requested image(s) have a green crosshair to measure.")
     return chosen
 
 
@@ -433,6 +436,10 @@ def main() -> None:
     parser.add_argument("--images", help="comma-separated filenames, overriding --count")
     args = parser.parse_args()
 
+    # The scan stops only on reaching --count, so anything below 1 would never
+    # stop it short of the whole corpus.
+    if args.count < 1:
+        parser.error("--count must be at least 1")
     if not args.source.is_dir():
         raise SystemExit(f"Source directory not found: {args.source}")
 
