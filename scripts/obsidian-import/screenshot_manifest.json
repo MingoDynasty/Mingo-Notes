@@ -923,6 +923,22 @@
     "encoder": "avif-q80-4:4:4-speed6",
     "source_sha256": "4c48a9cd8016be596f3e90a246dc8c1db9749b5cc35de85ce9c986f9e663ec5f"
   },
+  "20250711201759.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "93d8fb5e637199f5c03a57dee9ae06fb456475e0c30c4537d28e8f0410d67f3b"
+  },
+  "20250711201834.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "6be3d68c9df5398c19435f5d2360ff8f2ae4d3b5e422f6bbe875bf77e2057e7d"
+  },
+  "20250711201901.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "c9c1a982f2d5e3fe073cc2b938b3bcababe16dc55111bd97042a075cbff2532d"
+  },
+  "20250711202125.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "1098576e6a380475562d92bf6cd36017dc6fd4c89628bb4b6b6365bbefb5c444"
+  },
   "20250711204616.avif": {
     "encoder": "avif-q80-4:4:4-speed6",
     "source_sha256": "825d430882a1bc510f9a3c2ad0afc62d9eccfafdf6304ae269af29aa809f4084"
@@ -962,6 +978,22 @@
   "20250712061234.avif": {
     "encoder": "avif-q80-4:4:4-speed6",
     "source_sha256": "fd0be0f153dad180e271a548a08687ee02d0dbbc3052e2641cc01c155caba485"
+  },
+  "20250712194346.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "2b6c6ba72442dae22fd6a4c1fd6c37b29e36566e3e1b1f25a0351252a59461c5"
+  },
+  "20250712194426.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "76aaf6cbf4e01fc714a3cd993f9e811573a339cb7bed026f5755b47c409654d2"
+  },
+  "20250712194620.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "b9814d1d3a27277bf29f1d4df18a30fec9e18b72c027536111dab4934633d51d"
+  },
+  "20250712194745.avif": {
+    "encoder": "avif-q80-4:4:4-speed6",
+    "source_sha256": "7f753202e451d1e072e8bb546ed89053e6ce1b27533c1249408acad822f25699"
   },
   "20250804024651.avif": {
     "encoder": "avif-q80-4:4:4-speed6",
