@@ -5,6 +5,9 @@ on, and the preflight checks that must fire *before* the importer mutates the re
 """
 import os
 from pathlib import Path
+import subprocess
+import sys
+from typing import Any
 
 import pytest
 from PIL import Image
@@ -17,6 +20,7 @@ from import_vault import (
     build_source_index,
     derive_required_images,
     convert_required_images,
+    format_documents,
     load_manifest,
     needs_conversion,
     preflight,
@@ -433,3 +437,54 @@ def test_source_replaced_mid_conversion_fails_safe(tmp_path, monkeypatch):
     assert needs_conversion(
         "1.avif", source, destination_dir / "1.avif", manifest, encoder_fingerprint()
     ) is True
+
+
+# --------------------------------------------------------------------------
+# Prettier -- the pinned copy, never a download, and a failure stops the run
+# --------------------------------------------------------------------------
+
+
+def _record_runs(
+    monkeypatch: pytest.MonkeyPatch, returncode: int = 0, stderr: str = ""
+) -> list[tuple[list[str], dict[str, Any]]]:
+    calls: list[tuple[list[str], dict[str, Any]]] = []
+
+    def fake_run(args: list[str], **kwargs: Any) -> subprocess.CompletedProcess[str]:
+        calls.append((args, kwargs))
+        return subprocess.CompletedProcess(args, returncode, stdout="", stderr=stderr)
+
+    monkeypatch.setattr(import_vault.subprocess, "run", fake_run)
+    return calls
+
+
+@pytest.mark.parametrize("platform,launcher", [("win32", "npx.cmd"), ("linux", "npx")])
+def test_prettier_runs_the_pinned_copy_through_the_platform_launcher(
+    monkeypatch, tmp_path, platform, launcher
+):
+    monkeypatch.setattr(sys, "platform", platform)
+    calls = _record_runs(monkeypatch)
+
+    format_documents(tmp_path)
+
+    assert len(calls) == 1
+    args, kwargs = calls[0]
+    # --no-install: npx must never fetch whatever release is newest that day
+    assert args == [launcher, "--no-install", "prettier", str(tmp_path), "--write"]
+    # from the repo root, npx resolves the devDependency pinned in package.json
+    assert kwargs["cwd"] == import_vault.repo_root()
+
+
+def test_missing_launcher_stops_the_import(monkeypatch, tmp_path):
+    def launcher_missing(args: list[str], **kwargs: Any) -> subprocess.CompletedProcess[str]:
+        raise FileNotFoundError(args[0])
+
+    monkeypatch.setattr(import_vault.subprocess, "run", launcher_missing)
+    # PreflightError is what the CLI reports as "no changes were made"
+    with pytest.raises(PreflightError, match="not found on PATH"):
+        format_documents(tmp_path)
+
+
+def test_prettier_failure_stops_the_import(monkeypatch, tmp_path):
+    _record_runs(monkeypatch, returncode=2, stderr="[error] No parser could be inferred\n")
+    with pytest.raises(PreflightError, match="exited with code 2: .*No parser could be inferred"):
+        format_documents(tmp_path)

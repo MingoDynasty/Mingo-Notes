@@ -60,8 +60,12 @@ the whole import is known to be satisfiable:
 - **Python 3.14+** (see [`pyproject.toml`](pyproject.toml)).
 - [**uv**](https://docs.astral.sh/uv/) — required, for **Pillow** (screenshot
   conversion) alongside the `mypy` and `pytest` dev dependencies.
-- **Prettier** via `npx prettier`, only if `enable_markdown_auto_format = true`.
-- Windows is assumed (Prettier is invoked as `npx.cmd`; example paths use `E:/`).
+- **Prettier**, only if `enable_markdown_auto_format = true`. It is pinned as a
+  devDependency in the repo's `package.json`, so run `npm ci` at the repo root
+  first. The importer runs `npx --no-install prettier` from the repo root
+  (`npx.cmd` on Windows), so it never downloads a release. A missing `npx` or a
+  Prettier error stops the import before anything in the repo is written.
+- Example paths assume Windows (`E:/`).
 
 ## Tests
 

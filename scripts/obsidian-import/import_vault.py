@@ -198,20 +198,37 @@ def render_document(source_path: Path) -> str:
     return FRONTMATTER + rewritten + "\n"
 
 
+def npx_launcher() -> str:
+    """npm installs npx as a ``.cmd`` shim on Windows, so it has to be named in full there."""
+    return "npx.cmd" if sys.platform == "win32" else "npx"
+
+
 def format_documents(directory: Path) -> None:
-    """Run Prettier over generated documents, so it sees links + frontmatter."""
+    """Run Prettier over generated documents, so it sees links + frontmatter.
+
+    Prettier is a pinned devDependency in the repo's package.json. ``--no-install``
+    stops npx from fetching whatever release is newest that day, and running from
+    the repo root makes it resolve the repo's own copy.
+
+    This runs on the staging directory, before anything in the repo is written,
+    so a failure stops the import with the repo untouched instead of swapping in
+    unformatted documents.
+    """
+    launcher = npx_launcher()
     try:
         result = subprocess.run(
-            ["npx.cmd", "prettier", str(directory), "--write"],
+            [launcher, "--no-install", "prettier", str(directory), "--write"],
+            cwd=repo_root(),
             check=False,
             capture_output=True,
             text=True,
         )
     except FileNotFoundError:
-        logger.warning("Could not run Prettier: 'npx.cmd' not found on PATH.")
-        return
+        raise PreflightError(f"Could not run Prettier: {launcher!r} not found on PATH.") from None
     if result.returncode != 0:
-        logger.warning("Prettier exited with code %s: %s", result.returncode, result.stderr.strip())
+        raise PreflightError(
+            f"Prettier exited with code {result.returncode}: {result.stderr.strip()}"
+        )
 
 
 def generate_prospective_documents(config: AppConfig, staging_dir: Path) -> list[Path]:
