@@ -113,6 +113,12 @@ def validate_config(config: dict[str, Any]) -> AppConfig:
     if missing_keys:
         exit_config_error(f"Missing required key(s): {', '.join(missing_keys)}")
 
+    # A key the importer no longer reads (or a misspelt one) would otherwise
+    # look as if it were doing something. Warn, but keep going.
+    unknown_keys = sorted(set(config) - set(REQUIRED_CONFIG_KEYS))
+    if unknown_keys:
+        logger.warning("Ignoring unknown config key(s): %s", ", ".join(unknown_keys))
+
     for key in DIRECTORY_CONFIG_KEYS:
         value = config[key]
         if not isinstance(value, str):

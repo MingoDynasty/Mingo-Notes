@@ -3,6 +3,7 @@
 Focus is the AVIF migration's failure modes: the embed rewriting the site depends
 on, and the preflight checks that must fire *before* the importer mutates the repo.
 """
+import logging
 import os
 from pathlib import Path
 import subprocess
@@ -30,6 +31,7 @@ from import_vault import (
     source_digest,
     swap_documents,
     validate_both_directions,
+    validate_config,
 )
 from utilities import (
     get_screenshot_srcs_in_text,
@@ -488,3 +490,30 @@ def test_prettier_failure_stops_the_import(monkeypatch, tmp_path):
     _record_runs(monkeypatch, returncode=2, stderr="[error] No parser could be inferred\n")
     with pytest.raises(PreflightError, match="exited with code 2: .*No parser could be inferred"):
         format_documents(tmp_path)
+
+
+# --------------------------------------------------------------------------
+# config validation
+# --------------------------------------------------------------------------
+
+
+def _valid_config(tmp_path: Path) -> dict[str, Any]:
+    config: dict[str, Any] = {key: str(tmp_path) for key in import_vault.DIRECTORY_CONFIG_KEYS}
+    config.update({key: False for key in import_vault.BOOLEAN_CONFIG_KEYS})
+    return config
+
+
+def test_unknown_config_key_warns_but_does_not_fail(tmp_path, caplog):
+    # protected_markdown_files was removed in PR #5 but lingers in local configs
+    config = _valid_config(tmp_path) | {"protected_markdown_files": ["Ascent.md"]}
+    with caplog.at_level(logging.WARNING, logger="import_vault"):
+        assert validate_config(config) == config
+    warnings = [r for r in caplog.records if r.levelno == logging.WARNING]
+    assert len(warnings) == 1
+    assert "protected_markdown_files" in warnings[0].getMessage()
+
+
+def test_known_config_keys_do_not_warn(tmp_path, caplog):
+    with caplog.at_level(logging.WARNING, logger="import_vault"):
+        validate_config(_valid_config(tmp_path))
+    assert not [r for r in caplog.records if r.levelno >= logging.WARNING]
