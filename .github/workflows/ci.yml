@@ -1,0 +1,57 @@
+# Repo-local CI, no tooling-spec stamp: the Python spec covers no Node repo
+# yet. The shape follows the spec's canonical ci.yml (SHA-pinned actions,
+# read-only token, no persisted credentials, the same concurrency rule).
+name: CI
+
+on:
+    pull_request:
+    push:
+        branches: [main]
+
+permissions:
+    contents: read
+
+# A new push to a pull request cancels that pull request's superseded run.
+# A push to main gets a group of its own through the run id, so it is never
+# cancelled and never queued.
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+    cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+    gates:
+        runs-on: ubuntu-latest
+        env:
+            UV_NO_SYNC: '1'
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+              with:
+                  node-version: 24
+                  cache: npm
+            - name: Install site dependencies
+              run: npm ci
+            - name: Type check the site
+              run: npm run typecheck
+            # Build only: the output (about 380 MB) is not uploaded or deployed.
+            - name: Build the site
+              run: npm run build
+            - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+              with:
+                  working-directory: scripts/obsidian-import
+                  enable-cache: false
+            # The interpreter comes from scripts/obsidian-import/.python-version.
+            - name: Install importer dependencies
+              working-directory: scripts/obsidian-import
+              run: uv sync --locked
+            - name: Test the importer
+              working-directory: scripts/obsidian-import
+              run: uv run pytest
+            - name: Type check the importer
+              working-directory: scripts/obsidian-import
+              run: uv run mypy .
+            - name: Type check the format pilot
+              working-directory: scripts/obsidian-import
+              run: uv run mypy ../image-format-pilot/format_pilot.py
