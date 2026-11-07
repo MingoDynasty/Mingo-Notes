@@ -3,8 +3,12 @@
 Focus is the AVIF migration's failure modes: the embed rewriting the site depends
 on, and the preflight checks that must fire *before* the importer mutates the repo.
 """
+import logging
 import os
 from pathlib import Path
+import subprocess
+import sys
+from typing import Any
 
 import pytest
 from PIL import Image
@@ -17,6 +21,7 @@ from import_vault import (
     build_source_index,
     derive_required_images,
     convert_required_images,
+    format_documents,
     load_manifest,
     needs_conversion,
     preflight,
@@ -26,6 +31,7 @@ from import_vault import (
     source_digest,
     swap_documents,
     validate_both_directions,
+    validate_config,
 )
 from utilities import (
     get_screenshot_srcs_in_text,
@@ -433,3 +439,81 @@ def test_source_replaced_mid_conversion_fails_safe(tmp_path, monkeypatch):
     assert needs_conversion(
         "1.avif", source, destination_dir / "1.avif", manifest, encoder_fingerprint()
     ) is True
+
+
+# --------------------------------------------------------------------------
+# Prettier -- the pinned copy, never a download, and a failure stops the run
+# --------------------------------------------------------------------------
+
+
+def _record_runs(
+    monkeypatch: pytest.MonkeyPatch, returncode: int = 0, stderr: str = ""
+) -> list[tuple[list[str], dict[str, Any]]]:
+    calls: list[tuple[list[str], dict[str, Any]]] = []
+
+    def fake_run(args: list[str], **kwargs: Any) -> subprocess.CompletedProcess[str]:
+        calls.append((args, kwargs))
+        return subprocess.CompletedProcess(args, returncode, stdout="", stderr=stderr)
+
+    monkeypatch.setattr(import_vault.subprocess, "run", fake_run)
+    return calls
+
+
+@pytest.mark.parametrize("platform,launcher", [("win32", "npx.cmd"), ("linux", "npx")])
+def test_prettier_runs_the_pinned_copy_through_the_platform_launcher(
+    monkeypatch, tmp_path, platform, launcher
+):
+    monkeypatch.setattr(sys, "platform", platform)
+    calls = _record_runs(monkeypatch)
+
+    format_documents(tmp_path)
+
+    assert len(calls) == 1
+    args, kwargs = calls[0]
+    # --no-install: npx must never fetch whatever release is newest that day
+    assert args == [launcher, "--no-install", "prettier", str(tmp_path), "--write"]
+    # from the repo root, npx resolves the devDependency pinned in package.json
+    assert kwargs["cwd"] == import_vault.repo_root()
+
+
+def test_missing_launcher_stops_the_import(monkeypatch, tmp_path):
+    def launcher_missing(args: list[str], **kwargs: Any) -> subprocess.CompletedProcess[str]:
+        raise FileNotFoundError(args[0])
+
+    monkeypatch.setattr(import_vault.subprocess, "run", launcher_missing)
+    # PreflightError is what the CLI reports as "no changes were made"
+    with pytest.raises(PreflightError, match="not found on PATH"):
+        format_documents(tmp_path)
+
+
+def test_prettier_failure_stops_the_import(monkeypatch, tmp_path):
+    _record_runs(monkeypatch, returncode=2, stderr="[error] No parser could be inferred\n")
+    with pytest.raises(PreflightError, match="exited with code 2: .*No parser could be inferred"):
+        format_documents(tmp_path)
+
+
+# --------------------------------------------------------------------------
+# config validation
+# --------------------------------------------------------------------------
+
+
+def _valid_config(tmp_path: Path) -> dict[str, Any]:
+    config: dict[str, Any] = {key: str(tmp_path) for key in import_vault.DIRECTORY_CONFIG_KEYS}
+    config.update({key: False for key in import_vault.BOOLEAN_CONFIG_KEYS})
+    return config
+
+
+def test_unknown_config_key_warns_but_does_not_fail(tmp_path, caplog):
+    # protected_markdown_files was removed in PR #5 but lingers in local configs
+    config = _valid_config(tmp_path) | {"protected_markdown_files": ["Ascent.md"]}
+    with caplog.at_level(logging.WARNING, logger="import_vault"):
+        assert validate_config(config) == config
+    warnings = [r for r in caplog.records if r.levelno == logging.WARNING]
+    assert len(warnings) == 1
+    assert "protected_markdown_files" in warnings[0].getMessage()
+
+
+def test_known_config_keys_do_not_warn(tmp_path, caplog):
+    with caplog.at_level(logging.WARNING, logger="import_vault"):
+        validate_config(_valid_config(tmp_path))
+    assert not [r for r in caplog.records if r.levelno >= logging.WARNING]
