@@ -55,8 +55,8 @@ locally with `wrangler dev`.
 the repository has no `netlify.toml`. What has been observed (2026-11-07):
 
 - Netlify posts a `netlify/mingo-notes/deploy-preview` status on pull requests, linking a
-  preview at `deploy-preview-<number>--mingo-notes.netlify.app`. Seen on PRs #5 to #14;
-  PRs #1 to #4 have none.
+  preview at `deploy-preview-<number>--mingo-notes.netlify.app`. The preview succeeded on
+  PRs #5 to #14 and failed on PRs #2 to #4; PR #1 has no status.
 - A public copy of the site is served at <https://mingo-notes.netlify.app>. It served the
   same 24 routes as production, and its canonical links point at `notes.mingodynasty.com`.
 
